@@ -1789,7 +1789,7 @@ WaveSchedule {
 			LastSpawnOutput { Target halflife_radio Action PickRandomShuffle }
 			TFBot {
 				Class Demoman
-				ClassIcon demo_pumpkin_giant
+				ClassIcon demo_pumpkin
 				Name "Giant Pumpkin Bomber"
 				Action Mobber  
 				Skill Expert
