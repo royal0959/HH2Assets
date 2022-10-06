@@ -73,10 +73,11 @@ bozo_mission_be_liek
 	DisableSound "Announcer.MVM_Tank_Alert_Halfway_Multiple"
 	DisableSound "Announcer.MVM_Tank_Alert_Near_Hatch"
 	DisableSound "Announcer.MVM_Tank_Alert_Deploying"
-
-    PrecacheModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"
-    PrecacheModel "models\workshop\player\items\pyro\eotl_ducky\eotl_bonus_duck.mdl"
-    PrecacheModel "models/props_mvm/mvm_human_skull.mdl"
+	
+    // I'm a dumbass
+    //PrecacheModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"
+    //PrecacheModel "models\workshop\player\items\pyro\eotl_ducky\eotl_bonus_duck.mdl"
+    //PrecacheModel "models/props_mvm/mvm_human_skull.mdl"
 
     // Custom Assets
     PrecacheModel "models/player/items/all_class/gately_gibus_heavy.mdl"
