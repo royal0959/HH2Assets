@@ -16,6 +16,7 @@
 // Tag nav_prefer_flank_middle
 // Tag flankpusher
 // Tag noflank // I'm literally adding this to every bot, except flankers :>
+// Tag forcefollowbombpath
 
 // TO DO LIST:
 // Test it
@@ -71,13 +72,13 @@ red_moonlight
 
     OverrideSounds
 	{
-		"MVM.BombWarning" "ambient_mp3/alarms/doomsday_lift_alarm.mp3"
-        "music.mvm_end_wave" "ui/halloween_boss_defeated.wav"
-        "music.mvm_end_tank_wave" "ui/halloween_boss_defeated.wav"
-        "music.mvm_end_mid_wave" "ui/halloween_boss_defeated.wav"
-        "music.mvm_end_last_wave" "ui/halloween_boss_defeated.wav"
-        "MVM.GiantHeavyExplodes"	"physics/body/body_medium_break2.wav"
-		"MVM.GiantCommonExplodes"	"physics/body/body_medium_break2.wav"
+		"MVM.BombWarning" "ambient_mp3\alarms\doomsday_lift_alarm.mp3"
+        "music.mvm_end_wave" "ui\halloween_boss_defeated.wav"
+        "music.mvm_end_tank_wave" "ui\halloween_boss_defeated.wav"
+        "music.mvm_end_mid_wave" "ui\halloween_boss_defeated.wav"
+        "music.mvm_end_last_wave" "ui\halloween_boss_defeated.wav"
+        "MVM.GiantHeavyExplodes"	"physics\body\body_medium_break2.wav"
+		"MVM.GiantCommonExplodes"	"physics\body\body_medium_break2.wav"
     }
 
     Mission // Sentry Buster
@@ -158,7 +159,7 @@ red_moonlight
             ambient_generic
             {
                 "health" "10"
-                "message" "/misc/halloween/skeletons/skelly_medium_01.wav"
+                "message" "\misc\halloween\skeletons\skelly_medium_01.wav"
                 "radius" "2000"
                 "spawnflags" "48"
                 "targetname" "skelly_laugh01"
@@ -167,7 +168,7 @@ red_moonlight
             ambient_generic
             {
                 "health" "10"
-                "message" "/misc/halloween/skeletons/skelly_medium_02.wav"
+                "message" "\misc\halloween\skeletons\skelly_medium_02.wav"
                 "radius" "2000"
                 "spawnflags" "48"
                 "targetname" "skelly_laugh02"
@@ -176,7 +177,7 @@ red_moonlight
             ambient_generic
             {
                 "health" "10"
-                "message" "/misc/halloween/skeletons/skelly_medium_03.wav"
+                "message" "\misc\halloween\skeletons\skelly_medium_03.wav"
                 "radius" "2000"
                 "spawnflags" "48"
                 "targetname" "skelly_laugh03"
@@ -185,7 +186,7 @@ red_moonlight
             ambient_generic
             {
                 "health" "10"
-                "message" "/misc/halloween/skeletons/skelly_medium_04.wav"
+                "message" "\misc\halloween\skeletons\skelly_medium_04.wav"
                 "radius" "2000"
                 "spawnflags" "48"
                 "targetname" "skelly_laugh04"
@@ -194,7 +195,7 @@ red_moonlight
             ambient_generic
             {
                 "health" "10"
-                "message" "/misc/halloween/skeletons/skelly_medium_05.wav"
+                "message" "\misc\halloween\skeletons\skelly_medium_05.wav"
                 "radius" "2000"
                 "spawnflags" "48"
                 "targetname" "skelly_laugh05"
@@ -347,6 +348,27 @@ red_moonlight
 				"$TargetTestPass" "!parent,$FireUser5,,0,-1"
 			}
 		}
+        Monoculus_Death_Init
+        {
+            KeepAlive 1
+    	    OnParentKilledOutput 
+			{
+				Target "monoculus_death_effect"
+				Action "FireUser1"
+				Delay 0
+			}
+            info_particle_system
+            {
+                "targetname" "monoculus_death_effect"
+                "effect_name" "eyeboss_death"
+                "flag_as_weather" "0"
+                "start_active" "0"
+
+                "OnUser1" "!self,$PlaySound,ui/halloween_boss_defeated_monoculus,0,-1"
+                "OnUser1" "!self,Start,,0,-1"
+                "OnUser1" "!self,Kill,,5,-1" //cleanup
+            }
+            }
     }
     Templates
     {
@@ -371,7 +393,7 @@ red_moonlight
 			Attributes DisableDodge
             UseCustomModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"
             DeathSound "misc/halloween/skeleton_break.wav"
-            UseHumanAnimations 1  
+            UseHumanAnimations 1 [$SIGSEGV]
             ItemAttributes
             {
                 ItemName "tf_weapon_grenadelauncher"
@@ -425,10 +447,10 @@ red_moonlight
 			Attributes MiniBoss
             RocketCustomParticle eyeboss_projectile
             RocketCustomModel "models/props_halloween/eyeball_projectile.mdl"
-            AddCond   { Name TF_COND_SODAPOPPER_HYPE } 
+            AddCond [$SIGSEGV] { Name TF_COND_SODAPOPPER_HYPE } 
             Item "MONOCULUS!"
             Item "The Caped Crusader"
-            HomingRockets  
+            HomingRockets [$SIGSEGV]
 			{
                 Enable 1
 				IgnoreDisguisedSpies 1
@@ -457,8 +479,8 @@ red_moonlight
 			Health 900
 			Scale 1.5						// Force scale to 1 when "Health" set high
 			//WeaponRestrictions MeleeOnly
-            StripItemSlot 0  
-            StripItemSlot 1  
+            StripItemSlot 0 [$SIGSEGV]
+            StripItemSlot 1 [$SIGSEGV]
 			Item "The Freedom Staff"
             //Item "The Mantreads"
             Item "Point and Shoot"
@@ -485,8 +507,8 @@ red_moonlight
 			Item "Point and Shoot"
             Item "The Cool Cat Cardigan"
             Item "tf_weapon_spellbook"
-            StripItemSlot 0  
-            StripItemSlot 1  
+            StripItemSlot 0 [$SIGSEGV]
+            StripItemSlot 1 [$SIGSEGV]
 			ItemAttributes
 			{
 				ItemName "The Sandman"
@@ -561,7 +583,7 @@ red_moonlight
                     Item "The Detonator"
                     Item "The Burning Question"
                     Item "Wanderer's Wear"
-                    FireWeapon   // Actually uses his alt fire
+                    FireWeapon [$SIGSEGV] // Actually uses his alt fire
                     {
                         Delay 4
                         Cooldown 8
@@ -617,8 +639,8 @@ red_moonlight
                 Health 3300
                 Attributes MiniBoss
                 WeaponRestrictions PrimaryOnly
-                UseHumanAnimations 1  
-                UseCustomModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"
+                UseHumanAnimations 1 [$SIGSEGV]
+                UseCustomModel "models\bots\skeleton_sniper\skeleton_sniper.mdl"
                 DeathSound "misc/halloween/skeleton_break.wav"
                 Item "The Triggerman's Tacticals"
                 Item "The Toy Soldier"
@@ -803,7 +825,7 @@ red_moonlight
 				    //Tag flankpusher
 				    //BehaviorModifiers Push
                     Tag noflank
-                    Spell  
+                    Spell [$SIGSEGV]
                     {
                         Delay 9
                         Cooldown 11
@@ -820,7 +842,7 @@ red_moonlight
 				    //Tag flankpusher
 				    //BehaviorModifiers Push
                     Tag noflank
-                    Spell  
+                    Spell [$SIGSEGV]
                     {
                         Delay 12
                         Cooldown 8
@@ -837,7 +859,7 @@ red_moonlight
 				    //Tag flankpusher
 				    //BehaviorModifiers Push
                     Tag noflank
-                    Spell  
+                    Spell [$SIGSEGV]
                     {
                         Delay 7
                         Cooldown 13
@@ -941,7 +963,7 @@ red_moonlight
                 ClassIcon medic_crossbow
                 Name "Infected Zombie"
                 Skill Normal
-                Action FetchFlag   // Might not be needed since it's the leader?
+                Action FetchFlag [$SIGSEGV] // Might not be needed since it's the leader?
                 WeaponRestrictions PrimaryOnly
                 Item "the crusader's crossbow"
                 Item "The Smock Surgeon"
@@ -1082,7 +1104,7 @@ red_moonlight
 				        ItemName "Zombie Sniper"
 				        Model "models/empty.mdl"
 			        }
-                    NoBombUpgrades 1   // Hooray for our first arbitrary rafmod keyvalue
+                    NoBombUpgrades 1 [$SIGSEGV] // Hooray for our first arbitrary rafmod keyvalue
                     CharacterAttributes { "voice pitch scale" 0 "damage penalty" 0.75 }
                     Tag noflank
                 }
@@ -1186,7 +1208,7 @@ red_moonlight
                 Item "Crit-a-Cola"
                 Item "The Bottle Cap"
                 Item "The Caffeine Cooler"
-                StripItemSlot 0  
+                StripItemSlot 0 [$SIGSEGV]
                 CharacterAttributes { "voice pitch scale" 0.8 }
                 Tag noflank
             }
@@ -1320,7 +1342,7 @@ red_moonlight
                     Template T_TFBot_Spell_Jumpy_Boy
                     Name "Baseball Zombie"
                     CharacterAttributes { "voice pitch scale" 0.8 "increased air control" 4 }
-                    Spell  
+                    Spell [$SIGSEGV]
                     {
                         Delay 8
                         Cooldown 7
@@ -1416,7 +1438,7 @@ red_moonlight
                     Item "Holy Hunter"
                     Item "Silver Bullets"
                     Item "The Triggerman's Tacticals"
-                    UseMeleeThreatPrioritization 1  
+                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
                     CharacterAttributes { "voice pitch scale" 0.8 }
                     Tag noflank
                 }
@@ -1431,7 +1453,7 @@ red_moonlight
                     Item "Holy Hunter"
                     Item "Silver Bullets"
                     Item "The Triggerman's Tacticals"
-                    UseMeleeThreatPrioritization 1  
+                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
                     CharacterAttributes { "voice pitch scale" 0.8 }
                     Tag noflank
                 }
@@ -1446,7 +1468,7 @@ red_moonlight
                     Item "Holy Hunter"
                     Item "Silver Bullets"
                     Item "The Triggerman's Tacticals"
-                    UseMeleeThreatPrioritization 1  
+                    UseMeleeThreatPrioritization 1 [$SIGSEGV]
                     CharacterAttributes { "voice pitch scale" 0.8 }
                     Tag noflank
                 }
@@ -1775,10 +1797,10 @@ red_moonlight
                 Name "Giant Burst Homing Cultist"
                 RocketCustomParticle eyeboss_projectile
                 RocketCustomModel "models/props_halloween/eyeball_projectile.mdl"
-                AddCond   { Name TF_COND_SODAPOPPER_HYPE } 
+                AddCond [$SIGSEGV] { Name TF_COND_SODAPOPPER_HYPE } 
                 Item "MONOCULUS!"
                 Item "The Caped Crusader"
-                HomingRockets  
+                HomingRockets [$SIGSEGV]
 			    {
                     Enable 1
 				    IgnoreDisguisedSpies 1
@@ -1958,7 +1980,7 @@ red_moonlight
             TFBot
             {
                 Template T_TFBot_Spellcasting_Gaunlet
-                Spell  
+                Spell [$SIGSEGV]
                 {
                     Delay 9
                     Cooldown 11
@@ -1992,6 +2014,7 @@ red_moonlight
 					Target boss_deploy_relay
 					Action Trigger
 				}
+                SpawnTemplate Monoculus_Death_Init
 		        SpawnTemplate Monoculus_Blimp
 			    DisableSmokestack 1  
 			    Classicon boss_eyeball
