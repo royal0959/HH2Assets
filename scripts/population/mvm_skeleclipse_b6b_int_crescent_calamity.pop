@@ -18,10 +18,6 @@
 // Tag noflank // I'm literally adding this to every bot, except flankers :>
 // Tag forcefollowbombpath
 
-// TO DO LIST:
-// Test it
-// Check wave 5
-
 #base robot_giant.pop
 #base robot_standard.pop
 
@@ -65,10 +61,7 @@ red_moonlight
 	DisableSound "Announcer.MVM_Tank_Alert_Near_Hatch"
 	DisableSound "Announcer.MVM_Tank_Alert_Deploying"
 
-    PrecacheModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"
-
-    // Custom Assets
-    PrecacheModel "models/player/items/all_class/gately_gibus_heavy.mdl"
+    //PrecacheModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"
 
     OverrideSounds
 	{
