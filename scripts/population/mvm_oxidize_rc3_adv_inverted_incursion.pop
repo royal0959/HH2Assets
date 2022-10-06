@@ -944,8 +944,8 @@ WaveSchedule {
 				"targetname" "stunboss"
 				"filtername" "filter_boss"
 				"StartDisabled" "1"
-				"mins" "-500 -500 -500"
-				"maxs" "500 500 500"
+				"mins" "-5000 -5000 -5000"
+				"maxs" "5000 5000 5000"
 				"spawnflags" "1"
 				"move_speed_reduction" "1"
 				"stun_duration" "7"
@@ -1789,7 +1789,7 @@ WaveSchedule {
 			LastSpawnOutput { Target halflife_radio Action PickRandomShuffle }
 			TFBot {
 				Class Demoman
-				ClassIcon demo_pumpkin
+				ClassIcon demo_pumpkin_giant
 				Name "Giant Pumpkin Bomber"
 				Action Mobber  
 				Skill Expert
@@ -2869,7 +2869,6 @@ WaveSchedule {
 				}
 				CharacterAttributes	{
 					"move speed bonus"	0.5
-					"no_jump" 1
 					"damage force reduction" 0
 					"airblast vulnerability multiplier" 0
 					"override footstep sound set" 7
