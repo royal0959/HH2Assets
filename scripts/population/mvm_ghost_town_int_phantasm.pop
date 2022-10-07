@@ -1427,7 +1427,7 @@ WaveSchedule
 			{
 				Class Scout
 				Skill Hard
-				ClassIcon scout_bat_nys
+				ClassIcon scout_bat
 				WeaponRestrictions MeleeOnly
 				Attributes AlwaysCrit
 			}
