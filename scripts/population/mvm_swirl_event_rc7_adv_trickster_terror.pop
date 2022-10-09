@@ -40,7 +40,14 @@
 #base robot_giant.pop
 #base robot_standard.pop
 #base robot_gatebot.pop
-#base overclock_cactus.pop
+#base overclock_cactus_scout.pop
+#base overclock_cactus_soldier.pop
+#base overclock_cactus_demo.pop
+#base overclock_cactus_heavy.pop
+#base overclock_cactus_engineer.pop
+#base overclock_cactus_medic.pop
+#base overclock_cactus_sniperspy.pop
+//#base overclock_cactus.pop
 
 bozo_mission_be_liek
 {
@@ -73,7 +80,7 @@ bozo_mission_be_liek
 	DisableSound "Announcer.MVM_Tank_Alert_Halfway_Multiple"
 	DisableSound "Announcer.MVM_Tank_Alert_Near_Hatch"
 	DisableSound "Announcer.MVM_Tank_Alert_Deploying"
-	
+
     // I'm a dumbass
     //PrecacheModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"
     //PrecacheModel "models\workshop\player\items\pyro\eotl_ducky\eotl_bonus_duck.mdl"
