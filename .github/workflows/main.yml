@@ -42,34 +42,34 @@ jobs:
           } &
           done
           wait
-  webdownload:
-    needs: build
-    runs-on: ubuntu-latest
+  # webdownload:
+  #   needs: build
+  #   runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+  #   # Steps represent a sequence of tasks that will be executed as part of the job
+  #   steps:
+  #     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+  #     - uses: actions/checkout@v3
               
-      - name: Setup SSH Keys and known_hosts
-        env:
-            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        run: |
-            ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-            ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
+  #     - name: Setup SSH Keys and known_hosts
+  #       env:
+  #           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+  #       run: |
+  #           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+  #           ssh-add - <<< "${{ secrets.DEPLOY_KEY }}"
 
-      Runs a set of commands using the runners shell
-      - name: Install web assets
-        env:
-            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        continue-on-error: true
-        run: |
-          echo . -type f -not \( -name "*.bsp" -or -name "*.mp3" -or -name "*.nav" -or -name "*.res" -or -name ".bz2" \)  -exec pbzip2 -n 1 -f -k -4 {} +
-          find . -type f -not \( -name "*.pop" -or -name "*.nav" -or -name "*.res" -or -name "*.bz2" \) \( ! -regex '.*/\..*' \) -exec bzip2 -f -k {} +
+  #     Runs a set of commands using the runners shell
+  #     - name: Install web assets
+  #       env:
+  #           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+  #       continue-on-error: true
+  #       run: |
+  #         echo . -type f -not \( -name "*.bsp" -or -name "*.mp3" -or -name "*.nav" -or -name "*.res" -or -name ".bz2" \)  -exec pbzip2 -n 1 -f -k -4 {} +
+  #         find . -type f -not \( -name "*.pop" -or -name "*.nav" -or -name "*.res" -or -name "*.bz2" \) \( ! -regex '.*/\..*' \) -exec bzip2 -f -k {} +
       
-      - name: Install web assets (hydro)
-        env:
-            SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-        continue-on-error: true
-        run: |
-          rsync -a -e "ssh -p 8833 -i ~/.ssh/tohydro" --delete --update --include="*/" --include="*.bz2" --exclude="*" . server@us.potato.tf:/var/www/html/HH2Assets
+  #     - name: Install web assets (hydro)
+  #       env:
+  #           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+  #       continue-on-error: true
+  #       run: |
+  #         rsync -a -e "ssh -p 8833 -i ~/.ssh/tohydro" --delete --update --include="*/" --include="*.bz2" --exclude="*" . server@us.potato.tf:/var/www/html/HH2Assets
