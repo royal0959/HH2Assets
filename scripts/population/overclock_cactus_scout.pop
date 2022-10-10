@@ -1,0 +1,238 @@
+WaveSchedule
+{
+	PrecacheModel "models/props_mvm/mvm_comically_small_player_shield.mdl"
+
+	LuaScriptFile "scripts/small_shield_overclock.lua"
+	LuaScriptFile "scripts/deflect_rage_airblast.lua"
+///Last updated 9/15/2022   /////
+
+	DisallowUpgrade	[$SIGSEGV] //Advanced syntax
+	{
+		Upgrade	"projectile gravity" // Upgrade name. In case of extended upgrades, the name of the attribute
+		MaxLevel 0 // Maximum allowed level
+		IfUpgradePresent // Other upgrades that should not be present
+		{
+			"clip size upgrade atomic" 1 // "clip size upgrade atomic" at level 1 or more blocks this upgrade 
+		}
+	}
+    DisallowUpgrade    [$SIGSEGV] //Advanced syntax
+    {
+        Upgrade	"clip size upgrade atomic" // Upgrade name. In case of extended upgrades, the name of the attribute
+        MaxLevel 0 // Maximum allowed level
+        IfUpgradePresent // Other upgrades that should not be present
+        {
+            "projectile gravity" 1 // "damage bonus hidden" at level 1 or more blocks this upgrade 
+        }
+    }
+    DisallowUpgrade    [$SIGSEGV] //Advanced syntax
+    {
+        Upgrade	"ability master sniper" // Upgrade name. In case of extended upgrades, the name of the attribute
+        MaxLevel 0 // Maximum allowed level
+        IfUpgradePresent // Other upgrades that should not be present
+        {
+            "explosive sniper shot" 2 // "damage bonus hidden" at level 1 or more blocks this upgrade 
+        }
+    }
+    DisallowUpgrade    [$SIGSEGV] //Advanced syntax 
+    {
+        Upgrade	"explosive sniper shot" // Upgrade name. In case of extended upgrades, the name of the attribute
+        MaxLevel 1 // Maximum allowed level
+        IfUpgradePresent // Other upgrades that should not be present
+        {
+            "ability master sniper" 1 // "damage bonus hidden" at level 1 or more blocks this upgrade 
+        }
+    }
+	DisallowUpgrade
+	{
+		Upgrade	"cannot giftwrap" 
+		MaxLevel 0 
+		IfUpgradePresent 
+		{
+			"generate rage on heal" 1 
+		}
+	}
+
+
+    ExtendedUpgrades  
+	{
+		MaxUpgradesTier // For tiered upgrades: Specify how many upgrades can be bought per tier. (1 by default)
+		{
+			1 1 // Max 2 upgrades on tier 1
+		}
+/////Scout
+		ScatterA
+		{
+			Name "Unstable Mod: Hefty Shells"
+			Attribute "bullets per shot bonus"
+			Cap 1.2
+			Increment 0.2
+			Cost 0
+			SecondaryAttributes
+			{
+				"spread penalty" 0.50
+				"reload time increased hidden" 0.35		
+				"lose hype on take damage" -4
+			}
+			Description "Gun fires an additional 20% bullets per shot and boost is not lost on damage taken, but is 50% less accurate and reloads 25% slower" 
+			Tier 1
+			AllowPlayerClass Scout
+            AllowedWeapons
+			{
+				Slot "Primary"
+			}
+			DisallowedWeapons // Disallow those weapons
+			{
+				ItemName "The Soda Popper"
+				ItemName "The Force-a-Nature"
+				ItemName "The Shortstop"
+			}
+		}
+		Shortstop
+		{
+			Name "Unstable Mod: Special Delivery"
+			Attribute "max health additive bonus"
+			Cap 25
+			Increment 25
+			Cost 0
+			SecondaryAttributes
+			{
+				"damage penalty" -0.25
+				"reload time increased hidden" -0.46
+				"fire rate penalty HIDDEN" -0.15
+				"provide on active" -1
+			}
+			Description "+25 max hp and weapon reloads 50% faster, but damage is lowered by 25% and fires 15% slower" 
+			Tier 1
+			AllowPlayerClass Scout
+            AllowedWeapons
+			{
+				ItemName "The Shortstop"
+			}
+		}
+////Scout Boomsticks
+		FaNA
+		{
+			Name "Stable Mod: Lighter Barrel"
+			Attribute "damage penalty"
+			Cap 1
+			Increment 0.1
+			Cost 0
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"scattergun has knockback" -1
+			}
+			Description "Knockback effects disabled and you gain a 10% damage bonus"
+			Tier 1
+			AllowPlayerClass Scout
+            AllowedWeapons
+			{
+				ItemName "The Force-a-Nature"
+				ItemName "Festive Force-a-Nature"
+			}
+		}
+/////Pistols
+		PistolCoK
+		{
+			Name "Stable Mod: Combo Bullets"
+			Attribute "critboost on kill"
+			Cap 3.0
+			Increment 3.0
+			Cost 0
+			Description "For every kill get 3 seconds of crit boost" 
+			Tier 1
+            AllowPlayerClass Scout
+			AllowedWeapons
+			{
+				ClassName tf_weapon_handgun_scout_secondary 
+				ClassName TF_WEAPON_PISTOL_SCOUT
+				ItemName "The C.A.P.P.E.R"
+			}
+		}
+////Scout Misc
+		BonkSoda
+		{
+			Name "Stable Mod: Battalion's Bonk-up"
+			Attribute "effect cond override" 
+			Cap 26
+			Increment 26
+			Cost 0
+			Description "Replaces Bonk! effect with battalion's backup effect "
+			Tier 1
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"provide on active" 1
+			}
+			AllowedWeapons
+			{
+				ItemName "Bonk! Atomic Punch"
+				ItemName "Festive Bonk 2014"
+			}
+		}	
+		Cleaver
+		{
+			Name "Stable Mod: Hot Knife"
+			Attribute "Set DamageType Ignite"
+			Cap 1
+			Increment 1
+			Cost 0
+			Description "Projectile ignites and marks target on hit"
+			Tier 1
+			SecondaryAttributes
+			{
+				"mark for death" 1
+			}
+			AllowedWeapons
+			{
+				ItemName "The Flying Guillotine"
+			}
+		}	
+////Scout Melee
+		BatA  ///includes Fish
+		{
+			Name "Unstable Mod: Support Swing"
+			Attribute "mark for death"
+			Cap 1
+			Increment 1
+			Cost 0
+			Description "Melee swings now debuff target with mark and 3 seconds of milk, but -25 max hp and -50% damage penalty" 
+			Tier 1
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"max health additive penalty" -25
+				"add cond on hit" 27
+				"add cond on hit duration" 4
+				"damage penalty" -0.5
+			}
+			AllowedWeapons
+			{
+				ClassName TF_WEAPON_BAT 
+				ItemName "The Holy Mackerel"
+				ItemName "Festive Bat 2011"
+				ItemName "Festive Holy Mackerel"
+			}
+			DisallowedWeapons // Disallow those weapons
+			{
+				ItemName "The Fan O'War"
+			}
+		}
+		SunOnAStickA
+		{
+			Name "Stable Mod: Soul Scorcher"
+			Attribute "damage bonus vs burning"
+			Cap 8
+			Increment 8
+			Cost 0
+			Description "Weapon now deals an additional 800% damage to burning enemies and all players connected via Medigun beams are hit" 
+			Tier 1
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"damage all connected" 1
+				"damage penalty" -0.25
+			}
+			AllowedWeapons
+			{
+				ItemName "Sun-on-a-Stick"
+			}
+		}
+	}	
+}

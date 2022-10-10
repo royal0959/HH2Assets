@@ -1,0 +1,228 @@
+WaveSchedule
+{
+    ExtendedUpgrades  
+	{
+		MaxUpgradesTier // For tiered upgrades: Specify how many upgrades can be bought per tier. (1 by default)
+		{
+			1 1 // Max 2 upgrades on tier 1
+		}
+		GrenadeLauncherB
+		{
+			Name "Unstable Mod: Mortar Mode"
+			Attribute "Blast radius increased"
+			Cap 1.5
+			Increment 0.5
+			Cost 0
+			SecondaryAttributes
+			{
+				"clip size penalty" -0.25
+			}
+			Description "Grenades have 50% larger blast radius, but clip size is reduced by 25%" 
+			Tier 1
+			AllowedWeapons
+			{
+				ClassName TF_WEAPON_GRENADELAUNCHER
+				ItemName "Festive Grenade Launcher"
+			}
+			DisallowedWeapons // Disallow those weapons
+			{
+				ItemName "The Loch-n-Load"
+			}
+		}
+		LochB
+		{
+			Name "Unstable Mod: Burst Chamber"
+			Attribute "mult projectile count"
+			Cap 2
+			Increment 1
+			Cost 0
+			SecondaryAttributes
+			{
+//				"clip size penalty HIDDEN" -0.75
+				"damage penalty" -0.25
+				"projectile spread angle penalty" 2
+				"sticky air burst mode" -1
+				"Blast radius decreased" -0.5
+				"grenade damage reduction on world contact" -0.5
+			}
+			Description "Weapon now fires 2 bombs simultaneously, at the cost of 50% smaller blast radius and 25% less direct damage" 
+			Tier 1
+			AllowedWeapons
+			{
+				ItemName "The Loch-n-Load"
+			}
+		}
+		StickyA
+		{
+			Name "Unstable Mod: Extra Adhesive"
+			Attribute "max pipebombs decreased"
+			Cap -2
+			Increment -2
+			Cost 0
+			SecondaryAttributes
+			{
+				"sticky arm time bonus" -0.25
+				"stickybomb stick to enemies" 1
+			}
+			Description "Stickies arm 20% faster and stick to enemies, but max active bombs are reduced by 2" 
+			Tier 1
+			AllowedWeapons
+			{
+				ClassName TF_WEAPON_PIPEBOMBLAUNCHER
+				ItemName "Festive Stickybomb Launcher 2011"
+			}
+			DisallowedWeapons // Disallow those weapons
+			{
+				ItemName "The Scottish Resistance"
+				ItemName "The Quickiebomb Launcher"
+				ItemName "Stickybomb Jumper"
+			}
+		}
+		Jumper
+		{
+			Name "Stable Mod: Para-Mode"
+			Attribute "parachute attribute" 
+			Cap 1
+			Increment 1
+			Cost 0
+			Description "Sticky Jumper now has a built-in parachute." 
+			Tier 1
+			AllowedWeapons
+			{
+				ItemName "Stickybomb Jumper"
+			}
+		}
+		ScottishA
+		{
+			Name "Unstable Mod: Overloaded Drum"
+			Attribute "stickybomb stick to enemies" 
+			Cap 1
+			Increment 1
+			Cost 0
+			SecondaryAttributes
+			{
+				"can overload" 1
+				"auto fires full clip" 1
+				"max pipebombs decreased" -2
+				"fire rate bonus HIDDEN" -0.35
+				"projectile spread angle penalty" 6
+				"stickybomb charge rate" -10
+				"sticky arm time penalty" -0.8
+			}
+			Description "Launcher now uses Beggar's style reload system and firing speed is increased by 35%, but bombs now use a 6 degree spread varience and -2 max bombs" 
+			Tier 1
+			AllowedWeapons
+			{
+				ItemName "The Scottish Resistance"
+			}
+		}
+		Quickie
+		{
+			Name "Unstable Mod: Prototype Sensor"
+			Attribute "stickybomb stick to enemies" 
+			Cap 1
+			Increment 1
+			Cost 0
+			SecondaryAttributes
+			{
+				"clip size penalty" 0.25
+				"stickybomb fizzle time" 3
+				"stickybomb_charge_damage_increase" -0.35
+			}
+			Description "Launcher now mimics its original version and stickies stick to enemies" 
+			Tier 1
+			AllowedWeapons
+			{
+				ItemName "The Quickiebomb Launcher"
+			}
+		}
+///BEER AND SWORDS
+		Bottle
+		{
+			Name "Unstable Mod: Gardner Module"
+			Description "Scottish Handshake now functions like the Market Gardener, damage to Giant Robots is increased by 50% and damages enemies connected via healing beams."
+			AllowPlayerClass Demoman
+			AllowedWeapons
+			{
+				ItemName	"The Scottish Handshake"
+				ClassName TF_WEAPON_BOTTLE 
+			}
+			Cost 0
+			Attribute "mod crit while airborne"
+			Increment 1
+			Cap 1
+			SecondaryAttributes
+			{
+				"fire rate penalty"		0.25
+				"mult dmg vs giants"	0.5
+				"damage all connected"	1
+			}
+		}
+		EyelanderA
+		{
+			Name "Unstable Mod: Soul Contract"
+			Attribute "honorbound"
+			Cap 1
+			Increment 1
+			Cost 0
+			SecondaryAttributes
+			{	
+				"provide on active" 1
+				"dmg taken from crit reduced" -0.5
+				"dmg taken from bullets reduced" -0.2
+				"dmg taken from blast reduced" -0.2
+				"maxammo secondary reduced" -0.9
+				"maxammo primary reduced" -0.9
+			}
+			Description "When weapon is active gain resistance to crits, bullets and blast. Weapon is now honorbound and 90% less ammo" 
+			Tier 1
+			AllowedWeapons
+			{
+				ItemName "The Eyelander"
+				ItemName "The Scotsman's Skullcutter"
+				ItemName "Festive Eyelander"
+				ItemName "The Scotsman's Skullcutter"
+			}
+		}
+		CaberA
+		{
+			Name "Unstable Mod: Cushioned Explosive"
+			Attribute "regenerate stickbomb"
+			Cap 1
+			Increment 1
+			Cost 0
+			SecondaryAttributes
+			{
+				"self dmg push force decreased" -3
+				"blast dmg to self increased" 0.50
+			}
+			Description "Attacks do not consume the grenade and no longer knocks user into the air, but self damage is increeased by 50%" 
+			Tier 1
+			AllowedWeapons
+			{
+				ItemName "The Ullapool Caber"
+			}
+		}
+		MoneyKnight
+		{
+			Name "Stable Mod: Cash Vacuum"
+			Attribute "mult credit collect range"
+			Cap 3
+			Increment 2
+			Cost 0
+			SecondaryAttributes
+			{
+				"health from credits" 60
+			}
+			Description "Gain Cash Magnet and cash healing" 
+			Tier 1
+            Allowplayerclass Demoman
+			AllowedWeapons
+			{
+				ItemName "The Claidheamohmor"
+				ItemName "The Persian Persuader"
+				ItemName "The Half-Zatoichi"
+			}
+		}
+	}	
+}
