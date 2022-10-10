@@ -39,10 +39,10 @@ end
 
 function OnPlayerConnected(player)
 	if not player:IsRealPlayer() then
-	--	player:AddCallback(ON_SPAWN, onBotSpawn)
+		--	player:AddCallback(ON_SPAWN, onBotSpawn)
 		return
 	end
-		--prevent callbacks from stacking if wave restarting
+	--prevent callbacks from stacking if wave restarting
 	if playersHandle[player:GetHandleIndex()] then
 		return
 	end
@@ -62,23 +62,23 @@ function OnPlayerConnected(player)
 end
 
 function OnPlayerDisconnected(player)
-    -- just in case
-    if not player:IsRealPlayer() then
-        return
-    end
+	-- just in case
+	if not player:IsRealPlayer() then
+		return
+	end
 
-    local handle = player:GetHandleIndex()
+	local handle = player:GetHandleIndex()
 
-    if not deadPlayersHandle[handle] then
-        playersAlive = playersAlive - 1
-    end
+	if not deadPlayersHandle[handle] then
+		playersAlive = playersAlive - 1
+	end
 
-    playersHandle[handle] = nil
-    deadPlayersHandle[handle] = nil
+	playersHandle[handle] = nil
+	deadPlayersHandle[handle] = nil
 
-    playersCount = playersCount - 1
+	playersCount = playersCount - 1
 
-    onPlayerCountChange(player)
+	onPlayerCountChange(player)
 end
 
 function onPlayerSpawn(player)
@@ -87,8 +87,8 @@ function onPlayerSpawn(player)
 		return
 	end
 
---	print("a bloke lived")
---	print(player)
+	--	print("a bloke lived")
+	--	print(player)
 
 	deadPlayersHandle[player:GetHandleIndex()] = nil
 
@@ -96,7 +96,7 @@ function onPlayerSpawn(player)
 	onPlayerCountChange(player)
 end
 
--- function onBotSpawn(player) 
+-- function onBotSpawn(player)
 --	player:AcceptInput( "$SetProp$m_bIsMiniBoss" , "1" )
 --	player:SetAttributeValue("override footstep sound set" , "9" )
 --end
@@ -106,8 +106,8 @@ function onPlayerDeath(player)
 		return
 	end
 
---	print("a bloke died")
---	print(player)
+	--	print("a bloke died")
+	--	print(player)
 
 	deadPlayersHandle[player:GetHandleIndex()] = true
 
@@ -117,12 +117,9 @@ function onPlayerDeath(player)
 	--insta respawn in setup
 	if not inWave then
 		player:SetAttributeValue("is suicide counter", 0)
-		timer.Simple(
-			0.1,
-			function()
-				player:ForceRespawnDead()
-			end
-		)
+		timer.Simple(0.1, function()
+			player:ForceRespawnDead()
+		end)
 	else
 		player:SetAttributeValue("min respawn time", 999999)
 	end
@@ -139,64 +136,69 @@ function SpecificPlayersCountCheck()
 		return
 	end
 
- 	--set speed if < 3 players die after tank is spawned
-	local tank = ents.FindByName("tankboss_ghost")
-	if tank then 
-		tank:AcceptInput( "SetSpeed" , "55" ) 
-	end
+	timer.Simple(0.1, function()
+		if playersAlive > 3 then
+			return
+		end
 
---	local bossalive = ents.FindByName("bossbot")
---	local chalices = ents.FindByName("spawners*")
---	local spawnedchalices = ents.FindByClass("func_breakable")
+		--set speed if < 3 players die after tank is spawned
+		local tank = ents.FindByName("tankboss_ghost")
+		if tank then
+			tank:AcceptInput("SetSpeed", "55")
+		end
 
-	--REMOVED force spawn the boss chalices early if only 3 players are alive
---	if bossalive and chalices and wave == 5 then 
---		chalices:AcceptInput( "ForceSpawn" )
---	end
+		--	local bossalive = ents.FindByName("bossbot")
+		--	local chalices = ents.FindByName("spawners*")
+		--	local spawnedchalices = ents.FindByClass("func_breakable")
 
-	local allPlayers = ents.GetAllPlayers()
+		--REMOVED force spawn the boss chalices early if only 3 players are alive
+		--	if bossalive and chalices and wave == 5 then
+		--		chalices:AcceptInput( "ForceSpawn" )
+		--	end
 
+		local allPlayers = ents.GetAllPlayers()
 
-	--give crit/minicrit
-	if playersAlive == 2 then
-		for _, player in pairs(allPlayers) do
-			if player:IsRealPlayer() and player:IsAlive() then
-				player:AddCond(16)
-				player:AddCond(19)
+		--give crit/minicrit
+		if playersAlive == 2 then
+			for _, player in pairs(allPlayers) do
+				if player:IsRealPlayer() and player:IsAlive() then
+					player:AddCond(16)
+					player:AddCond(19)
+				end
 			end
 		end
-	end
-	
-	if playersAlive == 1 then
-		for _, player in pairs(allPlayers) do
-			if player:IsRealPlayer() and player:IsAlive() then
-				player:AddCond(34)
-				player:RemoveCond(16)
-				player:RemoveCond(19)
-				currentLastManCritPlayer = player
-				break
+
+		if playersAlive == 1 then
+			for _, player in pairs(allPlayers) do
+				if player:IsRealPlayer() and player:IsAlive() then
+					player:AddCond(34)
+					player:RemoveCond(16)
+					player:RemoveCond(19)
+					currentLastManCritPlayer = player
+					break
+				end
+			end
+		else
+			--remove crit from last man if someone becomes yesalive again midwave as they are no longer the last man
+			if currentLastManCritPlayer then
+				currentLastManCritPlayer:RemoveCond(34)
+				currentLastManCritPlayer = nil
 			end
 		end
-	else
-		--remove crit from last man if someone becomes yesalive again midwave as they are no longer the last man
-		if currentLastManCritPlayer then
-			currentLastManCritPlayer:RemoveCond(34)
-			currentLastManCritPlayer = nil
+
+		--give spells
+		if lastSpellsDistributeID and lastSpellsDistributeID == inWave then
+			return
 		end
-	end
 
-	--give spells
-	if lastSpellsDistributeID and lastSpellsDistributeID == inWave then
-		return
-	end
+		lastSpellsDistributeID = inWave
 
-	lastSpellsDistributeID = inWave
-
-	for _, player in pairs(allPlayers) do
-		if player:IsRealPlayer() and player:IsAlive() then
-			player:RollRareSpell()
+		for _, player in pairs(allPlayers) do
+			if player:IsRealPlayer() and player:IsAlive() then
+				player:RollRareSpell()
+			end
 		end
-	end
+	end)
 end
 
 function onPlayerCountChange(player)
@@ -204,8 +206,8 @@ function onPlayerCountChange(player)
 	SpecificPlayersCountCheck()
 end
 
-function OnWaveSpawnTank(tank , wave) --reduce speed if 3+ players die before tank is spawned
+function OnWaveSpawnTank(tank, wave) --reduce speed if 3+ players die before tank is spawned
 	if tank and wave == 2 and playersAlive < 4 then
-		tank:AcceptInput( "SetSpeed" , "55" )
+		tank:AcceptInput("SetSpeed", "55")
 	end
 end
