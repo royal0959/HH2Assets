@@ -228,7 +228,7 @@ how_tf_do_you_make_an_exp_again?
             Health 600
             SpawnTemplate malachite
             tag stealth_giver
-            ClassIcon soldier_d
+            ClassIcon soldier_backup_d
             Item "Idiot Box"
             UseCustomModel "models/bots/soldier_boss/bot_soldier_boss_gibby.mdl"
             Name "Cloak Banner Soldier"
@@ -244,7 +244,7 @@ how_tf_do_you_make_an_exp_again?
             Template T_TFBot_Giant_Soldier
             SpawnTemplate malachite
             tag stealth_giver
-            ClassIcon soldier_d
+            ClassIcon soldier_backup_d
             Item "Idiot Box"
             Name "Giant Cloak Banner Soldier"
             UseCustomModel "models/bots/soldier_boss/bot_soldier_boss_gibby.mdl"
@@ -1582,7 +1582,7 @@ how_tf_do_you_make_an_exp_again?
                 {
                     Class Soldier
                     Skill Hard
-                    ClassIcon soldier_d
+                    ClassIcon soldier_backup_d
                     Scale 1.4
                     Health 600
                 }
@@ -1590,7 +1590,7 @@ how_tf_do_you_make_an_exp_again?
                 {
                     Class Soldier
                     Skill Hard
-                    ClassIcon soldier_d
+                    ClassIcon soldier_backup_d
                     Health 600
                     Scale 1.4
                 }
