@@ -19,7 +19,7 @@ how_tf_do_you_make_an_exp_again?
 	PrecacheModel "models/bots/boss_bot/boss_tank_color" [$SIGSEGV]
     PrecacheModel "models/bots/soldier/bot_soldier_gibby.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/soldier_boss/bot_soldier_boss_gibby.mdl" [$SIGSEGV]
-    CustomNavFile "mvm_null_b9a_fixed.nav"
+    CustomNavFile "mvm_null_b9a_fixed"
 
     PointTemplates
     {
