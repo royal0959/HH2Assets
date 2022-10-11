@@ -1232,7 +1232,7 @@ red_moonlight
             MaxActive 6
             SpawnCount 3
             Where spawnbot
-            WaitBeforeStarting 12
+            WaitBeforeStarting 8
             WaitBetweenSpawns 20
             Squad
             {
@@ -1351,7 +1351,7 @@ red_moonlight
         WaveSpawn // Flare pyro
         {
             Name d2_1
-            WaitForAllSpawned d1_2
+            WaitForAllSpawned d1_3
             TotalCurrency 150
             TotalCount 24
             MaxActive 8
@@ -1374,7 +1374,7 @@ red_moonlight
         WaveSpawn // Demo
         {
             Name d2_2
-            WaitForAllSpawned d1_2
+            WaitForAllSpawned d1_3
             TotalCurrency 100
             TotalCount 14
             MaxActive 5
@@ -1470,7 +1470,7 @@ red_moonlight
         WaveSpawn // hyper league scout
         {
             Name d3_2
-            WaitForAllSpawned d1_1
+            WaitForAllSpawned d1_2
             TotalCurrency 350
             TotalCount 7
             MaxActive 7
