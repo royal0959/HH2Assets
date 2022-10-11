@@ -83,7 +83,7 @@ WaveSchedule
 			{
 				"bullets per shot bonus" 0.5
 			}
-			Description "Weapon ignites targets, and fires an additional 20% bullets per shot" 
+			Description "Weapon ignites targets, and fires an additional 50% bullets per shot" 
 			Tier 1
             AllowPlayerClass Pyro
 			AllowedWeapons
@@ -101,7 +101,7 @@ WaveSchedule
 			Name "Unstable Mod: Volcanic Compound"
 			Attribute "damage bonus"
 			Cap 1.75
-			Increment 0.5
+			Increment 0.75
 			Cost 0
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{
@@ -116,24 +116,6 @@ WaveSchedule
 				ItemName "Festive Flare Gun"
 				ItemName	"The Detonator"
 				ItemName	"The Scorch Shot"
-			}
-		}
-		MelterA
-		{
-			Name "Stable Mod: Optimized Core"
-			Attribute "bleeding duration"
-			Cap 5
-			Increment 5
-			Cost 0
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"damage bonus" 0.75
-			}
-			Description "Projectile inflicts 5 seconds of bleed on hit and deals an additional 75% damage"
-			Tier 1
-            AllowPlayerClass Pyro
-			AllowedWeapons
-			{
 				ItemName "The Manmelter"
 			}
 		}
