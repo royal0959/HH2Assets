@@ -25,6 +25,7 @@ WaveSchedule
 	RespawnWaveTime 3
 	CanBotsAttackWhileInSpawnRoom no
  	PrecacheModel "models/bots/boss_bot/boss_tank_color.mdl"
+	PrecacheModel "models/props_mvm/mvm_comically_small_player_shield.mdl"
 	ZombiesNoWave666 1
 	NoThrillerTaunt 1
 	BodyPartScaleSpeed 20

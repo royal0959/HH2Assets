@@ -84,23 +84,25 @@ bozo_mission_be_liek
 
     // I'm a dumbass
     //PrecacheModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"
-    //PrecacheModel "models\workshop\player\items\pyro\eotl_ducky\eotl_bonus_duck.mdl"
+    //PrecacheModel "models/workshop/player/items/pyro/eotl_ducky/eotl_bonus_duck.mdl"
     //PrecacheModel "models/props_mvm/mvm_human_skull.mdl"
 
     // Custom Assets
     PrecacheModel "models/player/items/all_class/gately_gibus_heavy.mdl"
     PrecacheModel "models/player/vatican/joker/spy.mdl"
+    PrecacheModel "models/props_mvm/mvm_comically_small_player_shield.mdl"
+    
     PrecacheSound "sound/trickster_terror_joker_laugh.mp3"
 
     OverrideSounds
 	{
-		"MVM.BombWarning" "ambient_mp3\alarms\doomsday_lift_alarm.mp3"
-        "music.mvm_end_wave" "ui\halloween_boss_defeated.wav"
-        "music.mvm_end_tank_wave" "ui\halloween_boss_defeated.wav"
-        "music.mvm_end_mid_wave" "ui\halloween_boss_defeated.wav"
-        "music.mvm_end_last_wave" "ui\halloween_boss_defeated.wav"
-        "MVM.GiantHeavyExplodes"	"physics\body\body_medium_break2.wav"
-		"MVM.GiantCommonExplodes"	"physics\body\body_medium_break2.wav"
+		"MVM.BombWarning" "ambient_mp3/alarms/doomsday_lift_alarm.mp3"
+        "music.mvm_end_wave" "ui/halloween_boss_defeated.wav"
+        "music.mvm_end_tank_wave" "ui/halloween_boss_defeated.wav"
+        "music.mvm_end_mid_wave" "ui/halloween_boss_defeated.wav"
+        "music.mvm_end_last_wave" "ui/halloween_boss_defeated.wav"
+        "MVM.GiantHeavyExplodes"	"physics/body/body_medium_break2.wav"
+		"MVM.GiantCommonExplodes"	"physics/body/body_medium_break2.wav"
     }
 
     ExtraSpawnPoint
@@ -124,7 +126,7 @@ bozo_mission_be_liek
 		TFBot
 		{
 			Template The_Funny_Buster_Bot
-            DeathSound "mvm\sentrybuster\mvm_sentrybuster_explode.wav"
+            DeathSound "mvm/sentrybuster/mvm_sentrybuster_explode.wav"
             Tag bot_giant
 		}
 	}
@@ -156,7 +158,7 @@ bozo_mission_be_liek
 		TFBot
 		{
 			Template The_Funny_Buster_Bot
-            DeathSound "mvm\sentrybuster\mvm_sentrybuster_explode.wav"
+            DeathSound "mvm/sentrybuster/mvm_sentrybuster_explode.wav"
             Tag bot_giant
 		}
 	}
@@ -172,7 +174,7 @@ bozo_mission_be_liek
 		TFBot
 		{
 			Template The_Funny_Buster_Bot
-            DeathSound "mvm\sentrybuster\mvm_sentrybuster_explode.wav"
+            DeathSound "mvm/sentrybuster/mvm_sentrybuster_explode.wav"
             Tag bot_giant
 		}
 	}
@@ -401,7 +403,7 @@ bozo_mission_be_liek
 			{
 				"targetname" "joker_sound"
 				"health" "10"
-				"message" "ui\halloween_boss_summoned.wav"
+				"message" "ui/halloween_boss_summoned.wav"
 				"radius" "2500"
 				"spawnflags" "49"
 				"origin" "0 0 0"
@@ -431,7 +433,7 @@ bozo_mission_be_liek
 			{
 				"targetname" "half_life_song"
 				"health" "7"
-				"message" "#music\hl1_song15.mp3"
+				"message" "#music/hl1_song15.mp3"
 				"radius" "99999"
 				"spawnflags" "17"
 				"origin" "0 0 0"
@@ -441,7 +443,7 @@ bozo_mission_be_liek
 			{
 				"targetname" "half_life_song"
 				"health" "7"
-				"message" "#music\hl1_song15.mp3"
+				"message" "#music/hl1_song15.mp3"
 				"radius" "99999"
 				"spawnflags" "17"
 				"origin" "0 0 0"
@@ -520,7 +522,7 @@ bozo_mission_be_liek
             ambient_generic
             {
                 "health" "10"
-                "message" "\misc\halloween\skeletons\skelly_medium_01.wav"
+                "message" "/misc/halloween/skeletons/skelly_medium_01.wav"
                 "radius" "2000"
                 "spawnflags" "48"
                 "targetname" "skelly_laugh01"
@@ -529,7 +531,7 @@ bozo_mission_be_liek
             ambient_generic
             {
                 "health" "10"
-                "message" "\misc\halloween\skeletons\skelly_medium_02.wav"
+                "message" "/misc/halloween/skeletons/skelly_medium_02.wav"
                 "radius" "2000"
                 "spawnflags" "48"
                 "targetname" "skelly_laugh02"
@@ -538,7 +540,7 @@ bozo_mission_be_liek
             ambient_generic
             {
                 "health" "10"
-                "message" "\misc\halloween\skeletons\skelly_medium_03.wav"
+                "message" "/misc/halloween/skeletons/skelly_medium_03.wav"
                 "radius" "2000"
                 "spawnflags" "48"
                 "targetname" "skelly_laugh03"
@@ -547,7 +549,7 @@ bozo_mission_be_liek
             ambient_generic
             {
                 "health" "10"
-                "message" "\misc\halloween\skeletons\skelly_medium_04.wav"
+                "message" "/misc/halloween/skeletons/skelly_medium_04.wav"
                 "radius" "2000"
                 "spawnflags" "48"
                 "targetname" "skelly_laugh04"
@@ -556,7 +558,7 @@ bozo_mission_be_liek
             ambient_generic
             {
                 "health" "10"
-                "message" "\misc\halloween\skeletons\skelly_medium_05.wav"
+                "message" "/misc/halloween/skeletons/skelly_medium_05.wav"
                 "radius" "2000"
                 "spawnflags" "48"
                 "targetname" "skelly_laugh05"
@@ -906,10 +908,10 @@ bozo_mission_be_liek
                 ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
                 "paintkit_proto_def_index" 302
 				"set_item_texture_wear" 0
-                "custom projectile model" "models\workshop\player\items\pyro\eotl_ducky\eotl_bonus_duck.mdl"
-                "custom weapon fire sound" "ambient\bumper_car_quack11.wav"
+                "custom projectile model" "models/workshop/player/items/pyro/eotl_ducky/eotl_bonus_duck.mdl"
+                "custom weapon fire sound" "ambient/bumper_car_quack11.wav"
                 "custom impact sound" "ambient/bumper_car_quack5.wav"
-                "custom weapon reload sound" "ambient\bumper_car_quack3.wav"
+                "custom weapon reload sound" "ambient/bumper_car_quack3.wav"
                 "projectile trail particle" "flamethrower_underwater"
                 "projectile speed decreased" 0.65
                 "mult projectile scale" 2
@@ -1020,7 +1022,7 @@ bozo_mission_be_liek
         WaveSpawn
         {
             WaitBeforeStarting 2
-            FirstSpawnWarningSound "vo\soldier_sf12_zombie03.mp3"
+            FirstSpawnWarningSound "vo/soldier_sf12_zombie03.mp3"
         }
         WaveSpawn // Gduck soldier
         {
@@ -1068,10 +1070,10 @@ bozo_mission_be_liek
                     ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
                     "paintkit_proto_def_index" 302
 				    "set_item_texture_wear" 0
-                    "custom projectile model" "models\workshop\player\items\pyro\eotl_ducky\eotl_bonus_duck.mdl"
-                    "custom weapon fire sound" "ambient\bumper_car_quack11.wav"
+                    "custom projectile model" "models/workshop/player/items/pyro/eotl_ducky/eotl_bonus_duck.mdl"
+                    "custom weapon fire sound" "ambient/bumper_car_quack11.wav"
                     "custom impact sound" "ambient/bumper_car_quack5.wav"
-                    "custom weapon reload sound" "ambient\bumper_car_quack3.wav"
+                    "custom weapon reload sound" "ambient/bumper_car_quack3.wav"
                     "projectile trail particle" "flamethrower_underwater"
                     "projectile speed decreased" 0.65
                     "mult projectile scale" 2
@@ -1220,7 +1222,7 @@ bozo_mission_be_liek
 				    "override footstep sound set" 6
 			    }
                 Tag bot_giant
-                DeathSound "mvm\sentrybuster\mvm_sentrybuster_explode.wav"
+                DeathSound "mvm/sentrybuster/mvm_sentrybuster_explode.wav"
             }
         }
         WaveSpawn // Normal Demoman
@@ -1705,7 +1707,7 @@ bozo_mission_be_liek
         {
             Name dummy
             WaitBeforeStarting 2
-            FirstSpawnWarningSound "vo\scout_meleedare03.mp3"
+            FirstSpawnWarningSound "vo/scout_meleedare03.mp3"
         }
         WaveSpawn // Super cheetah scout
         {
@@ -1847,7 +1849,7 @@ bozo_mission_be_liek
             Where spawnbot_chief
             WaitBeforeStarting 15
             WaitBetweenSpawns 20
-            FirstSpawnWarningSound "vo\soldier_sf12_taunts15.mp3"
+            FirstSpawnWarningSound "vo/soldier_sf12_taunts15.mp3"
             TFBot
             {
                 Template T_TFBot_Giant_Soldier_Spammer_Reload
@@ -2125,7 +2127,7 @@ bozo_mission_be_liek
             Where spawnbot_right
             WaitBeforeStarting 10
             WaitBetweenSpawns 25
-            FirstSpawnWarningSound "vo\heavy_item_birdhead_round_start04.mp3"
+            FirstSpawnWarningSound "vo/heavy_item_birdhead_round_start04.mp3"
             Squad
             {
                 TFBot
@@ -2204,7 +2206,7 @@ bozo_mission_be_liek
             Where spawnbot_right
             WaitBeforeStarting 3
             WaitBetweenSpawns 5
-            //FirstSpawnWarningSound "vo\soldier_item_birdhead_round_start02.mp3"
+            //FirstSpawnWarningSound "vo/soldier_item_birdhead_round_start02.mp3"
             TFBot
             {
                 Class Soldier
@@ -2282,7 +2284,7 @@ bozo_mission_be_liek
         WaveSpawn // Add shake effect
         {
             WaitBeforeStarting 2
-            FirstSpawnWarningSound "misc\halloween_eyeball\vortex_eyeball_died.wav"
+            FirstSpawnWarningSound "misc/halloween_eyeball/vortex_eyeball_died.wav"
             FirstSpawnMessage "{red}The Skeleton appears..."
             FirstSpawnOutput
             {
@@ -2321,7 +2323,7 @@ bozo_mission_be_liek
 				
 				    "grenade explode on impact" 1
 				
-				    "custom projectile model" "models\weapons\c_models\c_madmilk\c_madmilk.mdl"
+				    "custom projectile model" "models/weapons/c_models/c_madmilk/c_madmilk.mdl"
 				    "explosion particle" "peejar_impact_milk"
 				    //"projectile trail particle" "peejar_trail_blue"
 				
@@ -2396,7 +2398,7 @@ bozo_mission_be_liek
             MaxActive 1
             SpawnCount 1
             Where spawnbot_main // Might not be needed?
-            FirstSpawnWarningSound "misc\halloween\spell_skeleton_horde_cast.wav"
+            FirstSpawnWarningSound "misc/halloween/spell_skeleton_horde_cast.wav"
             WaitBeforeStarting 8
             DoneOutput
             {
@@ -2461,7 +2463,7 @@ bozo_mission_be_liek
                 Name "Giant Punchie"
                 Item "Weight Room Warmer"
 				Item "The Heavy-Weight Champ"
-                DeathSound "mvm\sentrybuster\mvm_sentrybuster_explode.wav"
+                DeathSound "mvm/sentrybuster/mvm_sentrybuster_explode.wav"
                 Tag bot_giant
 				EventChangeAttributes
 				{
@@ -2575,7 +2577,7 @@ bozo_mission_be_liek
                 Attributes MiniBoss
                 Attributes UseBossHealthBar
                 UseHumanAnimations 1 [$SIGSEGV]
-                UseCustomModel "models\bots\skeleton_sniper\skeleton_sniper.mdl"
+                UseCustomModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"
                 Skin 2
                 DeathSound "misc/halloween/skeleton_break.wav"
                 Item "The Crone's Dome"
@@ -2681,7 +2683,7 @@ bozo_mission_be_liek
 			    Item "The Mustachioed Mann"
                 UseHumanAnimations 1 [$SIGSEGV]
                 StripItemSlot 0  [$SIGSEGV]
-                UseCustomModel "models\bots\skeleton_sniper\skeleton_sniper.mdl"
+                UseCustomModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"
                 DeathSound "misc/halloween/skeleton_break.wav"
                 CharacterAttributes
                 {
@@ -2839,7 +2841,7 @@ bozo_mission_be_liek
         WaveSpawn
         {
             WaitBeforeStarting 2
-            FirstSpawnWarningSound "ambient\alarms\train_horn_distant1.wav"
+            FirstSpawnWarningSound "ambient/alarms/train_horn_distant1.wav"
         }
         WaveSpawn // Giant burst homing Soldier + uber meds
         {
@@ -3017,7 +3019,7 @@ bozo_mission_be_liek
             SpawnCount 1
             Where spawnbot_main
             WaitBeforeStarting 25
-            FirstSpawnWarningSound "vo\mvm_tank_alerts01.mp3"
+            FirstSpawnWarningSound "vo/mvm_tank_alerts01.mp3"
             FirstSpawnOutput
             {
                 Target tank_uber_on
@@ -3057,7 +3059,7 @@ bozo_mission_be_liek
             SpawnCount 1
             Where spawnbot_main
             WaitBeforeStarting 25
-            //FirstSpawnWarningSound "mvm\mvm_tank_start.wav"
+            //FirstSpawnWarningSound "mvm/mvm_tank_start.wav"
             Tank
             {
                 Health 9000
@@ -3224,7 +3226,7 @@ bozo_mission_be_liek
         {
             WaitForAllDead d2_1
             WaitBeforeStarting 6
-            FirstSpawnWarningSound "ambient\alarms\train_horn2.wav"
+            FirstSpawnWarningSound "ambient/alarms/train_horn2.wav"
         }
         WaveSpawn // Oh wait here they are
         {
@@ -3237,7 +3239,7 @@ bozo_mission_be_liek
             Where spawnbot_main
             WaitBeforeStarting 12
             WaitBetweenSpawns 3
-            FirstSpawnWarningSound "vo\mvm_tank_alerts09.mp3"
+            FirstSpawnWarningSound "vo/mvm_tank_alerts09.mp3"
             Tank
             {
                 Health 5555
@@ -3448,7 +3450,7 @@ bozo_mission_be_liek
         WaveSpawn
         {
             WaitBeforeStarting 2
-            FirstSpawnWarningSound "vo\scout_domination06.mp3"
+            FirstSpawnWarningSound "vo/scout_domination06.mp3"
         }
         WaveSpawn // Gdemo with the shield and crits
         {
@@ -3818,7 +3820,7 @@ bozo_mission_be_liek
                     Template T_TFBot_Giant_Soldier_Spammer
                     Name "Annoying Duck Wizard"
                     Item "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
-                    RocketCustomModel "models\workshop\player\items\pyro\eotl_ducky\eotl_bonus_duck.mdl" [$SIGSEGV]
+                    RocketCustomModel "models/workshop/player/items/pyro/eotl_ducky/eotl_bonus_duck.mdl" [$SIGSEGV]
                     UsehumanModel 2 [$SIGSEGV]
                     Item "Zombie Soldier"
                     Item "The Spellbinder's Bonnet"
@@ -3828,10 +3830,10 @@ bozo_mission_be_liek
                         ItemName "Upgradeable TF_WEAPON_ROCKETLAUNCHER"
                         "paintkit_proto_def_index" 302
 				        "set_item_texture_wear" 0
-                        //"custom projectile model" "models\workshop\player\items\pyro\eotl_ducky\eotl_bonus_duck.mdl"
-                        "custom weapon fire sound" "ambient\bumper_car_quack11.wav"
+                        //"custom projectile model" "models/workshop/player/items/pyro/eotl_ducky/eotl_bonus_duck.mdl"
+                        "custom weapon fire sound" "ambient/bumper_car_quack11.wav"
                         "custom impact sound" "ambient/bumper_car_quack5.wav"
-                        "custom weapon reload sound" "ambient\bumper_car_quack3.wav"
+                        "custom weapon reload sound" "ambient/bumper_car_quack3.wav"
                         "projectile trail particle" "flamethrower_underwater"
                         //"mult projectile scale" 2
 
@@ -3998,13 +4000,13 @@ bozo_mission_be_liek
             {
                 Template T_TFGateBot_Giant_Scout_FAN
                 Tag bot_giant
-                DeathSound "mvm\sentrybuster\mvm_sentrybuster_explode.wav"
+                DeathSound "mvm/sentrybuster/mvm_sentrybuster_explode.wav"
             }
         }
         WaveSpawn
         {
             WaitForAllSpawned f1_2
-            FirstSpawnWarningSound "mvm\giant_heavy\giant_heavy_entrance.wav"
+            FirstSpawnWarningSound "mvm/giant_heavy/giant_heavy_entrance.wav"
         }
         WaveSpawn // Overkill refrence
         {
@@ -4048,7 +4050,7 @@ bozo_mission_be_liek
 				    "airblast vertical vulnerability multiplier" 0.1
                     "increased jump height" 1.5
 			    }
-                DeathSound "mvm\sentrybuster\mvm_sentrybuster_explode.wav"
+                DeathSound "mvm/sentrybuster/mvm_sentrybuster_explode.wav"
                 EventChangeAttributes
 			    {
 				    Default
@@ -4492,7 +4494,7 @@ bozo_mission_be_liek
 				        "override footstep sound set" 3
 			        }
                     Tag bot_giant
-                    DeathSound "mvm\sentrybuster\mvm_sentrybuster_explode.wav"
+                    DeathSound "mvm/sentrybuster/mvm_sentrybuster_explode.wav"
                 }
                 TFBot // you're right, that is not an quick uber medic!
                 {
@@ -4723,7 +4725,7 @@ bozo_mission_be_liek
             Support limited
             Where bombhatch
             FirstSpawnMessage "{red}Bomb is at the Hatch!"
-            //FirstSpawnWarningSound "vo\mvm_bomb_alerts04.mp3"
+            //FirstSpawnWarningSound "vo/mvm_bomb_alerts04.mp3"
             RandomChoice { RandomChoice { TFBot { Class Scout Name "Bomb is at the hatch!" CharacterAttributes { "is suicide counter" 999 "move speed bonus" 0.001 } } } }
         }
         WaveSpawn // Then like 12 super scouts
