@@ -29,25 +29,6 @@ WaveSchedule
 				ItemName "The Frontier Justice"
 			}
 		}
-		Ranger
-		{
-			Name "Unstable Mod: Compact Sensor"
-			Attribute "maxammo metal reduced"
-			Cap 0.75
-			Increment -0.25
-			Cost 0
-			SecondaryAttributes
-			{
-				"engineer building teleporting pickup" -50
-				"clip size penalty" -0.25
-			}
-			Description "Ranged hauling cost reduced to 50 metal, but clip size is reduced by 25% and -25% max metal" 
-			Tier 1
-			AllowedWeapons
-			{
-				ItemName "The Rescue Ranger"
-			}
-		}
 ///SECONDARY ENGIE
 		PistolEngieA
 		{
@@ -157,25 +138,6 @@ WaveSchedule
             AllowedWeapons
 			{
 				ItemName "The Southern Hospitality"
-			}
-		}
-		Eureka
-		{
-			Name "Stable Mod: Tuned Capacitor"
-			Attribute "provide on active" 
-			Cap 1
-			Increment 1
-			Cost 0
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"Construction rate decreased" 0.5
-			}
-			Description "Construction rate penalty is removed" 
-			Tier 1
-            Allowplayerclass Engineer
-            AllowedWeapons
-			{
-				ItemName "The Eureka Effect"
 			}
 		}
 	}	

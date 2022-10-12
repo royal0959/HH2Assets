@@ -38,7 +38,6 @@ WaveSchedule
 			Cost 0
 			SecondaryAttributes
 			{
-//				"clip size penalty HIDDEN" -0.75
 				"damage penalty" -0.25
 				"projectile spread angle penalty" 2
 				"sticky air burst mode" -1
@@ -75,20 +74,6 @@ WaveSchedule
 			{
 				ItemName "The Scottish Resistance"
 				ItemName "The Quickiebomb Launcher"
-				ItemName "Stickybomb Jumper"
-			}
-		}
-		Jumper
-		{
-			Name "Stable Mod: Para-Mode"
-			Attribute "parachute attribute" 
-			Cap 1
-			Increment 1
-			Cost 0
-			Description "Sticky Jumper now has a built-in parachute." 
-			Tier 1
-			AllowedWeapons
-			{
 				ItemName "Stickybomb Jumper"
 			}
 		}

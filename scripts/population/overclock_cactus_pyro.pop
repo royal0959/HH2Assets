@@ -72,30 +72,6 @@ WaveSchedule
 			}
 		}
 ////Pyro Secondary
-		ReservePyro
-		{
-			Name "Stable Mod: Trench Gun"
-			Attribute "Set DamageType Ignite"
-			Cap 5
-			Increment 5
-			Cost 0
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"bullets per shot bonus" 0.5
-			}
-			Description "Weapon ignites targets, and fires an additional 50% bullets per shot" 
-			Tier 1
-            AllowPlayerClass Pyro
-			AllowedWeapons
-			{
-				ItemName "The Reserve Shooter"
-				ClassName TF_WEAPON_SHOTGUN_PYRO 
-			}
-			DisallowedWeapons // Disallow those weapons
-			{
-				ItemName "Panic Attack Shotgun"
-			}
-		}
 		FlaregunA
 		{
 			Name "Unstable Mod: Volcanic Compound"
@@ -139,22 +115,6 @@ WaveSchedule
 			}
 		}
 ////Pyro Melee
-		Axtinguisher
-		{
-			Name "Stable Mod: Serrated Axe"
-			Attribute "minicrits become crits"
-			Cap 1
-			Increment 1
-			Cost 0
-			Description "Crits when it would normally minicrit"
-			Tier 1
-			AllowedWeapons
-			{
-				ItemName "The Axtinguisher"
-				ItemName "The Postal Pummeler"
-				ItemName "Festive Axtinguisher"
-			}
-		}
 		Homewrecker
 		{
 			Name "Stable Mod: Heavy Mallet"

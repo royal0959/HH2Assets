@@ -240,6 +240,7 @@ WaveSchedule
 			{
 				ItemName "The Gunboats"
 				ItemName "The Thermal Thruster"
+				ItemName "Stickybomb Jumper"
 			}
 		}
 		Mantreads
@@ -275,7 +276,6 @@ WaveSchedule
 			Cost 0
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{
-				"cancel falling damage" 1
 				"parachute redeploy" 1
 			}
 			Description "Increased air control and can re-deploy" 
