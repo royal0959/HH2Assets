@@ -20,7 +20,7 @@ WaveSchedule
 				"fire rate penalty HIDDEN" 0.15
 				"Blast radius increased" 0.35
 			}
-			Description "Deal 35% bonus damage, but clip size is restricted to 1 rocket, and rockets arc" 
+			Description "Gain a 35% bonus to damage and blast radius, but clip size is restricted to 1 rocket, and rockets arc" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -294,7 +294,7 @@ WaveSchedule
 			Cap 5
 			Increment 5
 			Cost 0
-			Description "Provides 8 seconds of minicrits on kill and +25% damage bonus" 
+			Description "Provides 5 seconds of minicrits on kill and +25% damage bonus" 
 			Tier 1
 			SecondaryAttributes
 			{
@@ -308,7 +308,15 @@ WaveSchedule
 				ItemName "Panic Attack Shotgun"
 				ItemName "The Family Business"
 				ClassName TF_WEAPON_SHOTGUN_HWG
+				ClassName TF_WEAPON_SHOTGUN_PRIMARY
 				ItemName "The Family Business"
+			}
+			DisallowedWeapons // Disallow those weapons
+			{
+				ItemName "The Frontier Justice"
+				ItemName "The Pomson 6000"
+				ItemName "The Rescue Ranger"
+				ItemName "The Widowmaker"
 			}
 		}
 //////MELEE SOLDIER
