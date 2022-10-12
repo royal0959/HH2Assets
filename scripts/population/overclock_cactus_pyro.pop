@@ -62,9 +62,9 @@ WaveSchedule
 				"dmg pierces resists absorbs" 1
 				"damage penalty" -0.1
 				"airblast_pushback_disabled" 1
-				"mult airblast refire time" -0.25
+				"mult airblast refire time" -0.5
 			}
-			Description "Gain 10% faster move speed with 25% faster airblast and pierce resistances, but do 10% less damage and airblast no longer pushes back robots" 
+			Description "Gain 10% faster move speed with 50% faster airblast and pierce resistances, but do 10% less damage and airblast no longer pushes back robots" 
 			Tier 1
             AllowedWeapons
 			{

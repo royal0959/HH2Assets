@@ -49,11 +49,11 @@ WaveSchedule
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{
 				"health from credits" 125
-				"kb fall stun time" 3
+				"kb fall stun time" 2
 				"kb fall min velocity" 300
 				"kb fall radius" 1
 				"kb fall force" 0
-				"kb fall damage" 100
+				"kb fall damage" 25
 			}
 			Description "Weapon gives increased cash collection radius and cash collected heals you" 
 			Tier 1
@@ -158,8 +158,9 @@ WaveSchedule
 				"mod projectile heat seek power" 360
 				"clip size penalty" -0.5
 				"damage penalty" -0.15
+				"Projectile speed decreased" -0.35
 			}
-			Description "Rocket Jump bonuses are increased by 25% and rockets follow cross-hair, but clip size is reduced by 50%" 
+			Description "Rocket Jump bonuses are increased by 25% and rockets follow cross-hair, but clip size is reduced by 50% and rockets are 35% slower" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -192,11 +193,11 @@ WaveSchedule
 			Cost 0
 			Description "Weapon will now mark 1 target for death" 
 			Tier 1
-            Allowplayerclass Soldier
 			AllowedWeapons
 			{
 				ClassName TF_WEAPON_SHOTGUN_SOLDIER
 				ItemName "The Righteous Bison"
+				ClassName TF_WEAPON_SMG
 			}
 		}
 		ReserveA
