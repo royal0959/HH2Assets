@@ -92,7 +92,7 @@ bozo_mission_be_liek
     PrecacheModel "models/player/vatican/joker/spy.mdl"
     PrecacheModel "models/props_mvm/mvm_comically_small_player_shield.mdl"
     
-    PrecacheSound "sound/trickster_terror_joker_laugh.mp3"
+    PrecacheSound "trickster_terror_joker_laugh.mp3"
 
     OverrideSounds
 	{

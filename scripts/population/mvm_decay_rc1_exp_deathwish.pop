@@ -25,6 +25,8 @@ WaveSchedule
 	SpawnTemplate "the_SHACK"
 	
 	PrecacheModel "models/weapons/c_models/c_scythe/c_scythe.mdl"
+	PrecacheModel "models/trollface/trollface.mdl"
+    PrecacheModel "models/props_owo/sign001.mdl"
 	
 	Mission
 	{

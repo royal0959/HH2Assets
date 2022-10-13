@@ -20,6 +20,8 @@ how_tf_do_you_make_an_exp_again?
     PrecacheModel "models/bots/soldier/bot_soldier_gibby.mdl" [$SIGSEGV]
 	PrecacheModel "models/bots/soldier_boss/bot_soldier_boss_gibby.mdl" [$SIGSEGV]
     PrecacheModel "models/props_mvm/mvm_comically_small_player_shield.mdl" [$SIGSEGV]
+	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl" [$SIGSEGV]
+    PrecacheModel "models/props_gameplay/cap_circle_320.mdl" [$SIGSEGV]
     CustomNavFile "mvm_null_b9a_fixed"
 
     PointTemplates
