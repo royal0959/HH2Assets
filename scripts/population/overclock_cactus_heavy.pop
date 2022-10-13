@@ -6,27 +6,6 @@ WaveSchedule
 		{
 			1 1 // Max 2 upgrades on tier 1
 		}
-		OCMinigun	// heavy overclock for minigun, huo-long heater - +holster while spinning
-		{
-			Name "Stable Mod: Lighter Barrel"
-			Description "Weapon can be holstered while spinning."
-			AllowPlayerClass HeavyWeapons
-			AllowedWeapons
-			{
-				Slot	"Primary"
-			}
-			DisallowedWeapons
-			{
-				ItemName	"Natascha"
-				ItemName	"The Brass Beast"
-				ItemName	"Tomislav"
-				ItemName "The Huo Long Heatmaker"
-			}
-			Cost 0
-			Attribute "mod minigun can holster while spinning"
-			Increment 1
-			Cap 1
-		}
 		HeavyBalancedBrass
 		{
 			Name "Unstable Mod: Defense Framework"
@@ -156,27 +135,6 @@ WaveSchedule
 				ItemName "The Killing Gloves of Boxing"
 			}
 		}
-		GRU_B
-		{
-			Name "Unstable Mod: Improved Robo Gru"
-			Attribute "self mark for death" 
-			Cap 1
-			Increment 1
-			Cost 0
-			SecondaryAttributes
-			{
-				"mod_maxhealth_drain_rate" -10
-				"mult_player_movespeed_active" 0.1
-			}
-			Description "Health drain is replaced by self-mark for death and +10% movement speed" 
-			Tier 1
-			AllowedWeapons
-			{
-				ItemName "Gloves of Running Urgently"
-				ItemName "Festive Gloves of Running Urgently"
-				ItemName "The Bread Bite"
-			}
-		}
 		Warriors
 		{
 			Name "Unstable Mod: Warrior's Code"
@@ -195,44 +153,6 @@ WaveSchedule
 			AllowedWeapons
 			{
 				ItemName "Warrior's Spirit"
-			}
-		}
-		FoS
-		{
-			Name "Unstable Mod: Heavy Duty Steel"
-			Attribute "provide on active" 
-			Cap 1
-			Increment 1
-			Cost 0
-			SecondaryAttributes
-			{
-				"dmg from ranged reduced" -0.4
-				"move speed penalty" -0.20
-				"dmg from melee increased" 1.0
-			}
-			Description "Ranged resistance and melee vulnerability are doubled and move 20% slower while active" 
-			Tier 1
-			AllowedWeapons
-			{
-				ItemName "Fists of Steel"
-			}
-		}
-		Eviction
-		{
-			Name "Stable Mod: Brute Bracers"
-			Attribute "minicrits become crits"
-			Cap 2
-			Increment 1
-			Cost 0
-			SecondaryAttributes
-			{
-				"mod_maxhealth_drain_rate" -10
-			}
-			Description "Health Penalty is removed and crits when it would normally minicrit" 
-			Tier 1
-			AllowedWeapons
-			{
-				ItemName "The Eviction Notice"
 			}
 		}
 	}	

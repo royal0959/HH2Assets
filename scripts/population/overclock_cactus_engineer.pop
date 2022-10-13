@@ -74,27 +74,6 @@ WaveSchedule
 			}
 		}
 ///WRENCHES
-		WrenchA
-		{
-			Name "Unstable Mod: Support AI"
-			Attribute "engy building health bonus"
-			Cap 0.8
-			Increment -0.2
-			Cost 0
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"mult dispenser rate" 1.0
-				"mult teleporter recharge rate" -0.5
-				"maxammo metal increased" 0.25
-			}
-			Description "Dispenser and Tele are twice as effecient and gain +25% max metal, but building health is reduced by 20%" 
-			Tier 1
-            Allowplayerclass Engineer
-            AllowedWeapons
-			{
-				ClassName TF_WEAPON_WRENCH 
-			}
-		}
 		GunslingerA
 		{
 			Name "Stable Mod: Mobile Processors"
