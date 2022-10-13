@@ -124,24 +124,5 @@ WaveSchedule
 				ItemName "The Amputator"
 			}
 		}
-		VitaSaw
-		{
-			Name "Unstable Mod: Overcharged Heart-Capacitor"
-			Attribute "uber duration bonus"
-			Cap 2
-			Increment 2
-			Cost 0
-			Description "Uber duration is 2 seconds longer, but health penalty is increased to -15hp" 
-			Tier 1
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"max health additive penalty" -15
-			}
-            Allowplayerclass Medic
-            AllowedWeapons
-			{
-				ItemName "The Vita-Saw"
-			}
-		}
 	}	
 }

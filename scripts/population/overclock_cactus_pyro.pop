@@ -162,45 +162,6 @@ WaveSchedule
 				
 			}
 		}
-		PyroMeleeB //for other weapons
-		{
-			Name "Stable Mod: Armor Breaking"
-			Attribute "damage bonus"
-			Cap 1.35
-			Increment 0.1
-			Cost 0
-			SecondaryAttributes
-			{
-				"mult dmg vs giants" 0.25
-				"mult dmg vs tanks" 0.25
-			}
-			Description "Weapon now deals an additional 10% damage and 25% bonus damage to tanks and giants" 
-			Tier 1
-            Allowplayerclass Pyro
-			AllowedWeapons
-			{
-				ItemName "The Back Scratcher"
-			}
-		}
-		VolcanoFragment
-		{
-			Name "Stable Mod: Hell-Forged Head"
-			Attribute "minicrit vs burning player"
-			Cap 1
-			Increment 1
-			Cost 0
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"bleeding duration" 4
-				"heal on hit for rapidfire" 20
-			}
-			Description "Minicrits burning targets, inflicts bleed on hit and heals 20hp per tick"
-			Tier 1
-			AllowedWeapons
-			{
-				ItemName "Sharpened Volcano Fragment"
-			}
-		}
 		ThirdDegree
 		{
 			Name "Unstable Mod: Draining Coils"

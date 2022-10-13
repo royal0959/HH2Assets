@@ -85,7 +85,7 @@ WaveSchedule
 			Cost 0
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{
-				"health from credits" 60
+				"health from credits" 90
 			}
 			Description "Cloak no longer alerts robots on contact and increases movement speed and damage resistance, but cloak drains 60% faster" 
 			Tier 1
@@ -102,18 +102,17 @@ WaveSchedule
 		}
 		Revolver 
 		{
-			Name "Unstable Mod: Tranq Darts"
+			Name "Unstable Mod: Tranq Rounds"
 			Attribute "subtract victim medigun charge on hit" 
 			Cap 10
 			Increment 10
 			Cost 0
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{
-				"override projectile type" 5
 				"mark for death" 1
 				"clip size penalty HIDDEN" -0.35
 			}
-			Description "Fires a syringe that marks the opponent for death and drains 10% medigun charge on hit, but clip size is 35% smaller" 
+			Description "Marks the opponent for death and drains 10% medigun charge on hit, but clip size is 35% smaller" 
 			Tier 1
             AllowedWeapons
 			{
@@ -122,27 +121,6 @@ WaveSchedule
             DisallowedWeapons
 			{
 				ItemName "The Ambassador"
-			}
-		}
-		Enforcer
-		{
-			Name "Unstable Mod: Magnum Chamber"
-			Attribute "damage bonus"
-			Cap 1.35
-			Increment 0.35
-			Cost 0
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"damage bonus while disguised" 1.8
-				"Reload time increased" 0.5
-				"clip size penalty HIDDEN" -0.35
-				"auto fires full clip" 1
-			}
-			Description "Weapon gains a 35% damage bonus and +180% damage while disguised, but reload and magazine are reduced by 50% and and auto fires the entire clip" 
-			Tier 1
-            AllowedWeapons
-			{
-				ItemName "The Enforcer"
 			}
 		}
 		Amby
