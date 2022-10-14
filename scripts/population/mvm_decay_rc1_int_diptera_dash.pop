@@ -366,10 +366,10 @@ Mission	// Sentry Busters - All
 
 		Checkpoint Yes
 
-		Explanation  
-		{
-			Line	"Use the Killstick if you dare. It will kill."
-		}
+		//Explanation  
+		//{
+		//	Line	"Use the Killstick if you dare. It will kill."
+		//}
 
 		WaveSpawn // 6 Groups of 4 Scouts (150)
 		{
