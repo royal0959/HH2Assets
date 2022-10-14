@@ -19,7 +19,7 @@ WaveSchedule
 				"engineer building teleporting pickup" 150
 				"mark for death on building pickup" 1
 			}
-			Description "+Long range haul buildings for 150 metal +50% faster projectile speed -hauling buildings now marks you for death" 
+			Description "Shotgun can long range haul buildings for 150 metal and pomson projectile is 50% faster, but hauling buildings now marks you for death" 
 			Tier 1
             Allowplayerclass Engineer
 			AllowedWeapons
@@ -40,9 +40,8 @@ WaveSchedule
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{
 				"damage bonus bullet vs sentry target" 0.35
-				"bidirectional teleport" 1
 			}
-			Description "+50% building health +35% more damage to sentry targets +2way teleporter" 
+			Description "Buildings now have +50% extra health and pistol does 35% more damage to sentry targets" 
 			Tier 1
             AllowPlayerClass Engineer
 			AllowedWeapons
@@ -67,7 +66,7 @@ WaveSchedule
 				"dmg penalty vs players" -0.35
 				"engy building health bonus" 0.35 
 			}
-			Description "+Primary fire now uses an explosive attack +35% building health -250% firing speed" 
+			Description "Primary fire now uses an explosive attack and building health is increased by 35%, but fires 250% slower" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -91,7 +90,7 @@ WaveSchedule
 				"mult teleporter recharge rate" -0.5
 				"canteen specialist" 2
 			}
-			Description +1 additional disposable +50% faster disp/tele recharge +1 Canteen specialist"			
+			Description "Build an additional disposable, all support buildings are 50% more effecient and canteens are 10$ cheaper and last 1 second longer" 
 			Tier 1
             Allowplayerclass Engineer
             AllowedWeapons
@@ -112,31 +111,12 @@ WaveSchedule
 				"metal_pickup_decreased" -0.9
 				"engy sentry damage bonus" 0.35
 			}
-			Description "(i)When Wrench is active +35% sentry damage -90% metal from packs and dispensers" 
+			Description "When Wrench is active sentry deals 35% increased damage, but gain 90% less metal from packs and dispensers when active" 
 			Tier 1
             Allowplayerclass Engineer
             AllowedWeapons
 			{
 				ItemName "The Southern Hospitality"
-			}
-		}
-		Eureka
-		{
-			Name "Clean Overclock: Tuned Capacitor"
-			Attribute "provide on active" 
-			Cap 1
-			Increment 1
-			Cost 0
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"Construction rate decreased" 0.5
-			}
-			Description "Construction rate penalty is removed" 
-			Tier 1
-            Allowplayerclass Engineer
-            AllowedWeapons
-			{
-				ItemName "The Eureka Effect"
 			}
 		}
 	}	
