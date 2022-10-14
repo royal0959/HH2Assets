@@ -42,7 +42,6 @@
 #base robot_gatebot.pop
 #base overclock_cactus_scout.pop
 #base overclock_cactus_soldier.pop
-#base overclock_cactus_pyro.pop
 #base overclock_cactus_demo.pop
 #base overclock_cactus_heavy.pop
 #base overclock_cactus_engineer.pop
@@ -90,9 +89,8 @@ bozo_mission_be_liek
     // Custom Assets
     PrecacheModel "models/player/items/all_class/gately_gibus_heavy.mdl"
     PrecacheModel "models/player/vatican/joker/spy.mdl"
-    PrecacheModel "models/props_mvm/mvm_comically_small_player_shield.mdl"
-    
-    PrecacheSound "trickster_terror_joker_laugh.mp3"
+    PrecacheModel "models/props_mvm/mvm_comically_small_player_shield.mdl" // What the fuck is this
+    PrecacheSound "sound/trickster_terror_joker_laugh.mp3"
 
     OverrideSounds
 	{
@@ -3220,6 +3218,7 @@ bozo_mission_be_liek
 				    "voice pitch scale" 0.8
                     "move speed bonus" 0.9
 				}
+                Tag bot_giant
             }
         }
         WaveSpawn // something about the trains, ummmmmmm...
@@ -3452,7 +3451,7 @@ bozo_mission_be_liek
             WaitBeforeStarting 2
             FirstSpawnWarningSound "vo/scout_domination06.mp3"
         }
-        WaveSpawn // Gdemo with the shield and crits
+        WaveSpawn // Gdemo with crits
         {
             Name e1_1
             TotalCurrency 250
@@ -3494,6 +3493,7 @@ bozo_mission_be_liek
                 Item "MNC Mascot Outfit"
                 UsehumanModel 2 [$SIGSEGV]
                 Item "Zombie Scout"
+                Tag bot_giant
                 EventChangeAttributes
 				{
 					Default
