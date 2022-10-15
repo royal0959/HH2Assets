@@ -74,7 +74,7 @@ population
 	}
 	Mission
 	{
-		Objective	Spy
+		Objective	Sniper
 		Where	spawnbot_right
 		BeginAtWave	4
 		RunForThisManyWaves	1
