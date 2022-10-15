@@ -42,6 +42,7 @@
 #base robot_gatebot.pop
 #base overclock_cactus_scout.pop
 #base overclock_cactus_soldier.pop
+#base overclock_cactus_pyro.pop
 #base overclock_cactus_demo.pop
 #base overclock_cactus_heavy.pop
 #base overclock_cactus_engineer.pop
@@ -51,7 +52,7 @@
 
 bozo_mission_be_liek
 {
-    StartingCurrency 800
+    StartingCurrency 1000
 	RespawnWaveTime 4
     CanBotsAttackWhileInSpawnRoom No
 	AddSentryBusterWhenDamageDealtExceeds 2500
@@ -998,7 +999,7 @@ bozo_mission_be_liek
 			}
 		}
     }
-    Wave // wave 1 Payout: $900. Being random party themed 
+    Wave // wave 1 Payout: $1000. Being random party themed 
     {
         CustomWaveNumber 1 [$SIGSEGV]
 		CustomMaxWaveNumber 6 [$SIGSEGV]
@@ -1025,7 +1026,7 @@ bozo_mission_be_liek
         WaveSpawn // Gduck soldier
         {
             Name a1_1
-            TotalCurrency 25
+            TotalCurrency 50
             TotalCount 2
             MaxActive 2
             SpawnCount 1
@@ -1042,7 +1043,7 @@ bozo_mission_be_liek
         {
             Name a1_2
             WaitForAllDead a1_1
-            TotalCurrency 25
+            TotalCurrency 50
             TotalCount 2
             MaxActive 2
             SpawnCount 1
@@ -1142,7 +1143,7 @@ bozo_mission_be_liek
         WaveSpawn // Balloon popper Medic
         {
             Name a1_4
-            TotalCurrency 75
+            TotalCurrency 100
             TotalCount 24
             MaxActive 7
             SpawnCount 3
@@ -1179,7 +1180,7 @@ bozo_mission_be_liek
         {
             Name a2_1
             WaitForAllSpawned a1_2
-            TotalCurrency 75
+            TotalCurrency 100
             TotalCount 5
             MaxActive 2
             SpawnCount 1
@@ -1680,7 +1681,7 @@ bozo_mission_be_liek
             }
         }
     }
-    Wave // wave 2 Payout $850 Total: $1700 A+ $1800. Somewhat Animal themed wave.
+    Wave // wave 2 Payout $1050 Total: $1800 A+ $1900. Somewhat Animal themed wave.
     {
         CustomWaveNumber 2 [$SIGSEGV]
 		CustomMaxWaveNumber 6 [$SIGSEGV]
@@ -2069,13 +2070,13 @@ bozo_mission_be_liek
         {
             Name b2_3
             WaitForAllDead b1_3
-            TotalCurrency 50
+            TotalCurrency 150
             TotalCount 20
             MaxActive 6
             SpawnCount 2
             Where spawnbot_main
             WaitBeforeStarting 7
-            WaitBetweenSpawns 10
+            WaitBetweenSpawns 5
             TFBot
             {
                 Template T_TFBot_Heavyweapons_Shotgun
@@ -2196,7 +2197,7 @@ bozo_mission_be_liek
         {
             Name b3_2
             WaitForAllSpawned b2_1
-            TotalCurrency 75
+            TotalCurrency 175
             TotalCount 18
             MaxActive 5
             SpawnCount 2
@@ -2226,7 +2227,7 @@ bozo_mission_be_liek
         {
             WaitForAllSpawned b2_2
             TotalCurrency 125
-            TotalCount 22
+            TotalCount 44
             MaxActive 6
             SpawnCount 2
             Where spawnbot_left
@@ -2253,7 +2254,7 @@ bozo_mission_be_liek
             }
         }
     }
-    Wave // Wave 3 Payout: $1050 Total: $2550 A+ $2650. The skeleton appears... 
+    Wave // Wave 3 Payout: $1050 Total: $2850 A+ $2950. The skeleton appears... 
     {
         CustomWaveNumber 3 [$SIGSEGV]
 		CustomMaxWaveNumber 6 [$SIGSEGV]
@@ -2815,7 +2816,7 @@ bozo_mission_be_liek
             }
         }
     }
-    Wave // Wave 4 Payout: $1200 Total: $3600 A+ $3700 Knockback gone...
+    Wave // Wave 4 Payout: $1200 Total: $3900 A+ $4000 Knockback gone...
     {
         CustomWaveNumber 4 [$SIGSEGV]
 		CustomMaxWaveNumber 6 [$SIGSEGV]
@@ -3199,12 +3200,12 @@ bozo_mission_be_liek
                 Scale 1.4
                 Health 650
                 MaxVisionRange 500
-                Attributes AlwaysCrit
+                //Attributes AlwaysCrit
                 UsehumanModel 2 [$SIGSEGV]
                 Item "Zombie Scout"
                 Item "Speedy Scoundrel"
                 Item "The Pompous Privateer"
-                Item "The Force-a-Nature"
+                Item "The Soda Popper"
                 ItemAttributes
                 {
                     ItemName "The Soda Popper"
@@ -3425,7 +3426,7 @@ bozo_mission_be_liek
             }
         }
     }
-    Wave // Wave 5 Payout: $1400 Total: $4800 A+ $4900. I ran out of idea's what this theme wave is
+    Wave // Wave 5 Payout: $1400 Total: $5100 A+ $5200. I ran out of idea's what this theme wave is
     {
         CustomWaveNumber 5 [$SIGSEGV]
 		CustomMaxWaveNumber 6 [$SIGSEGV]
@@ -3965,7 +3966,7 @@ bozo_mission_be_liek
             }
         }
     }
-    Wave // Wave 6 Payout: $1500 Total: $6200 A+ $6300. Just a normal wave.
+    Wave // Wave 6 Payout: $1500 Total: $6500 A+ $6600. Just a normal wave.
     {
         CustomWaveNumber 6 [$SIGSEGV]
 		CustomMaxWaveNumber 6 [$SIGSEGV]
@@ -4688,7 +4689,7 @@ bozo_mission_be_liek
             }
         }
     }
-    Wave // Wave 7 Payout: $12369 Total: $7700 A+ $7800. A joker + sweet tooth wave. Gate cannot be captured
+    Wave // Wave 7 Payout: $11869 Total: $8000 A+ $8100. A joker + sweet tooth wave. Gate cannot be captured
     {
         CustomWaveNumber 404 [$SIGSEGV]
 		CustomMaxWaveNumber 0 [$SIGSEGV]
@@ -4862,7 +4863,7 @@ bozo_mission_be_liek
                 ClassIcon pyro_hyper_lite
                 Name "The Sweet Tooth"
                 Skill Expert
-                Health 38000
+                Health 46000
                 Attributes MiniBoss
                 Attributes UseBossHealthBar
                 UseHumanAnimations 1 [$SIGSEGV]
@@ -4888,21 +4889,21 @@ bozo_mission_be_liek
                 {
                     Delay 0
                     Repeats 1
-                    IfHealthBelow 38001
+                    IfHealthBelow 46001
                     Name "phase1"
                 }
                 ChangeAttributes [$SIGSEGV]  
                 {
                     Delay 0
                     Repeats 1
-                    IfHealthBelow 28001
+                    IfHealthBelow 34001
                     Name "phase2"
                 }
                 ChangeAttributes [$SIGSEGV]  
                 {
                     Delay 0
                     Repeats 1
-                    IfHealthBelow 17501
+                    IfHealthBelow 22001
                     Name "phase3"
                 }
                 EventChangeAttributes [$SIGSEGV]
@@ -5013,8 +5014,8 @@ bozo_mission_be_liek
         WaveSpawn // Jacked up pyro
         {
             WaitForAllSpawned g2_1
-            TotalCurrency 500
-            TotalCount 999
+            TotalCurrency 250
+            TotalCount 250
             MaxActive 5
             SpawnCount 2
             Support 1
@@ -5046,8 +5047,8 @@ bozo_mission_be_liek
         WaveSpawn // Skeleton Archer
         {
             WaitForAllSpawned g2_1
-            TotalCurrency 500
-            TotalCount 999
+            TotalCurrency 250
+            TotalCount 250
             MaxActive 7
             SpawnCount 3
             Support 1
@@ -5080,7 +5081,7 @@ bozo_mission_be_liek
         {
             WaitForAllSpawned g2_1
             TotalCurrency 1000
-            TotalCount 999
+            TotalCount 500
             MaxActive 14
             SpawnCount 2
             Support 1
