@@ -91,7 +91,7 @@ bozo_mission_be_liek
     PrecacheModel "models/player/items/all_class/gately_gibus_heavy.mdl"
     PrecacheModel "models/player/vatican/joker/spy.mdl"
     PrecacheModel "models/props_mvm/mvm_comically_small_player_shield.mdl" // What the fuck is this
-    PrecacheSound "sound/trickster_terror_joker_laugh.mp3"
+    PrecacheSound "trickster_terror_joker_laugh.mp3"
 
     OverrideSounds
 	{
