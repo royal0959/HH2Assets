@@ -3,7 +3,13 @@
 #base robot_damno.pop
 #base robot_gatebot.pop
 #base robot_damno_gatebot.pop
-#base overclock_cactus.pop
+#base overclock_cactus_scout.pop
+#base overclock_cactus_soldier.pop
+#base overclock_cactus_demo.pop
+#base overclock_cactus_heavy.pop
+#base overclock_cactus_engineer.pop
+#base overclock_cactus_medic.pop
+#base overclock_cactus_sniperspy.pop
 
 //CREDITS
 
@@ -123,25 +129,25 @@ WaveSchedule
 		}
 	}
 
-	FlagResetTime   //Overrides default bomb reset time
+	FlagResetTime [$SIGSEGV] //Overrides default bomb reset time
 	{
 		Name "intel" //Name of flag entity on the map
 		ResetTime 6000
 	}
 
-	FlagResetTime   //Overrides default bomb reset time
+	FlagResetTime [$SIGSEGV] //Overrides default bomb reset time
 	{
 		Name "intel1" //Name of flag entity on the map
 		ResetTime 6000
 	}
 
-	FlagResetTime   //Overrides default bomb reset time
+	FlagResetTime [$SIGSEGV] //Overrides default bomb reset time
 	{
 		Name "intel2" //Name of flag entity on the map
 		ResetTime 6000
 	}
 
-	FlagResetTime   //Overrides default bomb reset time
+	FlagResetTime [$SIGSEGV] //Overrides default bomb reset time
 	{
 		Name "intel3" //Name of flag entity on the map
 		ResetTime 6000
@@ -1185,14 +1191,14 @@ WaveSchedule
 				Attributes UseBossHealthBar
 				Health 32000
 
-				ChangeAttributes    
+				ChangeAttributes [$SIGSEGV]  
 				{
 					Delay 0
 					Repeats 1
 					IfHealthBelow 22501
 					Name "phase1"
 				}
-				ChangeAttributes    
+				ChangeAttributes [$SIGSEGV]  
 				{
 					Delay 0
 					Repeats 1
@@ -1309,21 +1315,21 @@ WaveSchedule
 					"airblast vertical vulnerability multiplier" 0.1
 					"rage giving scale" 0.1
 				}
-				ChangeAttributes    
+				ChangeAttributes [$SIGSEGV]  
 				{
 					Delay 0
 					Repeats 1
 					IfHealthBelow 20001
 					Name "phase1"
 				}
-				ChangeAttributes    
+				ChangeAttributes [$SIGSEGV]  
 				{
 					Delay 0
 					Repeats 1
 					IfHealthBelow 10001
 					Name "phase2"
 				}
-				EventChangeAttributes  
+				EventChangeAttributes [$SIGSEGV]
 				{                
 					phase1
 					{
@@ -1451,21 +1457,21 @@ WaveSchedule
                     "fire rate bonus" 0.6
                     "reload full clip at once" 1
                 }
-				ChangeAttributes    
+				ChangeAttributes [$SIGSEGV]  
 				{
 					Delay 0
 					Repeats 1
 					IfHealthBelow 17501
 					Name "phase1"
 				}
-				ChangeAttributes    
+				ChangeAttributes [$SIGSEGV]  
 				{
 					Delay 0
 					Repeats 1
 					IfHealthBelow 8001
 					Name "phase2"
 				}
-				EventChangeAttributes  
+				EventChangeAttributes [$SIGSEGV]
 				{                
 					phase1
 					{
@@ -2096,21 +2102,21 @@ WaveSchedule
                     "airblast vertical vulnerability multiplier" 0.1			
                     "Projectile speed increased" 0.4
 			    }
-				ChangeAttributes    // Thank you Yuugi, this was ass to make
+				ChangeAttributes [$SIGSEGV]  // Thank you Yuugi, this was ass to make
 				{
 					Delay 0
 					Repeats 1
 					IfHealthBelow 25501
 					Name "phase1"
 				}
-				ChangeAttributes    
+				ChangeAttributes [$SIGSEGV]  
 				{
 					Delay 0
 					Repeats 1
 					IfHealthBelow 12501
 					Name "phase2"
 				}
-				EventChangeAttributes  
+				EventChangeAttributes [$SIGSEGV]
 				{                
 					phase1
 					{
