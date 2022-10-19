@@ -28,13 +28,14 @@ WaveSchedule
 	ExtraBotSlotsNodeathcam 1   
     //PrecacheModel "models/workshop/weapons/c_models/c_browning/c_browning.mdl"
     //PrecacheModel "models/weapons/c_models/c_ash_m/c_ash_m.mdl"
-    PrecacheModel "models/bots/boss_bot/boss_tankred.mdl"
-    PrecacheModel "models/bots/boss_bot/boss_tankred_damage1.mdl"
-    PrecacheModel "models/bots/boss_bot/boss_tankred_damage2.mdl"
-    PrecacheModel "models/bots/boss_bot/boss_tankred_damage3.mdl"
-    PrecacheModel "models/bots/boss_bot/boss_tankred_part1_destruction.mdl"
-	PrecacheModel "models/bots/boss_bot/tankred_track_l.mdl"
-	PrecacheModel "models/bots/boss_bot/tankred_track_r.mdl"
+    // PrecacheModel "models/bots/boss_bot/boss_tankred.mdl"
+    // PrecacheModel "models/bots/boss_bot/boss_tankred_damage1.mdl"
+    // PrecacheModel "models/bots/boss_bot/boss_tankred_damage2.mdl"
+    // PrecacheModel "models/bots/boss_bot/boss_tankred_damage3.mdl"
+    // PrecacheModel "models/bots/boss_bot/boss_tankred_part1_destruction.mdl"
+	// PrecacheModel "models/bots/boss_bot/tankred_track_l.mdl"
+	// PrecacheModel "models/bots/boss_bot/tankred_track_r.mdl"
+    PrecacheModel "models/bots/boss_bot/boss_tank_color.mdl"
 	PrecacheModel "models/bots/boss_bot/bombblue_mechanism.mdl"
     PrecacheModel "models/props_mvm/mvm_comically_small_player_shield.mdl"
 
@@ -353,6 +354,7 @@ WaveSchedule
 				"targetname" "setfakeparet_relay"
                 "$modules" "fakeparent"
 				"OnTrigger" "spell_red,$SetFakeParent,!activator,0,-1"
+                "OnSpawn" "tankboss2,color,184 56 59,0,-1"
 			}	
             OnSpawnOutput
             {
@@ -3194,17 +3196,7 @@ WaveSchedule
                 SpawnTemplate red_spells
                 TeamNum 2
                 TriggerDestroyBuildingFix 1
-                Model   
-                {
-                    Default "models/bots/boss_bot/boss_tankred.mdl"
-                    Damage1 "models/bots/boss_bot/boss_tankred_damage1.mdl"
-                    Damage2 "models/bots/boss_bot/boss_tankred_damage2.mdl"
-                    Damage3 "models/bots/boss_bot/boss_tankred_damage3.mdl"
-                    Destruction "models/bots/boss_bot/boss_tankred_part1_destruction.mdl"
-                    LeftTrack "models/bots/boss_bot/tankred_track_l.mdl"
-                    RightTrack "models/bots/boss_bot/tankred_track_r.mdl"
-                    Bomb "models/bots/boss_bot/bombblue_mechanism.mdl"
-                }
+                Model "models/bots/boss_bot/boss_tank_color.mdl"
                 OnKilledOutput
                 {
                     Target bluwin_relay
