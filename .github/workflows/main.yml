@@ -38,7 +38,7 @@ jobs:
       - name: Upload to R2
         uses: jakejarvis/s3-sync-action@master
         with:
-          args: --exclude "*" --include "*.bz2" --follow-symlinks --delete
+          args: --exclude '*' --include '*.bz2' --follow-symlinks --delete
         env:
           AWS_S3_BUCKET: fastdl-hh2
           AWS_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
