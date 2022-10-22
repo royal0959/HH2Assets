@@ -214,7 +214,7 @@ function WingerDashPurchased(_, activator)
 
 		local secondary = activator:GetPlayerItemBySlot(1)
 		local secondaryHandle = secondary:GetHandleIndex()
-		
+
 		if activator.m_hActiveWeapon:GetHandleIndex() ~= secondaryHandle then
 			return
 		end
@@ -457,6 +457,10 @@ ents.AddCreateCallback("tf_projectile_rocket", function(entity)
 				return true
 			end
 
+			if target == owner then
+				return
+			end
+
 			local targetHandle = target:GetHandleIndex()
 
 			local nextAllowedDamageTickOnTarget = redeemerDebounces[handle][targetHandle] or -1
@@ -671,7 +675,7 @@ function DroneFired(sentryName, projectile)
 		sentryEnt.m_iTeamNum = 3
 	end
 
-	timer.Simple(0.6, function ()
+	timer.Simple(0.6, function()
 		sentryEnt.m_hBuilder = owner
 	end)
 
