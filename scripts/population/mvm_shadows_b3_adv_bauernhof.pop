@@ -2153,6 +2153,20 @@ WaveSchedule
 				Output "!activator,speakresponseconcept,TLK_MVM_LOOT_ULTRARARE,0,-1"
 			}
 		}
+		WU_PaP_T3_Generic_SMG // for medic SMG
+		{
+			Name "+100% Damage bonus"
+			Attribute "dmg penalty vs players"
+			Increment 1
+			Cap 2
+			Cost 5000
+			Tier 2
+			AllowedWeapons
+			{
+				ItemName "Primary SMG"
+				ItemName "Das Maschinenpistole"
+			}
+		}
 		WU_PaP_T3_Pistol
 		{
 			Name "Überweapon Upgrade"
@@ -2416,6 +2430,11 @@ WaveSchedule
 			AllowedWeapons
 			{
 				Classname tf_weapon_syringegun_medic
+			}
+			DisallowedWeapons
+			{
+				ItemName "Primary SMG"
+				ItemName "Das Maschinenpistole"
 			}
 			OnApply
 			{
@@ -4217,19 +4236,19 @@ WaveSchedule
 		Hulk_PT
 		{
 			KeepAlive 1
-			OnParentKilledOutput
-			{
-				Target !activator
-				Action $RemoveOutput
-				Param $OnDeath
-				Delay 1
-			}
-			OnSpawnOutput
-			{
-				Target "!activator"
-				Action "AddOutput"
-				Param "$OnDeath !activator:SpeakResponseConcept:TLK_MVM_TANK_DEAD:0.7:-1" 
-			}
+		//	OnParentKilledOutput
+		//	{
+		//		Target !activator
+		//		Action $RemoveOutput
+		//		Param $OnDeath
+		//		Delay 1
+		//	}
+		//	OnSpawnOutput // apparently crashes servers
+		//	{
+		//		Target "!activator"
+		//		Action "AddOutput"
+		//		Param "$OnDeath !activator:SpeakResponseConcept:TLK_MVM_TANK_DEAD:0.7:-1" 
+		//	}
 			OnSpawnOutput
 			{
 				Target "hankerman"
@@ -7004,6 +7023,7 @@ WaveSchedule
 				"projectile gravity" 300
 				"projectile speed increased" 1.7
 				"blast radius increased" 1.25
+				"custom kill icon" mailbox
 			//	"rocket specialist" 4
 				"penetrate teammates" 1 // throw through teammates
 				"mult_player_movespeed_active" 0 // stop moving when throwing rocks!
@@ -7169,6 +7189,7 @@ WaveSchedule
 				"damage bonus HIDDEN" 0.77
 				"is invisible" 1
 				"fire rate penalty" 1.4
+				"custom impact sound" Weapon_Fist.HitFlesh
 				"alt-fire disabled" 1 // for heavy AI
 				"custom kill icon" unarmed_combat
 			}
@@ -7238,7 +7259,7 @@ WaveSchedule
 				"is invisible" 1
 				"fire rate penalty" 1.3
 				"damage bonus" 1.2
-				"custom kill icon" unarmed_combat
+				"custom kill icon" hot_hand
 				"custom hit sound" =80|player/taunt_chest_thump_alt.wav
 				"charge time increased" 2
 			}
