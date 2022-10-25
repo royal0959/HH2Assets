@@ -16,6 +16,12 @@
 #base overclock_cactus_engineer.pop
 #base overclock_cactus_medic.pop
 
+PrecacheModel "models/bots/boss_bot/boss_blimp.mdl"
+PrecacheModel "models/bots/boss_bot/boss_blimp_damage1.mdl" 
+PrecacheModel "models/bots/boss_bot/boss_blimp_damage2.mdl"     
+PrecacheModel "models/bots/boss_bot/boss_blimp_damage3.mdl"
+PrecacheModel "models/bots/boss_bot/boss_blimp_damage_explode.mdl"
+PrecacheModel "models/bots/boss_bot/boss_blimp_explode.mdl"
 
 WaveSchedule
 {
