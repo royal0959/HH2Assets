@@ -26,12 +26,6 @@ population
 	PrecacheModel	"models\workshop\weapons\c_models\c_tactigatling\c_russian_riot.mdl"	 
 	PrecacheModel	"models\workshop_partner\weapons\c_models\c_great_peace_preserver\c_dex_shotgun.mdl"	 
 	PrecacheModel	"models\weapons\c_models\c_gupgun\c_leechgun.mdl"	 
-    PrecacheModel "models/bots/boss_bot/boss_blimp.mdl"
-    PrecacheModel "models/bots/boss_bot/boss_blimp_damage1.mdl" 
-    PrecacheModel "models/bots/boss_bot/boss_blimp_damage2.mdl"     
-    PrecacheModel "models/bots/boss_bot/boss_blimp_damage3.mdl"
-    PrecacheModel "models/bots/boss_bot/boss_blimp_damage_explode.mdl"
-    PrecacheModel "models/bots/boss_bot/boss_blimp_explode.mdl"
 	// Sound precache
 	PrecacheSound	"weapons/china_lake_shoot.wav"	 
 	PrecacheSound	"weapons/sven_shotgun_shoot.wav"	 
