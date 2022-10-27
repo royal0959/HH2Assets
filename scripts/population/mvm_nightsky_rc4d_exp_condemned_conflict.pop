@@ -304,6 +304,24 @@ population
 		Upgrade		"airblast pushback scale"
 		MaxLevel	0
 	}
+	DisallowUpgrade	[$SIGSEGV]	// Limit Clip Size if Burst Fire Module is purchased
+	{
+		Upgrade		"clip size upgrade atomic"
+		MaxLevel	1
+		IfUpgradePresent
+		{
+			"force fire full clip"	1
+		}
+	}
+	DisallowUpgrade	[$SIGSEGV]	// Disallow Burst Fire Module if Clip Size is upgraded too much
+	{
+		Upgrade		"force fire full clip"
+		MaxLevel	0
+		IfUpgradePresent
+		{
+			"clip size upgrade atomic"	2
+		}
+	}
 	DisallowUpgrade	[$SIGSEGV]	// Fire Rate and Burst Fire Module are mutually exclusive
 	{
 		Upgrade		"fire rate bonus"

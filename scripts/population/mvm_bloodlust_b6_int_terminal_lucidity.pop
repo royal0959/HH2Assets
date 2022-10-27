@@ -251,23 +251,41 @@ population
 	// Upgrade bans
 	DisallowUpgrade	"weapon burn time increased"	[$SIGSEGV]	// Afterburn duration doesn't work after Jungle Inferno
 	//DisallowUpgrade	"explode_on_ignite"	[$SIGSEGV]	// Explode on ignite is still busted
-	DisallowUpgrade	[$SIGSEGV]
+	DisallowUpgrade	[$SIGSEGV]	// Replaced by custom upgrade
 	{
-		Name		"The Sandman"	// Replaced by custom upgrade
+		Name		"The Sandman"
 		Upgrade		"mark for death"
 		MaxLevel	0
 	}
-	DisallowUpgrade	[$SIGSEGV]
+	DisallowUpgrade	[$SIGSEGV]	// Doesn't have a clip
 	{
-		Name		"Atomic Anguish"	// Doesn't have a clip
+		Name		"Atomic Anguish"
 		Upgrade		"clip size upgrade atomic"
 		MaxLevel	0
 	}
-	DisallowUpgrade	[$SIGSEGV]
+	DisallowUpgrade	[$SIGSEGV]	// Airblast doesn't push enemies
 	{
-		Name		"Con-man's Compressor"	// Airblast doesn't push enemies
+		Name		"Con-man's Compressor"
 		Upgrade		"airblast pushback scale"
 		MaxLevel	0
+	}
+	DisallowUpgrade	[$SIGSEGV]	// Limit Clip Size if Burst Fire Module is purchased
+	{
+		Upgrade		"clip size upgrade atomic"
+		MaxLevel	1
+		IfUpgradePresent
+		{
+			"force fire full clip"	1
+		}
+	}
+	DisallowUpgrade	[$SIGSEGV]	// Disallow Burst Fire Module if Clip Size is upgraded too much
+	{
+		Upgrade		"force fire full clip"
+		MaxLevel	0
+		IfUpgradePresent
+		{
+			"clip size upgrade atomic"	2
+		}
 	}
 	DisallowUpgrade	[$SIGSEGV]	// Fire Rate and Burst Fire Module are mutually exclusive
 	{

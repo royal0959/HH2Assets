@@ -11,28 +11,28 @@ population
 	FixedRespawnWaveTime			Yes
 	Advanced						1
 	// Rafmod cvars
-	BodyPartScaleSpeed		50	 
-	FixSetCustomModelInput	1	 
-	MaxSpectators			2	 
-	NoCritPumpkin			1	 
-	NoRomevisionCosmetics	1	 
-	NoThrillerTaunt			1	 
-	RobotLimit				24	 
-	TextPrintTime			0	 
+	BodyPartScaleSpeed		50	[$SIGSEGV]
+	FixSetCustomModelInput	1	[$SIGSEGV]
+	MaxSpectators			2	[$SIGSEGV]
+	NoCritPumpkin			1	[$SIGSEGV]
+	NoRomevisionCosmetics	1	[$SIGSEGV]
+	NoThrillerTaunt			1	[$SIGSEGV]
+	RobotLimit				24	[$SIGSEGV]
+	TextPrintTime			0	[$SIGSEGV]
 	// Model precache
-	PrecacheModel	"models\weapons\c_models\c_entrenched_gun\c_scattergun.mdl"	 
-	PrecacheModel	"models\workshop\weapons\c_models\c_hornetsnest\c_atom_launcher.mdl"	 
-	PrecacheModel	"models\weapons\c_models\c_howitzer\c_lochnload.mdl"	 
-	PrecacheModel	"models\workshop\weapons\c_models\c_tactigatling\c_russian_riot.mdl"	 
-	PrecacheModel	"models\workshop_partner\weapons\c_models\c_great_peace_preserver\c_dex_shotgun.mdl"	 
-	PrecacheModel	"models\weapons\c_models\c_gupgun\c_leechgun.mdl"	 
+	PrecacheModel	"models\weapons\c_models\c_entrenched_gun\c_scattergun.mdl"	[$SIGSEGV]
+	PrecacheModel	"models\workshop\weapons\c_models\c_hornetsnest\c_atom_launcher.mdl"	[$SIGSEGV]
+	PrecacheModel	"models\weapons\c_models\c_howitzer\c_lochnload.mdl"	[$SIGSEGV]
+	PrecacheModel	"models\workshop\weapons\c_models\c_tactigatling\c_russian_riot.mdl"	[$SIGSEGV]
+	PrecacheModel	"models\workshop_partner\weapons\c_models\c_great_peace_preserver\c_dex_shotgun.mdl"	[$SIGSEGV]
+	PrecacheModel	"models\weapons\c_models\c_gupgun\c_leechgun.mdl"	[$SIGSEGV]
 	// Sound precache
-	PrecacheSound	"weapons/china_lake_shoot.wav"	 
-	PrecacheSound	"weapons/sven_shotgun_shoot.wav"	 
-	PrecacheSound	"weapons/mp40_shoot.wav"	 
-	PrecacheSound	"weapons/supernailgun_shoot.wav"	 
+	PrecacheSound	"weapons/china_lake_shoot.wav"	[$SIGSEGV]
+	PrecacheSound	"weapons/sven_shotgun_shoot.wav"	[$SIGSEGV]
+	PrecacheSound	"weapons/mp40_shoot.wav"	[$SIGSEGV]
+	PrecacheSound	"weapons/supernailgun_shoot.wav"	[$SIGSEGV]
 	// Tank paths
-	ExtraTankPath	 
+	ExtraTankPath	[$SIGSEGV]
 	{
 		Name	"tankpath_nogate"
 		Node	"1900 -6200 400"	// tunnel
@@ -62,7 +62,7 @@ population
 	}
 	// Custom weapons
 	// Scout
-	CustomWeapon	 	// Scout Slug Scattergun
+	CustomWeapon	[$SIGSEGV]	// Scout Slug Scattergun
 	{
 		Name								"Steel Slugger"
 		OriginalItemName					"The Back Scatter"
@@ -79,7 +79,7 @@ population
 		"special item description 2"		"Doink!"
 	}
 	// Soldier
-	CustomWeapon	 	// Soldier Homing Rocket Launcher
+	CustomWeapon	[$SIGSEGV]	// Soldier Homing Rocket Launcher
 	{
 		Name									"Psychopath's Seeker"
 		OriginalItemName						"The Liberty Launcher"
@@ -103,7 +103,7 @@ population
 		"special item description"				"Launches a wide spread of low damage rockets that home in on the crosshair."
 		"special item description 2"			"If you run, you'll only die tired."
 	}
-	CustomWeapon	 	// Soldier Nuke Launcher
+	CustomWeapon	[$SIGSEGV]	// Soldier Nuke Launcher
 	{
 		Name							"Atomic Anguish"
 		OriginalItemName				"The Black Box"
@@ -124,7 +124,7 @@ population
 		"special item description 2"	"This was not a good idea at any point in time."
 	}
 	// Pyro
-	CustomWeapon	 	// Pyro Airblast Flame Thrower
+	CustomWeapon	[$SIGSEGV]	// Pyro Airblast Flame Thrower
 	{
 		Name									"Con-man's Compressor"
 		OriginalItemName						"The Degreaser"
@@ -142,7 +142,7 @@ population
 		"special item description 2"			"We're puttin' on a clinic!"
 	}
 	// Demoman
-	CustomWeapon	 	// Demoman Auto Grenade Launcher
+	CustomWeapon	[$SIGSEGV]	// Demoman Auto Grenade Launcher
 	{
 		Name								"Burst of Brimstone"
 		OriginalItemName					"The Loch-n-Load"
@@ -164,7 +164,7 @@ population
 		"special item description 2"		"Blammo!"
 	}
 	// Heavy
-	CustomWeapon	 	// Heavy Deflector
+	CustomWeapon	[$SIGSEGV]	// Heavy Deflector
 	{
 		Name							"Bootleg Deflector"
 		OriginalItemName				"Deflector"
@@ -176,7 +176,7 @@ population
 		"special item description"		"Destroys projectiles in a wider spread and deals slightly more damage, but spins up slower."
 		"special item description 2"	"I hate metal!"
 	}
-	CustomWeapon	 	// Heavy Auto Shotgun
+	CustomWeapon	[$SIGSEGV]	// Heavy Auto Shotgun
 	{
 		Name							"Soviet Slammer"
 		OriginalItemName				"The Family Business"
@@ -195,7 +195,7 @@ population
 		"special item description 2"	"I am 100 metres from your location and approaching rapidly."
 	}
 	// Engineer
-	CustomWeapon	 	// Engineer Machine Gun
+	CustomWeapon	[$SIGSEGV]	// Engineer Machine Gun
 	{
 		Name								"Veruc"	// Based on the Veruc from Borderlands 2
 		OriginalItemName					"TF_WEAPON_SHOTGUN_PRIMARY"
@@ -212,7 +212,7 @@ population
 		"special item description 2"		"I want that rifle, Daddy!"
 	}
 	// Medic
-	CustomWeapon	 	// Medic Burst Fire Syringe Gun
+	CustomWeapon	[$SIGSEGV]	// Medic Burst Fire Syringe Gun
 	{
 		Name								"Four Part Plan"
 		OriginalItemName					"The Blutsauger"
@@ -230,7 +230,7 @@ population
 		"special item description 2"		"Part five: booby trap the stalemate button!"
 	}
 	// Spy
-	CustomWeapon	 	// Spy Disabled Invis Watch
+	CustomWeapon	[$SIGSEGV]	// Spy Disabled Invis Watch
 	{
 		Name							"Gunman's Gait"
 		OriginalItemName				"TTG Watch"
@@ -241,7 +241,7 @@ population
 		"special item description"		"Grants increased health, ranged damage resistance, and movement speed, but cloak drains instantly."
 		"special item description 2"	"Think you're hard, do ya?"
 	}
-	ExtraLoadoutItems	 
+	ExtraLoadoutItems	[$SIGSEGV]
 	{
 		Scout
 		{
@@ -279,27 +279,45 @@ population
 		}
 	}
 	// Upgrade bans
-	DisallowUpgrade	"weapon burn time increased"	 	// Afterburn duration doesn't work after Jungle Inferno
-	//DisallowUpgrade	"explode_on_ignite"	 	// Explode on ignite is still busted
-	DisallowUpgrade	 	// Replaced by custom upgrade
+	DisallowUpgrade	"weapon burn time increased"	[$SIGSEGV]	// Afterburn duration doesn't work after Jungle Inferno
+	//DisallowUpgrade	"explode_on_ignite"	[$SIGSEGV]	// Explode on ignite is still busted
+	DisallowUpgrade	[$SIGSEGV]	// Replaced by custom upgrade
 	{
 		Name		"The Sandman"
 		Upgrade		"mark for death"
 		MaxLevel	0
 	}
-	DisallowUpgrade	 	// Doesn't have a clip
+	DisallowUpgrade	[$SIGSEGV]	// Doesn't have a clip
 	{
 		Name		"Atomic Anguish"
 		Upgrade		"clip size upgrade atomic"
 		MaxLevel	0
 	}
-	DisallowUpgrade	 	// Airblast doesn't push enemies
+	DisallowUpgrade	[$SIGSEGV]	// Airblast doesn't push enemies
 	{
 		Name		"Con-man's Compressor"
 		Upgrade		"airblast pushback scale"
 		MaxLevel	0
 	}
-	DisallowUpgrade	 	// Fire Rate and Burst Fire Module are mutually exclusive
+	DisallowUpgrade	[$SIGSEGV]	// Limit Clip Size if Burst Fire Module is purchased
+	{
+		Upgrade		"clip size upgrade atomic"
+		MaxLevel	1
+		IfUpgradePresent
+		{
+			"force fire full clip"	1
+		}
+	}
+	DisallowUpgrade	[$SIGSEGV]	// Disallow Burst Fire Module if Clip Size is upgraded too much
+	{
+		Upgrade		"force fire full clip"
+		MaxLevel	0
+		IfUpgradePresent
+		{
+			"clip size upgrade atomic"	2
+		}
+	}
+	DisallowUpgrade	[$SIGSEGV]	// Fire Rate and Burst Fire Module are mutually exclusive
 	{
 		Upgrade		"fire rate bonus"
 		MaxLevel	0
@@ -308,7 +326,7 @@ population
 			"force fire full clip"	1
 		}
 	}
-	DisallowUpgrade	 	// Fire Rate and Burst Fire Module are mutually exclusive
+	DisallowUpgrade	[$SIGSEGV]	// Fire Rate and Burst Fire Module are mutually exclusive
 	{
 		Upgrade		"force fire full clip"
 		MaxLevel	0
@@ -317,31 +335,31 @@ population
 			"fire rate bonus"	1
 		}
 	}
-	DisallowUpgrade	 	// Far too strong with fire rate
+	DisallowUpgrade	[$SIGSEGV]	// Far too strong with fire rate
 	{
 		Name		"Soviet Slammer"
 		Upgrade		"fire rate bonus"
 		MaxLevel	0
 	}
-	DisallowUpgrade	 	// Third point of sentry firing speed doesn't work
+	DisallowUpgrade	[$SIGSEGV]	// Third point of sentry firing speed doesn't work
 	{
 		Upgrade		"engy sentry fire rate increased"
 		MaxLevel	2
 	}
-	DisallowUpgrade	 	// Mark for death is enough
+	DisallowUpgrade	[$SIGSEGV]	// Mark for death is enough
 	{
 		Name		"Four Part Plan"
 		Upgrade		"mad milk syringes"
 		MaxLevel	0
 	}
-	DisallowUpgrade	 	// Uber duration is kinda busted on the Vaccinator
+	DisallowUpgrade	[$SIGSEGV]	// Uber duration is kinda busted on the Vaccinator
 	{
 		Name		"The Vaccinator"
 		Upgrade		"uber duration bonus"
 		MaxLevel	1
 	}
 	// Custom upgrades
-	ExtendedUpgrades	 
+	ExtendedUpgrades	[$SIGSEGV]
 	{
 		MeleeResistance	// all class - reduce damage taken from melee
 		{
@@ -854,7 +872,7 @@ population
 		}
 	}
 	// Point templates
-	PointTemplates  
+	PointTemplates [$SIGSEGV]
 	{
 		OverseerCallouts
 		{
@@ -1073,7 +1091,7 @@ population
 			}
 		}
 	}
-	SpawnTemplate "OverseerCallouts"  
+	SpawnTemplate "OverseerCallouts" [$SIGSEGV]
 	Templates
 	{
 		T_TFBot_Tind_Scout // w3
@@ -1453,7 +1471,7 @@ population
 			Attributes MiniBoss
 			Attributes HoldFireUntilFullReload
 			Attributes AlwaysCrit
-			ChangeAttributes  
+			ChangeAttributes [$SIGSEGV]
 			{
 				Delay			0
 				IfHealthBelow	6000
@@ -1461,7 +1479,7 @@ population
 				Cooldown		999
 				Name			"Default"
 			}
-			ChangeAttributes  
+			ChangeAttributes [$SIGSEGV]
 			{
 				Delay			0
 				IfHealthBelow	2000
@@ -1611,7 +1629,7 @@ population
 				"airblast vulnerability multiplier"	0.4
 				"override footstep sound set"		3
 			}
-			AimAt Body  
+			AimAt Body [$SIGSEGV]
 		}
 		T_TFBot_Tind_Soldier_Giant_Backup // w3
 		{
@@ -2421,7 +2439,7 @@ population
 				"health regen"					1
 				"cannot pick up intelligence"	1
 			}
-			Message	 
+			Message	[$SIGSEGV]
 			{
 				Name	"{EE82EE}The Overseer {FFB1C7}:  That Engie is going to call in more robots if you don't kill him."
 				Delay	0
@@ -2447,7 +2465,7 @@ population
 				"health regen"					1
 				"cannot pick up intelligence"	1
 			}
-			Message	 
+			Message	[$SIGSEGV]
 			{
 				Name	"{EE82EE}The Overseer {FFB1C7}:  Blast that Engie before he calls in reinforcements!"
 				Delay	0
@@ -2473,14 +2491,14 @@ population
 				"health regen"					1
 				"cannot pick up intelligence"	1
 			}
-			Message	 
+			Message	[$SIGSEGV]
 			{
 				Name	"{EE82EE}The Overseer {FFB1C7}:  Engineers are nothing but trouble. Take it out fast!"
 				Delay	0
 				Repeats	1
 			}
 		}
-		T_TFBot_Tind_Engineer_Veruc   // w4
+		T_TFBot_Tind_Engineer_Veruc [$SIGSEGV] // w4
 		{
 			Class Engineer
 			Name "Veruc Engineer"
@@ -2502,7 +2520,7 @@ population
 				"custom weapon fire sound"		"=75|weapons/mp40_shoot.wav"
 				"custom item model"				"models\workshop_partner\weapons\c_models\c_great_peace_preserver\c_dex_shotgun.mdl"
 			}
-			Action FetchFlag  
+			Action FetchFlag [$SIGSEGV]
 		}
 		T_TFBot_Tind_Medic_Uber // w4
 		{
@@ -2800,8 +2818,8 @@ population
 				"override footstep sound set" 		5
 				"head scale"						0.55
 			}
-			UseCustomModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"  
-			UseHumanAnimations 1  
+			UseCustomModel "models/bots/skeleton_sniper/skeleton_sniper.mdl" [$SIGSEGV]
+			UseHumanAnimations 1 [$SIGSEGV]
 		}
 		T_TFBot_Tind_Spy // w3,4,6
 		{
@@ -2838,9 +2856,9 @@ population
 				"override footstep sound set"		7
 				"cannot be backstabbed"				1
 			}
-			UseCustomModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"  
-			UseHumanAnimations 1  
-			ItemModel  
+			UseCustomModel "models/bots/skeleton_sniper/skeleton_sniper.mdl" [$SIGSEGV]
+			UseHumanAnimations 1 [$SIGSEGV]
+			ItemModel [$SIGSEGV]
 			{
 				ItemName	"The Snapped Pupil"
 				Model		"models/workshop/player/items/demo/tw_sentrybuster/tw_sentrybuster.mdl"
@@ -3039,7 +3057,7 @@ population
 			Target	wave_finished_relay
 			Action	Trigger
 		}
-		Explanation  
+		Explanation [$SIGSEGV]
 		{
 			Line	"{EE82EE}The Overseer {FFB1C7}:  Greetings, Mercenaries. I will be your mission control on this fine Hallow's Eve. I have also been approved to issue you new hardware available at any upgrade station."
 		}
@@ -3068,7 +3086,7 @@ population
 			WaitBeforeStarting	2
 			WaitBetweenSpawns	7
 			Where	spawnbot
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w1a
 				Action	PickRandom
@@ -3089,7 +3107,7 @@ population
 			WaitBeforeStarting	15
 			WaitBetweenSpawns	0
 			Where	spawnbot
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w1b
 				Action	PickRandom
@@ -3144,7 +3162,7 @@ population
 			SpawnCount	1
 			WaitBeforeStarting	30
 			WaitBetweenSpawns	0
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w1c
 				Action	PickRandom
@@ -3280,7 +3298,7 @@ population
 			WaitBeforeStarting	14
 			WaitBetweenSpawns	10
 			Where	flankers
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w2a
 				Action	PickRandom
@@ -3317,7 +3335,7 @@ population
 			WaitBeforeStarting	5
 			WaitBetweenSpawns	20
 			Where	flankers
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w2b
 				Action	PickRandom
@@ -3338,7 +3356,7 @@ population
 			WaitBeforeStarting	3
 			WaitBetweenSpawns	18
 			Where	spawnbot
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w2c
 				Action	PickRandom
@@ -3433,7 +3451,7 @@ population
 			SpawnCount	1
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	0
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w3a
 				Action	PickRandom
@@ -3497,7 +3515,7 @@ population
 			WaitBeforeStarting	15
 			WaitBetweenSpawns	30
 			Where	spawnbot
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w3b
 				Action	PickRandom
@@ -3569,7 +3587,7 @@ population
 			WaitBeforeStarting	8
 			WaitBetweenSpawns	12
 			Where	spawnbot
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w3c
 				Action	PickRandom
@@ -3673,7 +3691,7 @@ population
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	6
 			Where	spawnbot
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w4a
 				Action	PickRandom
@@ -3710,7 +3728,7 @@ population
 			WaitBeforeStarting	4
 			WaitBetweenSpawns	16
 			Where	spawnbot
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w4b
 				Action	PickRandom
@@ -3779,7 +3797,7 @@ population
 			WaitBeforeStarting	2
 			WaitBetweenSpawns	9
 			Where	flankers
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w4c
 				Action	PickRandom
@@ -3800,7 +3818,7 @@ population
 			WaitBeforeStarting	9
 			WaitBetweenSpawns	16
 			Where	spawnbot
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w4d
 				Action	PickRandom
@@ -3911,7 +3929,7 @@ population
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	22
 			Where	spawnbot
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w5a
 				Action	PickRandom
@@ -3954,7 +3972,7 @@ population
 			WaitBeforeStarting	5
 			WaitBetweenSpawns	14
 			Where	spawnbot
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w5b
 				Action	PickRandom
@@ -4007,7 +4025,7 @@ population
 			WaitBeforeStarting	10
 			WaitBetweenSpawns	9
 			Where	flankers
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w5c1
 				Action	PickRandom
@@ -4028,7 +4046,7 @@ population
 			WaitBeforeStarting	20
 			WaitBetweenSpawns	20
 			Where	flankers
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w5c2
 				Action	PickRandom
@@ -4056,7 +4074,7 @@ population
 			WaitBeforeStarting	20
 			WaitBetweenSpawns	16
 			Where	spawnbot
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w5d
 				Action	PickRandom
@@ -4129,7 +4147,7 @@ population
 			SpawnCount	1
 			WaitBeforeStarting	0
 			WaitBetweenSpawns	0
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w6a
 				Action	PickRandom
@@ -4216,7 +4234,7 @@ population
 			WaitBeforeStarting	8
 			WaitBetweenSpawns	8
 			Where	flankers
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w6b
 				Action	PickRandom
@@ -4243,7 +4261,7 @@ population
 			SpawnCount	1
 			WaitBeforeStarting	12
 			WaitBetweenSpawns	0
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w6c
 				Action	PickRandom
@@ -4326,7 +4344,7 @@ population
 			WaitBeforeStarting	15
 			WaitBetweenSpawns	18
 			Where	spawnbot
-			FirstSpawnOutput  
+			FirstSpawnOutput [$SIGSEGV]
 			{
 				Target	case_overseer_w6d
 				Action	PickRandom
