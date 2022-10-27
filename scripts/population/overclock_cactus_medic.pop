@@ -92,7 +92,7 @@ WaveSchedule
 			Cap 0.25
 			Increment -0.75
 			Cost 0
-			Description "+50% faster heal rate +Medigun can heal buildings +innately share canteens -50% overheal -20% slower uber build on overhealed patients" 
+			Description "+50% faster heal rate +Medigun can heal buildings -50% overheal -20% slower uber build on overhealed patients" 
 			Tier 1
 			SecondaryAttributes 
 			{
