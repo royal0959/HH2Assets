@@ -825,15 +825,19 @@ how_tf_do_you_make_an_exp_again?
         Objective Engineer
         BeginAtWave 4
         RunForThisManyWaves 1
-       DesiredCount 2
+        DesiredCount 2
     
-        InitialCooldown 50
+        InitialCooldown 40
         CooldownTime 30
     
         TFBot
        { 
            Template T_TFBot_Engineer_Sentry_Tele_Battle
             Item "Defragmenting Hard Hat 17%"
+            TeleportWhere spawnbot_alley
+            TeleportWhere spawnbot_jeep
+            TeleportWhere spawnbot_left
+            TeleportWhere spawnbot_tank
         }
     }
     Mission // For Wave 6
