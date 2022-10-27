@@ -22,8 +22,6 @@ WaveSchedule
 	FixHuntsmanDamageBonus 1   
 	RobotLimit 26  
 	NoRomevisionCosmetics 1  
-	PrecacheSound "mvm/mvm_used_powerup.wav"  
-	PrecacheSound "mvm/mvm_tank_start.wav"  
 	PrecacheModel "models/bots/boss_bot/boss_tank_gate.mdl"
     PrecacheModel "models/bots/boss_bot/boss_tank_gate_damage1.mdl"
     PrecacheModel "models/bots/boss_bot/boss_tank_gate_damage2.mdl"
