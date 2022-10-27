@@ -20,7 +20,7 @@ WaveSchedule
 				"fire rate penalty HIDDEN" 0.15
 				"Blast radius increased" 0.35
 			}
-			Description "Gain a 35% bonus to damage and blast radius, but clip size is restricted to 1 rocket, and rockets arc" 
+			Description "(i)Rockets now arc +35% damage bonus +35% blast radius -clip size is restricted to 1" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -53,7 +53,7 @@ WaveSchedule
 				"dmg pierces resists absorbs" 1
 				"clip size penalty HIDDEN" -0.25
 			}
-			Description "Deal 20% extra damage with 20% bonus damage to tanks and bypass resistances, but explosions are 20% smaller and clip size is 25% smaller" 
+			Description "+20% damage bonus +20% damage to tanks +Attacks pierce damage resistances -20% smaller blast radius -25% clip size" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -73,7 +73,7 @@ WaveSchedule
 				"heal on hit for rapidfire" 15
 				"health on radius damage" -20
 			}
-			Description "Heal on hit is per-target rather than damage dealt and adds a 20% damage bonus Vs. Tanks, but rockets travel 25% slower" 
+			Description "+Heal on hit stacks with multiple enemies +20% damage Vs. Tanks -25% slower projectile speed" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -93,7 +93,7 @@ WaveSchedule
 				"damage penalty" -0.1
 				"blast radius increased" 0.35
 			}
-			Description "Increases the firing speed by 40% and explosions are 35% larger, but adds a 10% damage penalty" 
+			Description "+40% firing speed 35% larger blast radius -10% damage penalty" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -116,7 +116,7 @@ WaveSchedule
 				"damage penalty" -0.15
 				"Projectile speed decreased" -0.35
 			}
-			Description "Rocket Jump bonuses are increased by 25% and rockets follow cross-hair, but clip size is reduced by 50% and rockets are 35% slower" 
+			Description "+25% increase to rocket jump bonuses +Rockets follow cross-hair -50% clip size -35% slower projectile speed" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -154,7 +154,7 @@ WaveSchedule
 				"parachute attribute" 1
 				"weapon spread bonus" -0.5
 			}
-			Description "Weapon crits and fires 50% faster while rocket jumping and is 50% more accurate, but fires 50% slower on the ground" 
+			Description "+Deals crits and fires 40% faster while rocket jumping +50% accuracy -50% slower firing speed" 
 			Tier 1
             Allowplayerclass Soldier
 			AllowedWeapons
@@ -174,7 +174,7 @@ WaveSchedule
 				"cancel falling damage" 1
 				"maxammo primary increased"	0.5
 			}
-			Description "Grants wearer increased cash collection range and fall damage immunity and +50% primary ammo" 
+			Description "+ increased cash collection range +fall damage immunity +50% primary ammo" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -211,7 +211,7 @@ WaveSchedule
 			Cap 5
 			Increment 5
 			Cost 0
-			Description "Provides 5 seconds of minicrits on kill and +25% damage bonus" 
+			Description "+On Kill: 5 seconds of mini-crits +25% damage bonus" 
 			Tier 1
 			SecondaryAttributes
 			{
@@ -244,7 +244,12 @@ WaveSchedule
 			Cap 1.2
 			Increment 0.2
 			Cost 0
-			Description "Weapon now deals an additional 20% damage" 
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"increase buff duration" 0.5
+				"provide on active" 1
+			}
+			Description "(i)When active: +20% damage bonus +50% buff duration" 
 			Tier 1
             Allowplayerclass Soldier
 			AllowedWeapons
@@ -259,7 +264,7 @@ WaveSchedule
 		}
 		PainTrain
 		{
-			Name "Stable Mod: Longer Spike" 
+			Name "Stable Mod: Magnetic Spike" 
 			Attribute "melee range multiplier"
 			Cap 2.5
 			Increment 1.5
@@ -268,7 +273,7 @@ WaveSchedule
 			{
 				"mult credit collect range" 1
 			}
-			Description "When active, user gains increased cash collection radius and +100% melee range" 
+			Description "+increased cash collection radius and +100% melee range" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -286,7 +291,7 @@ WaveSchedule
 			{
 				"mult dmg vs giants" 0.5
 			}
-			Description "Damages all enemies connected via medi-beam and deals a bonus 50% damage to giant robots" 
+			Description "+Damages all enemies connected via medi-beam +50% damage to giant robots" 
 			Tier 1
 			AllowedWeapons
 			{

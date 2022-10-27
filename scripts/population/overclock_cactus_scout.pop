@@ -24,24 +24,6 @@ WaveSchedule
             "projectile gravity" 1 // "damage bonus hidden" at level 1 or more blocks this upgrade 
         }
     }
-    DisallowUpgrade    [$SIGSEGV] //Advanced syntax
-    {
-        Upgrade	"ability master sniper" // Upgrade name. In case of extended upgrades, the name of the attribute
-        MaxLevel 0 // Maximum allowed level
-        IfUpgradePresent // Other upgrades that should not be present
-        {
-            "explosive sniper shot" 2 // "damage bonus hidden" at level 1 or more blocks this upgrade 
-        }
-    }
-    DisallowUpgrade    [$SIGSEGV] //Advanced syntax 
-    {
-        Upgrade	"explosive sniper shot" // Upgrade name. In case of extended upgrades, the name of the attribute
-        MaxLevel 1 // Maximum allowed level
-        IfUpgradePresent // Other upgrades that should not be present
-        {
-            "ability master sniper" 1 // "damage bonus hidden" at level 1 or more blocks this upgrade 
-        }
-    }
 	DisallowUpgrade
 	{
 		Upgrade	"cannot giftwrap" 
@@ -73,7 +55,7 @@ WaveSchedule
 				"reload time increased hidden" 0.35		
 				"lose hype on take damage" -4
 			}
-			Description "Gun fires an additional 20% bullets per shot and boost is not lost on damage taken, but is 50% less accurate and reloads 25% slower" 
+			Description "+20% bullets per shot +Hype no longer lost from damage -50% accuracy -35% slower reload" 
 			Tier 1
 			AllowPlayerClass Scout
             AllowedWeapons
@@ -101,7 +83,7 @@ WaveSchedule
 				"fire rate penalty HIDDEN" -0.15
 				"provide on active" -1
 			}
-			Description "+25 max hp and weapon reloads 50% faster, but damage is lowered by 25% and fires 15% slower" 
+			Description "+25 max hp +50% faster reload -25% damage penalty -15% slower firing speed" 
 			Tier 1
 			AllowPlayerClass Scout
             AllowedWeapons
@@ -120,8 +102,10 @@ WaveSchedule
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{
 				"scattergun has knockback" -1
+				"slow enemy on hit" 1
+				"damage bonus" 0.2
 			}
-			Description "Knockback effects disabled and you gain a 10% damage bonus"
+			Description "+10% Damage bonus +Slows enemies on hit -No knockback"
 			Tier 1
 			AllowPlayerClass Scout
             AllowedWeapons
@@ -156,7 +140,7 @@ WaveSchedule
 			Cap 26
 			Increment 26
 			Cost 0
-			Description "Replaces Bonk! effect with battalion's backup effect "
+			Description "Replaces Bonk! effect with battalion's backup effect"
 			Tier 1
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{
@@ -175,11 +159,12 @@ WaveSchedule
 			Cap 1
 			Increment 1
 			Cost 0
-			Description "Projectile ignites and marks target on hit"
+			Description "+Projectile ignites and marks target on hit"
 			Tier 1
 			SecondaryAttributes
 			{
 				"mark for death" 1
+				"damage all connected" 1
 			}
 			AllowedWeapons
 			{
@@ -194,13 +179,13 @@ WaveSchedule
 			Cap 1
 			Increment 1
 			Cost 0
-			Description "Melee swings now debuff target with mark and 3 seconds of milk, but -25 max hp and -50% damage penalty" 
+			Description "+On Hit: apply mark for death and milk -25 max hp -50% damage penalty" 
 			Tier 1
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{
 				"max health additive penalty" -25
 				"add cond on hit" 27
-				"add cond on hit duration" 4
+				"add cond on hit duration" 6
 				"damage penalty" -0.5
 			}
 			AllowedWeapons
@@ -209,10 +194,50 @@ WaveSchedule
 				ItemName "The Holy Mackerel"
 				ItemName "Festive Bat 2011"
 				ItemName "Festive Holy Mackerel"
+				ItemName "The Wrap Assassin"
 			}
 			DisallowedWeapons // Disallow those weapons
 			{
 				ItemName "The Fan O'War"
+			}
+		}
+		SandmanA
+		{
+			Name "Stable Mod: Craftsman's Bat"
+			Attribute "mult bleeding dmg"
+			Cap 3
+			Increment 3
+			Cost 0
+			Description "+On Hit: Bleed for 5 seconds +15 max health +300% bleed damage" 
+			Tier 1
+			SecondaryAttributes
+			{
+				"max health additive penalty" 15
+				"mult bleeding dmg" 3
+				"bleeding duration" 5
+			}
+			AllowedWeapons
+			{
+				ItemName "The Sandman"
+				ItemName "The Boston Basher"
+			}
+		}
+		CandyCaneA
+		{
+			Name "Clean Overclock: Sugar Shock"
+			Attribute "mark for death"
+			Cap 1
+			Increment 1
+			Cost 0
+			Description "+Marks Target for death +75% health from packs" 
+			Tier 1
+			SecondaryAttributes
+			{
+				"health from packs increased" 0.75
+			}
+			AllowedWeapons
+			{
+				ItemName "The Candy Cane"
 			}
 		}
 		SunOnAStickA
@@ -222,7 +247,7 @@ WaveSchedule
 			Cap 8
 			Increment 8
 			Cost 0
-			Description "Weapon now deals an additional 800% damage to burning enemies and all players connected via Medigun beams are hit" 
+			Description "+800% damage to burning enemies +All players connected via Medigun beams are hit" 
 			Tier 1
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{

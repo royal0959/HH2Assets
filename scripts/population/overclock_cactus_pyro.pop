@@ -16,8 +16,10 @@ WaveSchedule
 			SecondaryAttributes
 			{
 				"damage bonus HIDDEN" 0.15
+				"bleeding duration" 5
+				"mult bleeding dmg" 2
 			}
-			Description "Direct fire ignores resistances, and deal an additional +15% damage" 
+			Description "+15% damage bonus +On hit: Bleed for 5 seconds" 
 			Tier 1
             AllowedWeapons
 			{
@@ -36,14 +38,14 @@ WaveSchedule
 		{
 			Name "Unstable Mod: Leech Valve"
 			Attribute "heal on hit for rapidfire"
-			Cap 12
-			Increment 12
+			Cap 15
+			Increment 15
 			Cost 0
 			SecondaryAttributes
 			{
 				"damage penalty" -0.1
 			}
-			Description "heal +12 hp per hit, but deal 15% less damage" 
+			Description "+15 hp per hit -10% damage penalty" 
 			Tier 1
             AllowedWeapons
 			{
@@ -64,7 +66,7 @@ WaveSchedule
 				"airblast_pushback_disabled" 1
 				"mult airblast refire time" -0.5
 			}
-			Description "Gain 10% faster move speed with 50% faster airblast and pierce resistances, but do 10% less damage and airblast no longer pushes back robots" 
+			Description "10% move-speed +50% faster airblast +Attacks pierce damage resistances -10% less damage -airblast no longer pushes back robots" 
 			Tier 1
             AllowedWeapons
 			{
@@ -83,7 +85,7 @@ WaveSchedule
 			{
 				"Projectile speed decreased" -0.35
 			}
-			Description "Flares deal 75% more damage. but flares travel 35% slower" 
+			Description "+75% damage bonus -35% slower projectile speed" 
 			Tier 1
             AllowPlayerClass Pyro
 			AllowedWeapons
@@ -127,7 +129,7 @@ WaveSchedule
 				"provide on active" 1
 				"damage force reduction" 0.75
 			}
-			Description "When weapon is active all bullet damage is reduced by 35% and become 75% resistant to knockback"
+			Description "(i)When active all +35% bullet resistance +75% resistant to knockback"
 			Tier 1
 			AllowedWeapons
 			{
@@ -147,7 +149,7 @@ WaveSchedule
 				"mult dmg vs giants" 0.35
 				"mult dmg vs tanks" 0.35
 			}
-			Description "Weapon now deals an additional 20% damage and 35% bonus damage to tanks and giants" 
+			Description "+20% damage +35% bonus damage Vs. tanks and giants" 
 			Tier 1
             Allowplayerclass Pyro
 			AllowedWeapons
@@ -173,7 +175,7 @@ WaveSchedule
 			{
 				"max health additive penalty" -15
 			}
-			Description "Weapon drains 15% medigun charge from victim, at the cost of -15 max hp"
+			Description "+On hit: drain 15% medigun charge from victim -15 max hp"
 			Tier 1
 			AllowedWeapons
 			{
@@ -187,7 +189,7 @@ WaveSchedule
 			Cap 5
 			Increment 5
 			Cost 0
-			Description "Range is increased by 70% and smacking allies gives both players a speed bonus for 5 seconds"
+			Description "+70% melee range +85% damage bonus +On ally hit: allies gives both players a speed bonus for 5 seconds"
 			Tier 1
 			AllowedWeapons
 			{

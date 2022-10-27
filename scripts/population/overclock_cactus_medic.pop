@@ -17,13 +17,35 @@ WaveSchedule
 			{
 				"add cond on hit duration" 3.0
 				"reload time increased hidden" 0.50
+				"damage penalty" -0.25
 			}
-			Description "Bolts apply Mad Milk on hit, but reload 50% slower" 
+			Description "+On hit: Apply 3 seconds of Mad Milk -50% slower reload speed -25% damage penalty" 
 			Tier 1
 			AllowedWeapons
 			{
 				ItemName "The Crusader's Crossbow"
 				ItemName "Festive Crusader's Crossbow"
+			}
+		}
+		NeedleBalancedB
+		{
+			Name "Balanced Overclock: Biohazard Needle"
+			Attribute "add cond on hit" 
+			SecondaryAttributes  
+			{
+				"add cond on hit duration" 3.0
+				"reload time increased hidden" 0.35
+				"damage penalty" -0.75
+				"clip size penalty" -0.75
+			}
+			Cap 24
+			Increment 24
+			Cost 0
+			Description "Applies Jarate on hit, but reloads 35% slower and damage and clip size are reduced by 75%" 
+			Tier 1
+			AllowedWeapons
+			{
+				ClassName TF_WEAPON_SYRINGEGUN_MEDIC
 			}
 		}
 ///mediguns
@@ -33,8 +55,8 @@ WaveSchedule
 			Attribute "increase buff duration"
 			Cap 1.35
 			Increment 0.35
-			Cost 0
-			Description "Mediguns heal 20% faster and build uber 15% faster on overhealed patients, shield is replaced by a smaller shield that deals more damage" 
+			Cost 0hield is replaced by a smaller shield that deals more dama
+			Description "(i) shield is replaced by a smaller shield that deals more damage +20% faster healing speed +15% faster uber build rate" 
 			Tier 1
 			SecondaryAttributes 
 			{
@@ -70,7 +92,7 @@ WaveSchedule
 			Cap 0.25
 			Increment -0.75
 			Cost 0
-			Description "Medigun heals 50% faster heal buildings and innately share canteens, but significantly weaker overheal and 20% slower uber build on overhealed patients" 
+			Description "+50% faster heal rate +Medigun can heal buildings +innately share canteens -50% overheal -20% slower uber build on overhealed patients" 
 			Tier 1
 			SecondaryAttributes 
 			{
@@ -93,7 +115,7 @@ WaveSchedule
 			Cap 0.15
 			Increment 0.15
 			Cost 0
-			Description "Gain 15% uber on hit" 
+			Description "+15% uber on hit" 
 			Tier 1
             Allowplayerclass Medic
             AllowedWeapons
@@ -112,16 +134,92 @@ WaveSchedule
 			Cap 100
 			Increment 100
 			Cost 0
-			Description "Resist all ranged damage by 50% and on hit: release an aoe heal to the team and when active/" 
+			Description "Resist all ranged damage by 35% and on hit: release an aoe heal to the team and when active/" 
 			Tier 1
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			SecondaryAttributes  
 			{
-				"dmg from ranged reduced" -0.5
+				"dmg from ranged reduced" -0.35
+				"effect cond override" 6672
+				"mult effect duration" 5
 			}
             Allowplayerclass Medic
             AllowedWeapons
 			{
 				ItemName "The Amputator"
+			}
+		}
+		RifleA
+		{
+			Name "Unstable Mod: Rifle Mastery"
+			Attribute "ability master sniper" 
+			Cap 1
+			Increment 1
+			Cost 0
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"mult bleeding dmg" -0.65
+				"sniper full charge damage bonus" 0.2
+				"damage penalty on bodyshot" -0.5
+				"subtract victim medigun charge on hit" 0.5
+			}
+			Description "+50% charge rate +20% damage at full charge +Drains 50% uber on hit -65% explosive headshot damage -50% damage on body shot" 
+			Tier 1
+            Allowplayerclass Sniper
+            AllowedWeapons
+			{
+				Slot "Primary"
+				ItemName "Shooting Star"
+			}
+            DisallowedWeapons
+			{
+				ItemName "The Hitman's Heatmaker"
+				ItemName "The Huntsman"
+				ItemName "The Fortified Compound"
+				ItemName "Festive Huntsman"
+			}
+		}
+		HuntsmanA
+		{
+			Name "Unstable Mod: Rubber Compound"
+			Attribute "grenade bounce speed"
+			Cap 0.95
+			Increment 0.95
+			Cost 0
+			SecondaryAttributes
+			{
+				"projectile lifetime" 2.5
+				"dmg penalty vs players" -0.2
+			}
+			Description "+Arrows now bounce -20% damage penalty" 
+			Tier 1
+            AllowedWeapons
+			{
+				ItemName "The Huntsman"
+				ItemName "The Fortified Compound"
+				ItemName "Festive Huntsman"
+			}
+		}
+		Classic
+		{
+			Name "Unstable Mod: Seeker Rounds"
+			Attribute "damage all connected"
+			Cap 1
+			Increment 1
+			Cost 0
+			SecondaryAttributes  
+			{
+				"sniper no headshot without full charge" -1
+				"damage penalty on bodyshot" -0.2
+				"mult bleeding dmg" -0.35
+			}
+			Description "+Damages all connected via medi-beam +Classic no longer requires full-charge +20% body shot damage -35% explosive headshot damage" 
+			Tier 1
+            Allowplayerclass Sniper
+            AllowedWeapons
+			{
+				ItemName "The Classic"
+				ItemName "The Huntsman"
+				ItemName "The Fortified Compound"
 			}
 		}
 	}	

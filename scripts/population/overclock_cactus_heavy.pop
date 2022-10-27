@@ -9,7 +9,7 @@ WaveSchedule
 		HeavyBalancedBrass
 		{
 			Name "Unstable Mod: Defense Framework"
-			Description "Increase damage resistance while spun-up increased by 15% and spin-up penalty is removed, but movement is disabled while spun-up."
+			Description "+damage resistance while spun-up increased by 15% +spin-up time penalty is removed -movement is disabled while spun-up."
 			AllowPlayerClass HeavyWeapons
 			AllowedWeapons
 			{
@@ -41,7 +41,7 @@ WaveSchedule
 				"spunup_push_force_immunity" 1.0
 				"damage penalty" 0.2
 			}
-			Description "Weapon deals +20% damage with faster spinup, at the cost of no movement speed or resistances while spun-up and" 
+			Description "+20% damage +30% faster spinup -100% move speed while spun-up -20% resistance when spunup below 50% health" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -61,7 +61,7 @@ WaveSchedule
 				"aiming movespeed increased" 1.5
 				"hidden primary max ammo bonus" -0.25
 			}
-			Description "Bullets now pierce resistances and move at full speed while spun-up, but -25% max ammo" 
+			Description "+Attacks pierce damage resistances +no movement penalty when spun-up -25% max ammo" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -80,7 +80,7 @@ WaveSchedule
 				"uses ammo while aiming" 3
 				"damage penalty" 0.1
 			}
-			Description "Weapon now suffers no damage penalty, but the ammo drain is increased" 
+			Description "+10% damage bonus -200% faster ammo drain" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -118,7 +118,7 @@ WaveSchedule
 			{
 				"deploy time decreased" -0.35
 			}
-			Description "Switch time is 35% faster and max primary ammo is increased by 25%" 
+			Description "35% faster switch speed +25% minigun ammo" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -148,7 +148,7 @@ WaveSchedule
 				"fire rate penalty" 0.3
 				"minicrits become crits" 1
 			}
-			Description "Damage vulnerability is removed and crits when it would normally minicrit, but weapon is now honorbound and swings 30% slower" 
+			Description "+30% damage resistance +crits when it would normally minicrit -weapon is now honorbound -30% slower swing speed" 
 			Tier 1
 			AllowedWeapons
 			{

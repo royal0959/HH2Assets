@@ -6,6 +6,25 @@ WaveSchedule
 		{
 			1 1 // Max 2 upgrades on tier 1
 		}
+		Widow
+		{
+			Name "Balanced Overclock: Sentry Companion A.I"
+			Attribute "engy sentry radius increased"
+			Cap 1.2
+			Increment 0.2
+			Cost 0
+			SecondaryAttributes
+			{
+				"mod ammo per shot" 25
+				"damage bonus bullet vs sentry target" 0.3
+			}
+			Description "+30% damage to sentry's targets +25% sentry range -25 increased metal per shot" 
+			Tier 1
+			AllowedWeapons
+			{
+				ItemName "The Widowmaker"
+			}
+		}
 		PomsonA
 		{
 			Name "Unstable Mod: Custom Engineered Shotgun"
@@ -19,7 +38,7 @@ WaveSchedule
 				"engineer building teleporting pickup" 150
 				"mark for death on building pickup" 1
 			}
-			Description "Shotgun can long range haul buildings for 150 metal and pomson projectile is 50% faster, but hauling buildings now marks you for death" 
+			Description "+Use 150 metal to pick up your buildings from long range +pomson projectile is 50% faster -Self mark for death when hauling buildings" 
 			Tier 1
             Allowplayerclass Engineer
 			AllowedWeapons
@@ -40,8 +59,9 @@ WaveSchedule
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{
 				"damage bonus bullet vs sentry target" 0.35
+				"bidirectional teleport" 1
 			}
-			Description "Buildings now have +50% extra health and pistol does 35% more damage to sentry targets" 
+			Description "+50% max building health +35% damage to sentry targets +2Way teleporter" 
 			Tier 1
             AllowPlayerClass Engineer
 			AllowedWeapons
@@ -66,7 +86,7 @@ WaveSchedule
 				"dmg penalty vs players" -0.35
 				"engy building health bonus" 0.35 
 			}
-			Description "Primary fire now uses an explosive attack and building health is increased by 35%, but fires 250% slower" 
+			Description "+Primary fire now uses an explosive +35% max building health -250% slower firing speed" 
 			Tier 1
 			AllowedWeapons
 			{
@@ -90,7 +110,7 @@ WaveSchedule
 				"mult teleporter recharge rate" -0.5
 				"canteen specialist" 2
 			}
-			Description "Build an additional disposable, all support buildings are 50% more effecient and canteens are 10$ cheaper and last 1 second longer" 
+			Description "+1 disposable sentry gun +50% more effecient dispenser and teleporter +canteens are 20$ cheaper and last 2 second longer" 
 			Tier 1
             Allowplayerclass Engineer
             AllowedWeapons
@@ -111,12 +131,121 @@ WaveSchedule
 				"metal_pickup_decreased" -0.9
 				"engy sentry damage bonus" 0.35
 			}
-			Description "When Wrench is active sentry deals 35% increased damage, but gain 90% less metal from packs and dispensers when active" 
+			Description "(i)when active: +35% sentry damage bonus -90% less metal from packs and dispensers" 
 			Tier 1
             Allowplayerclass Engineer
             AllowedWeapons
 			{
 				ItemName "The Southern Hospitality"
+			}
+		}
+		Eureka
+		{
+			Name "Clean Overclock: Tuned Capacitor"
+			Attribute "provide on active" 
+			Cap 1
+			Increment 1
+			Cost 0
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"Construction rate decreased" 0.5
+			}
+			Description "Construction rate penalty is removed" 
+			Tier 1
+            Allowplayerclass Engineer
+            AllowedWeapons
+			{
+				ItemName "The Eureka Effect"
+			}
+		}
+		WatchMoney
+		{
+			Name "Unstable Mod: Cash Vacuum"
+			Attribute "mult credit collect range" 
+			Cap 4
+			Increment 3
+			Cost 0
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"health from credits" 90
+			}
+			Description "+300% Cash Collection Range +heals from cash collected" 
+			Tier 1
+            AllowedWeapons
+			{
+				ItemName "The Cloak and Dagger"
+				ItemName "TTG Watch"
+				ClassName TF_WEAPON_INVIS 
+			}
+            DisallowedWeapons
+			{
+				ItemName "The Dead Ringer"
+			}
+		}
+		Enforcer
+		{
+			Name "Balanced Overclock: Magnum Chamber"
+			Attribute "damage bonus"
+			Cap 1.35
+			Increment 0.35
+			Cost 0
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"damage bonus while disguised" 1.8
+				"Reload time increased" 0.5
+				"clip size penalty HIDDEN" -0.35
+				"auto fires full clip" 1
+			}
+			Description "(i)Uses Beggars Style Reload +35% damage bonus +180% damage while disguised -50% slower reload -35% mag size" 
+			Tier 1
+            AllowedWeapons
+			{
+				ItemName "The Enforcer"
+			}
+		}
+		Amby
+		{
+			Name "Unstable Mod: Explosive Headshot"
+			Attribute "explosive sniper shot"
+			Cap 1
+			Increment 1
+			Cost 0
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"crit_dmg_falloff" -1
+				"Reload time increased" 0.5
+				"clip size penalty HIDDEN" -0.5
+				"fire rate penalty HIDDEN" 0.2
+			}
+			Description "+headshot explode +No Crit falloff -50% slower reload -50% Mag size -20% slower firing speed "
+			Tier 1
+            AllowedWeapons
+			{
+				ItemName "The Ambassador"
+				ItemName "Festive Ambassador"
+			}
+		}
+		Sapper
+		{
+			Name "Unstable Mod: Chemical payload"
+			Attribute "effect cond override" 
+			Cap 3283736
+			Increment 3283736
+			Cost 0
+			SecondaryAttributes
+			{
+				"robo sapper" 3
+				"effect bar recharge rate increased" -1.0
+				"applies snare effect" 0.65
+			}
+			Description "(i)Sapper effect replaced with jarate + milk" 
+			Tier 1
+            AllowPlayerClass Spy
+            AllowedWeapons
+			{
+                ItemName "The Red-Tape Recorder"
+				ClassName TF_WEAPON_BUILDER_SPY
+				ItemName "Festive Sapper"
 			}
 		}
 	}	
