@@ -49,6 +49,30 @@ WaveSchedule
 			}
 		}
 ///mediguns
+		MedigunB
+		{
+			Name "Clean Overclock: Overheal Optimization"
+			Attribute "overheal bonus"
+			Cap 1.15
+			Increment 0.15
+			Cost 0
+			Description "Mediguns provide an additional 15% overheal and uber builds 10% faster on overhealed patients." 
+			Tier 1
+			SecondaryAttributes 
+			{
+				"ubercharge overheal rate penalty" 0.1
+			}
+            AllowedWeapons
+			{
+				ClassName TF_WEAPON_MEDIGUN
+				ItemName "Festive Medigun 2011"
+			}
+            DisallowedWeapons
+            {
+				ItemName "The Quick-Fix"
+                ItemName "The Vaccinator"
+            }
+		}
 		MedigunC
 		{
 			Name "Unstable Mod: Pocket Shield Lens"
@@ -66,14 +90,13 @@ WaveSchedule
 			}
             AllowedWeapons
 			{
-				ItemName "The Kritzkrieg"
 				ClassName TF_WEAPON_MEDIGUN
 				ItemName "Festive Medigun 2011"
 			}
             DisallowedWeapons
             {
-                ItemName "The Vaccinator"
 				ItemName "The Quick-Fix"
+                ItemName "The Kritzkrieg"
             }
 			// these are required
 			OnApply
