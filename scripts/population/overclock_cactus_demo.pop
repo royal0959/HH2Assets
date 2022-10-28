@@ -128,8 +128,8 @@ WaveSchedule
 ///BEER AND SWORDS
 		Bottle
 		{
-			Name "Unstable Overclock: Gardner Module"
-			Description "+Crits while airbone +Damages all connected via medibeam +50% damage vs. giants -25% slower swing speed"
+			Name "Unstable Overclock: Gardener Module"
+			Description "+Crits while blast jumping +Damages all connected via medibeam +50% damage vs. giants -25% slower swing speed"
 			AllowPlayerClass Demoman
 			AllowedWeapons
 			{
