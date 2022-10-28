@@ -158,11 +158,9 @@ WaveSchedule
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{
 				"mult bleeding dmg" -0.65
-				"sniper full charge damage bonus" 0.2
-				"damage penalty on bodyshot" -0.5
-				"subtract victim medigun charge on hit" 0.5
+				"sniper full charge damage bonus" 0.25
 			}
-			Description "+50% charge rate +20% damage at full charge +Drains 50% uber on hit -65% explosive headshot damage -50% damage on body shot" 
+			Description "+50% charge rate +25% damage at full charge -65% explosive headshot damage" 
 			Tier 1
             Allowplayerclass Sniper
             AllowedWeapons
