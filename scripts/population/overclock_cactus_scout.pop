@@ -46,12 +46,12 @@ WaveSchedule
 		{
 			Name "Unstable Mod: Hefty Shells"
 			Attribute "bullets per shot bonus"
-			Cap 1.2
-			Increment 0.2
+			Cap 1.5
+			Increment 0.5
 			Cost 0
 			SecondaryAttributes
 			{
-				"spread penalty" 0.50
+				"spread penalty" 0.35
 				"reload time increased hidden" 0.35		
 				"lose hype on take damage" -4
 			}

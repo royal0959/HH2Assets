@@ -107,6 +107,7 @@ WaveSchedule
 			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
 			{
 				"effect cond override" 24
+				"provide on active" 1
 			}
 			Description "Gas Effect now coats robots in jarate"
 			Tier 1
