@@ -347,7 +347,7 @@ population
 			Description "Grants immunity to fall damage and 75% knockback resistance."
 			AllowPlayerClass Scout
 			PlayerUpgrade 1
-			Cost 150
+			Cost 100
 			Attribute "cancel falling damage"
 			Increment 1
 			Cap 1
@@ -511,7 +511,7 @@ population
 			{
 				ItemName	"The Phlogistinator"
 			}
-			Cost 300
+			Cost 250
 			Attribute "mult reflect velocity"
 			Increment 0.25
 			Cap 2
@@ -732,7 +732,7 @@ population
 			{
 				Slot	"Secondary"
 			}
-			Cost 150
+			Cost 100
 			Attribute "mult medigun range"
 			Increment 0.25
 			Cap 2
@@ -746,7 +746,7 @@ population
 			{
 				Slot	"Secondary"
 			}
-			Cost 100
+			Cost 50
 			Attribute "medic machinery beam"
 			Increment 4
 			Cap 4
