@@ -941,8 +941,8 @@ cliff_of_dover
 			{
 				Name "tankboss"
 				StartingPathTrackNode "tank_path_1"
-				Health 13500
-				Speed 75
+				Health 11500
+				Speed 70
 
 				ClassIcon tank_shield
 				Template RShieldLvL1
