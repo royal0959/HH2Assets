@@ -11,8 +11,9 @@
 //Huge Thank you for everyone who helped!
 
 //NYS: Few icons
-//Sntr: Letting me use and modify his cutscene logic (used for wave 6)
+//Sntr: Letting me use and modify his cutscene logic borrowed from castle crasher (used for wave 6)
 //DrCactus: Overclock upgrades
+//Seelpit: Tank health number thingies
 WaveSchedule
 {
     StartingCurrency 950
@@ -24,20 +25,18 @@ WaveSchedule
     GiantsDropRareSpells 0
     SpellDropRateCommon 0
     SpellDropRateGiant 0
-    AllowBotExtraSlots 1   
-	ExtraBotSlotsNodeathcam 1   
-    //PrecacheModel "models/workshop/weapons/c_models/c_browning/c_browning.mdl"
-    //PrecacheModel "models/weapons/c_models/c_ash_m/c_ash_m.mdl"
-    // PrecacheModel "models/bots/boss_bot/boss_tankred.mdl"
-    // PrecacheModel "models/bots/boss_bot/boss_tankred_damage1.mdl"
-    // PrecacheModel "models/bots/boss_bot/boss_tankred_damage2.mdl"
-    // PrecacheModel "models/bots/boss_bot/boss_tankred_damage3.mdl"
-    // PrecacheModel "models/bots/boss_bot/boss_tankred_part1_destruction.mdl"
-	// PrecacheModel "models/bots/boss_bot/tankred_track_l.mdl"
-	// PrecacheModel "models/bots/boss_bot/tankred_track_r.mdl"
-    PrecacheModel "models/bots/boss_bot/boss_tank_color.mdl"
-	PrecacheModel "models/bots/boss_bot/bombblue_mechanism.mdl"
-    PrecacheModel "models/props_mvm/mvm_comically_small_player_shield.mdl"
+    AllowBotExtraSlots 1 [$SIGSEGV] 
+	ExtraBotSlotsNodeathcam 1 [$SIGSEGV] 
+    //PrecacheModel "models\workshop\weapons\c_models\c_browning\c_browning.mdl"
+    //PrecacheModel "models\weapons\c_models\c_ash_m\c_ash_m.mdl"
+    PrecacheModel "models\bots\boss_bot\boss_tankred.mdl"
+    PrecacheModel "models\bots\boss_bot\boss_tankred_damage1.mdl"
+    PrecacheModel "models\bots\boss_bot\boss_tankred_damage2.mdl"
+    PrecacheModel "models\bots\boss_bot\boss_tankred_damage3.mdl"
+    PrecacheModel "models\bots\boss_bot\boss_tankred_part1_destruction.mdl"
+	PrecacheModel "models\bots\boss_bot\tankred_track_l.mdl"
+	PrecacheModel "models\bots\boss_bot\tankred_track_r.mdl"
+	PrecacheModel "models\bots\boss_bot\bombblue_mechanism.mdl"
 
     PrecacheSound "Dance_ofthe_Dreadnought.mp3"
     NoThrillerTaunt 1
@@ -52,17 +51,17 @@ WaveSchedule
     //spawnbot_left
     //spawnbot_right
 
-    //DisallowUpgrade	  //Advanced syntax
+    //DisallowUpgrade	[$SIGSEGV] //Advanced syntax
 	//{
 	//	Upgrade	"ubercharge" // Upgrade name
 	//	MaxLevel 0 // Maximum allowed level
 	//}
-    //DisallowUpgrade	  //Advanced syntax
+    //DisallowUpgrade	[$SIGSEGV] //Advanced syntax
 	//{
 	//	Upgrade	"critboost" // Upgrade name
 	//	MaxLevel 0 // Maximum allowed level
 	//}
-    //DisallowUpgrade	  //Advanced syntax
+    //DisallowUpgrade	[$SIGSEGV] //Advanced syntax
 	//{
 	//	Upgrade	"generate rage on heal" // temporary
 	//	MaxLevel 0 // Maximum allowed level
@@ -77,7 +76,7 @@ WaveSchedule
         Z "46.6"
     }
 
-    SpellBookNormalRoll  
+    SpellBookNormalRoll [$SIGSEGV]
 	{
 		"Healing Aura" 1
 		"Fireball" 2
@@ -95,7 +94,7 @@ WaveSchedule
         "Summon Monoculus" 1
 	}
 
-	SpellBookRareRoll  
+	SpellBookRareRoll [$SIGSEGV]
 	{
 		"Fireball" 5
 		"Meteor Shower" 2
@@ -241,7 +240,7 @@ WaveSchedule
             info_teleport_destination
             {
                 "targetname" "teledest"
-                "origin" "-134 -3 28"
+                "origin" "16 -3 156"
                 "start_active" "1"
             }
             ambient_generic
@@ -354,7 +353,6 @@ WaveSchedule
 				"targetname" "setfakeparet_relay"
                 "$modules" "fakeparent"
 				"OnTrigger" "spell_red,$SetFakeParent,!activator,0,-1"
-                "OnSpawn" "tankboss2,color,184 56 59,0,-1"
 			}	
             OnSpawnOutput
             {
@@ -490,6 +488,138 @@ WaveSchedule
                 "spawnflags"    "2"
                 "OnTrigger"    "w2_hl2_song,PlaySound,,0,-1"
                 "OnSpawn"    "!self,Trigger,,134,-1"
+            }
+        }
+        tankhealth_text
+        {
+            //On spawn: set the % in the text to the tank's max health.
+            //Juuust in case something goes awry at the start.
+            OnSpawnOutput
+            {
+                Target timerformat
+                Action $SetKey$case01
+                Param 53000
+            }
+            //Change the text color from green to red, since it's dropped below half.
+            //Just a cute touch.
+            logic_compare
+            {
+                "targetname" "colorcompare"
+                "comparevalue" "26500" //half of tank's max health
+                "OnGreaterThan" "timertext,$SetKey$color,65 255 65,0,-1" //green
+                "OnLessThan" "timertext,$SetKey$color,255 65 65,0,-1" //red
+            }
+            //Text formatter. The % will continually get replaced, see logic_relay.
+            //Every time this gets $Format sent to it, it will fire the OnDefault outputs,
+            //updating game_text to display the updated values.
+            //The value of case01 replaces the %!
+            logic_case
+            {
+                "targetname" "timerformat"
+                "Case16" "RED Tank Health: %/53000"
+                "OnDefault" "timertext,$setkey$message,,0,-1"
+                "OnDefault" "timertext,display,0,0,-1"
+            }
+            //The displayed text. Only determines where it's located (x and y), and its color.
+            game_text
+            {
+                "targetname" "timertext"
+                "color" "65 225 65"
+                "holdtime" "2"
+                "spawnflags" "1"
+                "channel" "4"
+                "x" "0.4"
+                "y" "-0.65"
+            }
+        
+            //The loop for checking the tank's health, and formatting the text.
+        
+            //Grab the m_iHealth netprop of tankboss2 (aka: current health),
+            //then use that as value for case01 of timerformat.
+        
+            //Remember: the value of case01 replaces the %!
+        
+            //Notice that there are only two arguments given (Target & Action; timerformat & $SetKey$case01).
+            //The value you got from $GetData$m_iHealth is used as Param!
+            logic_relay
+            {
+                "targetname" "realtimer"
+                "spawnflags" "2"
+                "OnTrigger" "tankboss2,$GetData$m_iHealth,timerformat|$SetKey$case01,0.01,-1"
+                "OnTrigger" "timerformat,$format,,0.02,-1"
+                "OnTrigger" "!self,trigger,,1,-1"
+                "OnTrigger" "tankboss2,$GetData$m_iHealth,colorcompare|SetValueCompare,0.01,-1"
+            }
+            OnSpawnOutput
+            {
+                Target realtimer
+                Action Trigger 
+            }
+        }
+        tankhealth_text2
+        {
+            //On spawn: set the % in the text to the tank's max health.
+            //Juuust in case something goes awry at the start.
+            OnSpawnOutput
+            {
+                Target timerformat
+                Action $SetKey$case01
+                Param 75000
+            }
+            //Change the text color from green to red, since it's dropped below half.
+            //Just a cute touch.
+            logic_compare
+            {
+                "targetname" "colorcompare"
+                "comparevalue" "37500" //half of tank's max health
+                "OnGreaterThan" "timertext,$SetKey$color,10 177 218,0,-1" //green
+                //"OnLessThan" "timertext,$SetKey$color,255 65 65,0,-1" //red
+            }
+            //Text formatter. The % will continually get replaced, see logic_relay.
+            //Every time this gets $Format sent to it, it will fire the OnDefault outputs,
+            //updating game_text to display the updated values.
+            //The value of case01 replaces the %!
+            logic_case
+            {
+                "targetname" "timerformat"
+                "Case16" "BLU Tank Health: %/75000"
+                "OnDefault" "timertext,$setkey$message,,0,-1"
+                "OnDefault" "timertext,display,0,0,-1"
+            }
+            //The displayed text. Only determines where it's located (x and y), and its color.
+            game_text
+            {
+                "targetname" "timertext"
+                "color" "10 177 218"
+                "holdtime" "2"
+                "spawnflags" "1"
+                "channel" "2"
+                "x" "0.4"
+                "y" "-0.6"
+            }
+        
+            //The loop for checking the tank's health, and formatting the text.
+        
+            //Grab the m_iHealth netprop of tankboss2 (aka: current health),
+            //then use that as value for case01 of timerformat.
+        
+            //Remember: the value of case01 replaces the %!
+        
+            //Notice that there are only two arguments given (Target & Action; timerformat & $SetKey$case01).
+            //The value you got from $GetData$m_iHealth is used as Param!
+            logic_relay
+            {
+                "targetname" "realtimer"
+                "spawnflags" "2"
+                "OnTrigger" "tankboss_blue,$GetData$m_iHealth,timerformat|$SetKey$case01,0.01,-1"
+                "OnTrigger" "timerformat,$format,,0.02,-1"
+                "OnTrigger" "!self,trigger,,1,-1"
+                "OnTrigger" "tankboss_blue,$GetData$m_iHealth,colorcompare|SetValueCompare,0.01,-1"
+            }
+            OnSpawnOutput
+            {
+                Target realtimer
+                Action Trigger 
             }
         }
     }
@@ -681,79 +811,14 @@ WaveSchedule
         }
     }
 
+    
+    ////////////////////////////////////////////////////BALANCING
+    /////////////////////////////////////////////////////////////
+
 
     Templates
     {
         //scout
-        T_TFBot_Giant_Scout_Headshotter
-		{
-			Class Scout
-			Name "Headshot Scout"
-			ClassIcon spy_ambassador_lite
-			Skill Expert
-			Health 1200
-			WeaponRestrictions SecondaryOnly
-			Attributes MiniBoss
-            Item "Upgradeable TF_WEAPON_PISTOL"
-            Item "The Fed-Fightin' Fedora"
-            AimAt Head
-            ItemAttributes
-            {
-                Itemname "Upgradeable TF_WEAPON_PISTOL"
-                "revolver use hit locations" 1 // adds the text
-                "can headshot" 1
-                "fire rate penalty" 8.5
-                "weapon spread bonus" 0
-                "damage bonus" 3.5
-                "reload time increased" 2.5
-                "sniper fires tracer" 1
-
-                //"custom item model" "models/weapons/c_models/c_ambassador/c_sneakyshot.mdl"
-                "custom weapon fire sound" "Weapon_ProSniperRifle.Single"
-            }
-			CharacterAttributes
-			{
-				"damage force reduction" 0.7m
-				"airblast vulnerability multiplier" 0.7
-				"override footstep sound set" 5
-                "move speed bonus" 2
-			}
-		}
-        T_TFBot_Giant_Scout_Eyelander
-        {
-            Name "Giant Eyelander Scout"
-            Class Scout
-            Scale 1.7
-            Health 1200
-            ClassIcon demoknight_giant
-            Skill Expert 
-            WeaponRestrictions MeleeOnly
-            Attributes Miniboss 
-            Item "The Eyelander"
-            Item "The Digit Divulger"
-            Item "Prince Tavish's Crown"
-            Tag bot_giant 
-            ItemModel   // Replaces item model
-			{
-				ItemName "The Digit Divulger"
-				Model "models/weapons/c_models/c_targe/c_targe.mdl"
-			}
-            ItemAttributes
-            {
-                Itemname "The Eyelander"
-                "critboost on kill" 3
-                "fire rate bonus" 0.635
-                "damage penalty" 0.54
-            }
-            CharacterAttributes 
-            {
-                "damage force reduction" 0.7
-                "airblast vulnerability multiplier" 0.7
-                "override footstep sound set" 5
-                "dmg taken from fire reduced" 0.5
-                "dmg taken from blast reduced" 0.65
-            }
-        }
         //soldier
         T_TFBot_Giant_Soldier_Homing_MouseTrack
         {
@@ -800,44 +865,6 @@ WaveSchedule
             }
         }
 
-        T_TFBot_Chief_Soldier_Atomic_NotChief
-		{
-			Class Soldier
-			Skill Expert
-			WeaponRestrictions PrimaryOnly
-			Name "Major Clone"
-			Item "The Team Captain"
-			Item "The Black Box"
-			Item "Fancy Dress Uniform"
-			Item "The Gunboats"
-			ClassIcon soldier_sergeant_crits
-			Health 4000
-			Scale 1.9
-			Attributes MiniBoss
-			Attributes HoldFireUntilFullReload
-			Attributes AlwaysCrit
-			ItemAttributes
-			{
-				ItemName "The Black Box"
-				"damage bonus" 3.5
-				"damage causes airblast" 1
-                "blast radius increased" 2.5
-
-				"projectile spread angle penalty" 1
-				"use large smoke explosion" 1
-                "reload time increased" 3
-				"fire rate penalty" 2
-			}
-			CharacterAttributes
-			{
-				//"health regen"	1 // lol why
-				"move speed bonus"	0.5
-				"damage force reduction" 0.4
-				"airblast vulnerability multiplier" 0.4
-				"override footstep sound set" 3
-				//"airblast vertical vulnerability multiplier" 0.1
-			}
-		}
         //pyro
         T_TFBot_Pyro_Flare_Burst
         {
@@ -861,45 +888,6 @@ WaveSchedule
             }
         }
         //DEMO
-        T_TFBot_Chief_Demo_Atomic_NotChief
-		{
-			Class Demoman
-			Name "Giant Nukesalot Clone"
-			ClassIcon demo_giant
-			Health 3300
-			Scale 1.7
-			Skill Expert
-			WeaponRestrictions PrimaryOnly
-			Item "The Loose Cannon"
-			Attributes MiniBoss
-			Attributes HoldFireUntilFullReload
-			Attributes AlwaysCrit
-
-			ItemAttributes
-			{
-				ItemName "The Loose Cannon"
-                "damage bonus" 2
-                "damage causes airblast" 1
-                "blast radius increased" 2
-
-                "reload time increased" 1.8
-				"fire rate penalty" 2
-				"clip size penalty" 0.5
-				"Projectile speed increased" 0.8
-				"projectile spread angle penalty" 5
-
-				"grenade launcher mortar mode" 0
-				"use large smoke explosion" 1
-			}
-
-			CharacterAttributes
-			{
-				"move speed bonus"	0.5
-				"damage force reduction" 0.4
-				"airblast vulnerability multiplier" 0.4
-				"override footstep sound set" 4
-			}
-		}
         T_TFBot_Demo_Burst_Cannon
         {
             Name "Cannon Burst Demoman"
@@ -1004,49 +992,6 @@ WaveSchedule
 			}
 		}
         //med
-        T_TFBot_Giant_Medic_Shield_Special
-        {
-            Name "Giant Shield Medic"
-            Class Medic
-            ClassIcon medic_resist
-            Health 4500
-            Attributes ProjectileShield
-            Attributes SpawnWithFullCharge
-            //Attributes IgnoreEnemies
-            Attributes Miniboss 
-
-            Skill Expert 
-            WeaponRestrictions SecondaryOnly
-            Scale 1.7
-            Item "TF_WEAPON_MEDIGUN"
-            Item "Grimm Hatte"
-            Tag bot_giant 
-            FireWeapon    //Periodically fires weapon
-            {
-                Delay 1 //Time before the first fire input starts (Default: 10)
-                Cooldown 3 //Time between each fire input (Default: 10)
-                Repeats 0 //How many times should bot use the fire input in total (Default: 0 - Infinite)
-                Duration 0.6 //How long should the button be pressed (Default: 0.1)
-                Type "Special" 
-            }
-            ItemAttributes
-            {
-                ItemName "TF_WEAPON_MEDIGUN"
-                "generate rage on heal"  2 // Level 2 Projectile Shield
-                "increase buff duration" 9999
-                "ubercharge rate bonus" 0.01
-                "alt-fire disabled" 1
-                "medigun passive attributes" "move speed bonus|0.4"
-                //"mult medigun range" 0.35
-            }
-            CharacterAttributes
-            {
-                "move speed bonus" 0.5
-                "damage force reduction" 0.6
-                "airblast vulnerability multiplier" 0.6
-                "heal rate bonus" 200
-            }
-        }
     }
 
     Wave // Wave 1 // scouts
@@ -1072,7 +1017,7 @@ WaveSchedule
             Name "SUPPORT"
             WaitForAllDead "a1.1"
             Where spawnbot_left
-            TotalCount 111
+            TotalCount 100
             MaxActive 2
             SpawnCount 2
             WaitBeforeStarting 0
@@ -1091,7 +1036,7 @@ WaveSchedule
             Name "support2"
             WaitForAllDead "a2"
             Where spawnbot_right
-            TotalCount 222
+            TotalCount 100
             MaxActive 3
             SpawnCount 1
             WaitBeforeStarting 0
@@ -1216,7 +1161,7 @@ WaveSchedule
             WaitForAllDead "a3"
             Where spawnbot_mid
             TotalCount 16
-            MaxActive 8
+            MaxActive 4
             SpawnCount 8
             WaitBeforeStarting 0
             WaitBetweenSpawns 12
@@ -1278,7 +1223,7 @@ WaveSchedule
             Name "support"
             //WaitForAllDead "a3.1"
             Where spawnbot
-            TotalCount 2222
+            TotalCount 100
             MaxActive 5
             SpawnCount 5
             WaitBeforeStarting 45
@@ -1917,7 +1862,7 @@ WaveSchedule
             WaitBeforeStarting 0
             WaitBetweenSpawns 0
         
-            TotalCurrency 100
+            TotalCurrency 150
         
             Tank
             {
@@ -2117,7 +2062,7 @@ WaveSchedule
             SpawnCount 2
             WaitBeforeStarting 0
             WaitBetweenSpawns 0
-            TotalCurrency 200
+            TotalCurrency 300
             Squad
             {
                 TFBot 
@@ -2194,7 +2139,7 @@ WaveSchedule
             SpawnCount 1
             WaitBeforeStarting 0
             WaitBetweenSpawns 2
-            TotalCurrency 50
+            TotalCurrency 150
         
             TFBot
             {
@@ -2215,7 +2160,7 @@ WaveSchedule
             SpawnCount 1
             WaitBeforeStarting 0
             WaitBetweenSpawns 2
-            TotalCurrency 50
+            TotalCurrency 150
         
             TFBot
             {
@@ -2234,7 +2179,7 @@ WaveSchedule
             WaitBeforeStarting 13
             WaitBetweenSpawns 0
         
-            TotalCurrency 200
+            TotalCurrency 400
         
             Tank
             {
@@ -2273,12 +2218,12 @@ WaveSchedule
             WaitForAllDead "a3"
             Where spawnbot_mid
             Where spawnbot_left
-            TotalCount 24
+            TotalCount 50
             MaxActive 12
             SpawnCount 3
             WaitBeforeStarting 0
             WaitBetweenSpawns 10
-            TotalCurrency 50
+            TotalCurrency 250
             Support 1
             TFBot
             {
@@ -2299,7 +2244,7 @@ WaveSchedule
             SpawnCount 3
             WaitBeforeStarting 0
             WaitBetweenSpawns 2
-            TotalCurrency 50
+            TotalCurrency 200
         
             TFBot
             {
@@ -2331,7 +2276,6 @@ WaveSchedule
             Line "{9632dc}Equip a {yellow}Spellbook {9632dc}this wave..."
             Line "{9632dc}An ally {red}Tank {9632dc}will give you spells!"
             Line "{9632dc}If the {red}Red Tank {9632dc}dies... You lose."
-            Line "{Blue}You will hear Music playing this wave! Don't worry, you wont get a copyright strike."
             //Line "{9632dc}du"
         }
         
@@ -2339,6 +2283,8 @@ WaveSchedule
         SpawnTemplate fixed_tank_cutscene
         SpawnTemplate spawn_enable
         SpawnTemplate Music_Template
+        SpawnTemplate tankhealth_text
+        SpawnTemplate tankhealth_text2
 
         WaveSpawn // just chillin
 		{
@@ -2695,9 +2641,9 @@ WaveSchedule
                     ClassIcon blu_lite
                     Attributes DisableDodge
                     Action Mobber 
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2737,9 +2683,9 @@ WaveSchedule
                     Attributes IgnoreFlag 
                     Action Mobber 
                     ClassIcon blu_lite
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2753,9 +2699,9 @@ WaveSchedule
                     Attributes DisableDodge
                     Action Mobber 
                     ClassIcon blu_lite
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2770,9 +2716,9 @@ WaveSchedule
                     Attributes DisableDodge
                     Action Mobber 
                     ClassIcon blu_lite
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2786,9 +2732,9 @@ WaveSchedule
                     Attributes DisableDodge
                     Action Mobber 
                     ClassIcon blu_lite
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2803,9 +2749,9 @@ WaveSchedule
                     Attributes DisableDodge
                     Action Mobber 
                     ClassIcon blu_lite
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2819,9 +2765,9 @@ WaveSchedule
                     Attributes DisableDodge
                     Action Mobber 
                     ClassIcon blu_lite
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2837,9 +2783,9 @@ WaveSchedule
                     ClassIcon blu_lite
                     Attributes DisableDodge
                     Action Mobber 
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2853,9 +2799,9 @@ WaveSchedule
                     ClassIcon blu_lite
                     Attributes DisableDodge
                     Action Mobber 
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2869,9 +2815,9 @@ WaveSchedule
                     ClassIcon blu_lite
                     Attributes DisableDodge
                     Action Mobber 
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2885,9 +2831,9 @@ WaveSchedule
                     ClassIcon blu_lite
                     Attributes DisableDodge
                     Action Mobber 
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2925,9 +2871,9 @@ WaveSchedule
                     ClassIcon blu_lite
                     Attributes DisableDodge
                     Action Mobber 
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2951,9 +2897,9 @@ WaveSchedule
                     ClassIcon blu_lite
                     Attributes DisableDodge
                     Action Mobber 
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2966,9 +2912,9 @@ WaveSchedule
                     ClassIcon blu_lite
                     Attributes DisableDodge
                     Action Mobber 
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -2990,9 +2936,9 @@ WaveSchedule
                     ClassIcon blu_lite
                     Attributes DisableDodge
                     Action Mobber 
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -3008,9 +2954,9 @@ WaveSchedule
                     ClassIcon blu_lite
                     Attributes DisableDodge
                     Action Mobber 
-                    ExtAttr IgnoreBuildings   // Ignore buildings
-				    ExtAttr IgnorePlayers   // Ignore players
-                    InterruptAction   // Stop current bot ai and force the bot to move to a location
+                    ExtAttr IgnoreBuildings [$SIGSEGV] // Ignore buildings
+				    ExtAttr IgnorePlayers [$SIGSEGV] // Ignore players
+                    InterruptAction [$SIGSEGV] // Stop current bot ai and force the bot to move to a location
                     {
                         Target "tankboss2" 
                         KillAimTarget 1
@@ -3188,7 +3134,7 @@ WaveSchedule
             {
                 Name "tankboss2"
                 StartingPathTrackNode "tank_red_new_1"
-                Health 45000
+                Health 53000
                 Speed 75
                 Skin 1
                 //Immobile 1
@@ -3196,7 +3142,17 @@ WaveSchedule
                 SpawnTemplate red_spells
                 TeamNum 2
                 TriggerDestroyBuildingFix 1
-                Model "models/bots/boss_bot/boss_tank_color.mdl"
+                Model [$SIGSEGV] 
+                {
+                    Default "models/bots/boss_bot/boss_tankred.mdl"
+                    Damage1 "models/bots/boss_bot/boss_tankred_damage1.mdl"
+                    Damage2 "models/bots/boss_bot/boss_tankred_damage2.mdl"
+                    Damage3 "models/bots/boss_bot/boss_tankred_damage3.mdl"
+                    Destruction "models/bots/boss_bot/boss_tankred_part1_destruction.mdl"
+                    LeftTrack "models/bots/boss_bot/tankred_track_l.mdl"
+                    RightTrack "models/bots/boss_bot/tankred_track_r.mdl"
+                    Bomb "models/bots/boss_bot/bombblue_mechanism.mdl"
+                }
                 OnKilledOutput
                 {
                     Target bluwin_relay
@@ -3229,7 +3185,7 @@ WaveSchedule
             {
                 Name "tankboss_blue"
                 StartingPathTrackNode "tank_blue_new_1"
-                Health 75000
+                Health 70000
                 Speed 75
                 Skin 1
                 //Immobile 1
