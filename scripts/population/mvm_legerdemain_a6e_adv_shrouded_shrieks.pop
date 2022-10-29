@@ -1161,7 +1161,7 @@ WaveSchedule
             WaitForAllDead "a3"
             Where spawnbot_mid
             TotalCount 16
-            MaxActive 4
+            MaxActive 8
             SpawnCount 8
             WaitBeforeStarting 0
             WaitBetweenSpawns 12
