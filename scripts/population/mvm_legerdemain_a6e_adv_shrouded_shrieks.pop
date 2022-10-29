@@ -1862,7 +1862,7 @@ WaveSchedule
             WaitBeforeStarting 0
             WaitBetweenSpawns 0
         
-            TotalCurrency 150
+            TotalCurrency 100
         
             Tank
             {
@@ -2015,7 +2015,7 @@ WaveSchedule
             SpawnCount 2
             WaitBeforeStarting 5
             WaitBetweenSpawns 2.5
-            TotalCurrency 100
+            TotalCurrency 200
             RandomChoice
             {
                 TFBot
@@ -2062,7 +2062,7 @@ WaveSchedule
             SpawnCount 2
             WaitBeforeStarting 0
             WaitBetweenSpawns 0
-            TotalCurrency 300
+            TotalCurrency 200
             Squad
             {
                 TFBot 
@@ -2139,7 +2139,7 @@ WaveSchedule
             SpawnCount 1
             WaitBeforeStarting 0
             WaitBetweenSpawns 2
-            TotalCurrency 150
+            TotalCurrency 250
         
             TFBot
             {
@@ -2160,7 +2160,7 @@ WaveSchedule
             SpawnCount 1
             WaitBeforeStarting 0
             WaitBetweenSpawns 2
-            TotalCurrency 150
+            TotalCurrency 250
         
             TFBot
             {
@@ -2179,7 +2179,7 @@ WaveSchedule
             WaitBeforeStarting 13
             WaitBetweenSpawns 0
         
-            TotalCurrency 400
+            TotalCurrency 300
         
             Tank
             {
@@ -2244,7 +2244,7 @@ WaveSchedule
             SpawnCount 3
             WaitBeforeStarting 0
             WaitBetweenSpawns 2
-            TotalCurrency 200
+            TotalCurrency 150
         
             TFBot
             {
