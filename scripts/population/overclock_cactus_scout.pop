@@ -42,6 +42,17 @@ WaveSchedule
 			1 1 // Max 2 upgrades on tier 1
 		}
 /////Scout
+		Dummy
+		{
+			Name "Overclock Upgrades"
+			Attribute "max health additive bonus"
+			Cap 0
+			Increment 0
+			Cost 0
+			Description "Overclocks are unique custom upgrades that do not cost players currency." 
+			Tier 1
+			PlayerUpgrade 1
+		}
 		ScatterA
 		{
 			Name "Unstable Mod: Hefty Shells"
