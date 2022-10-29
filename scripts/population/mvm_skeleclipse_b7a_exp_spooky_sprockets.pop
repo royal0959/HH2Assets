@@ -3,6 +3,7 @@
 //Map: Skeleclipse
 //Map Maker: Bazooks
 //Uses rafmod
+//V7
 
 //
 // Starting Currency: 3000
@@ -11,13 +12,12 @@
 // | Wave     | Currency | A+       |
 // +----------+----------+----------+
 // | Wave 1   | 2250     | 2350     |
-// | Wave 2   | 2500     | 2600     |
-// | Wave 3   | 2250     | 2350     |
+// | Wave 2   | 2250     | 2350     |
+// | Wave 3   | 2000     | 2100     |
 // +----------+----------+----------+
-// | Total    | 7000     | 7300     |
+// | Total    | 6500     | 6800     |
 // +----------+----------+----------+
 //
-
 
 #base robot_giant.pop
 #base robot_standard.pop
@@ -77,8 +77,8 @@ WaveSchedule
 			ItemAttributes
 			{
 				ItemName "The Righteous Bison"
-				"reload full clip at once" 1  
-				"clip size bonus upgrade" 2   //Clip size of 8
+				"reload full clip at once" 1 [$SIGSEGV]
+				"clip size bonus upgrade" 2 [$SIGSEGV] //Clip size of 8
 				"set item tint RGB" 255
 				"damage bonus" 5
 				"faster reload rate" 1
@@ -125,6 +125,34 @@ WaveSchedule
 				"override footstep sound set" 3
 				"airblast vertical vulnerability multiplier" 0.1			
 				"Projectile speed increased" 0.4
+				"increase buff duration" 9.0
+			}
+		}
+		T_TFBot_Giant_Soldier_Spammer_Extended_Buff
+		{
+			Class Soldier
+			Name "Giant Rapid Buff Soldier"
+			ClassIcon soldier_buff_spammer_giant
+			Health 3800
+			Skill Expert
+			Item "The Lucky Shot"	
+			WeaponRestrictions PrimaryOnly
+			Attributes MiniBoss
+			Attributes SpawnWithFullCharge
+			Item "The Buff Banner"
+			ItemAttributes
+			{
+				ItemName "TF_WEAPON_ROCKETLAUNCHER"
+				"faster reload rate" -0.8
+				"fire rate bonus" 0.5
+			}
+			CharacterAttributes
+			{
+				"move speed bonus"	0.5
+				"damage force reduction" 0.4
+				"airblast vulnerability multiplier" 0.4
+				"override footstep sound set" 3
+				"Projectile speed increased" 0.65
 				"increase buff duration" 9.0
 			}
 		}
@@ -202,14 +230,14 @@ WaveSchedule
 			Attributes SpawnWithFullCharge
 			WeaponRestrictions SecondaryOnly
 			Item "The Gas Passer"
+			Item "The Degreaser"
 			Item "The Person in the Iron Mask"
 
 			ItemAttributes
 			{
 				ItemName "The Gas Passer"
-				"item_meter_charge_rate" 0.5
-				"fire rate penalty" 3
-				"weapon burn dmg increased" 3
+				"mult_item_meter_charge_rate" 0.04
+				"weapon burn dmg increased" 3 
 			}
 			CharacterAttributes
 			{
@@ -527,29 +555,6 @@ WaveSchedule
 			Skill Normal
 			WeaponRestrictions SecondaryOnly
 		}
-		T_TFBot_Armored_Medic_Crossbow_Burst //Make squad leader to work properly
-		{
-			Class Medic
-			Name "Armored Burst Crossbow Medic"
-			ClassIcon medic_crossbow_burst
-			Skill Hard
-			Health 650
-			Scale 1.3
-			Item "The Crusader's Crossbow"
-			WeaponRestrictions PrimaryOnly
-			Item "Berliner's Bucket Helm"
-
-			ItemAttributes 
-			{
-				ItemName "The Crusader's Crossbow"
-				"faster reload rate" 0.3
-				"fire rate bonus" 0.1
-				"clip size upgrade atomic" 7.0
-				"auto fires full clip"  1
-        		"auto fires when full"  1
-				"projectile penetration" 1
-			}
-		}
 		T_TFBot_Armored_Medic_Shield
 		{
 			Class Medic
@@ -581,7 +586,10 @@ WaveSchedule
 			{
 				"bot medic uber deploy delay duration" 999
 				"heal rate bonus" 200
+				"damage force reduction" 0.75
+				"airblast vulnerability multiplier" 0.75
 			}
+			
 		}
 		T_TFBot_Medic_Kritz
 		{
@@ -671,8 +679,7 @@ WaveSchedule
 			ItemAttributes
 			{
 				ItemName "The Gas Passer"
-				"item_meter_charge_rate" 5
-				"fire rate penalty" 3
+				"mult_item_meter_charge_rate" 0.05
 				"explode_on_ignite" 1
 			}
 			CharacterAttributes 
@@ -683,7 +690,7 @@ WaveSchedule
 				"dmg taken from blast reduced" 0.25
 				"dmg taken from bullets reduced" 0.25
 			}
-			weaponresist  
+			weaponresist [$SIGSEGV]
 			{
             	"tf_weapon_knife" 0.2
 			}
@@ -701,7 +708,7 @@ WaveSchedule
 			Item "Upgradeable TF_WEAPON_MINIGUN"
 			Item "The Trash Man"
 			Item "Battery Canteens"
-			ExtAttr SuppressCanteenUse  
+			ExtAttr SuppressCanteenUse [$SIGSEGV]
 			NoIdleSound 1
 			ItemAttributes
 			{
@@ -724,9 +731,9 @@ WaveSchedule
                 ItemName "Battery Canteens" 
                 "ubercharge" 1
                 "powerup duration" 5
-                "powerup charges" 2
+                "powerup charges" 1
             }
-			FireWeapon  
+			FireWeapon [$SIGSEGV]
             {
                 IfHealthBelow 150
                 Delay 0
@@ -736,7 +743,7 @@ WaveSchedule
                 Duration 0.1
                 Type "Action"
             }
-			FireWeapon  
+			FireWeapon [$SIGSEGV]
             {
                 IfHealthBelow 100
                 Delay 0
@@ -746,7 +753,7 @@ WaveSchedule
                 Duration 0.1
                 Type "Action"
             }
-			weaponresist  
+			weaponresist [$SIGSEGV]
 			{
             	"tf_weapon_knife" 0.2
 			}
@@ -798,7 +805,7 @@ WaveSchedule
                 "powerup duration" 5
                 "powerup charges" 3
             }
-			weaponresist  
+			weaponresist [$SIGSEGV]
 			{
             	"tf_weapon_knife" 0.2
 			}
@@ -811,7 +818,7 @@ WaveSchedule
 			Scale 1
 			//Health 800
 			ClassIcon scout_giant
-			Name "Upgrades their Gun"
+			Name "Non Idle Scout"
 			WeaponRestrictions PrimaryOnly
 			Item "The Soda Popper"
 			Attributes MiniBoss
@@ -832,10 +839,13 @@ WaveSchedule
 			{
 				"increased jump height" 1.6
 				"move speed bonus"	1
+				"dmg taken from fire reduced" 0.25
 				"dmg taken from crit reduced" 0.1
+				"dmg taken from blast reduced" 0.25
+				"dmg taken from bullets reduced" 0.25
 				
 			}
-			weaponresist  
+			weaponresist [$SIGSEGV]
 			{
             	"tf_weapon_knife" 0.6
 			}
@@ -875,7 +885,7 @@ WaveSchedule
 				"dmg taken from blast reduced" 0.25
 				"dmg taken from bullets reduced" 0.25
 			}
-			weaponresist  
+			weaponresist [$SIGSEGV]
 			{
             	"tf_weapon_knife" 0.2
 			}
@@ -884,7 +894,7 @@ WaveSchedule
 		T_TFBot_Giant_Medic_Player
 		{
 			Class Medic
-			Name "Medic Girlfriend"
+			Name "Non Idle Med"
 			ClassIcon medic_kritz_giant
 			Skill Expert
 			Scale 1
@@ -922,13 +932,14 @@ WaveSchedule
 				"dmg taken from blast reduced" 0.25
 				"dmg taken from bullets reduced" 0.25
 			}
-			weaponresist  
+			weaponresist [$SIGSEGV]
 			{
             	"tf_weapon_knife" 0.2
 			}
-			FireWeapon  
+			FireWeapon [$SIGSEGV]
 			{	
-				Delay 20
+				IfSeeTarget 1
+				Delay 11
 				Type "Special"
 			}
 		}
@@ -990,7 +1001,7 @@ WaveSchedule
 		}
 	}
 
-	FlagResetTime   //Overrides default bomb reset time
+	FlagResetTime [$SIGSEGV] //Overrides default bomb reset time
     {
         Name "intel" //Name of flag entity on the map
         ResetTime 60
@@ -1043,7 +1054,7 @@ WaveSchedule
 			}
 		}
 
-		WaveSpawn //10k tank ($200)
+		WaveSpawn //11k tank ($200)
 		{
 			TotalCurrency 200
 			Name "w1a_tank"
@@ -1054,7 +1065,7 @@ WaveSchedule
 
 			Tank
 			{
-				Health 10000
+				Health 11000
 				Speed 75
 				Name "tankboss"
 				StartingPathTrackNode "boss_path_middle_1"
@@ -1221,7 +1232,8 @@ WaveSchedule
 				Template T_TFBot_Giant_Pyro_Gas
 				Tag doesnottaketopfalldamage
 				Tag forcefollowbombpath
-			}
+				Tag noflank
+			}	
 		}
 
 		WaveSpawn //14 conch soldiers ($100)
@@ -1241,6 +1253,7 @@ WaveSchedule
 			{
 				Template T_TFBot_Soldier_Extended_Concheror
 				Tag forcefollowbombpath
+				Tag noflank
 			}
 		}
 
@@ -1263,6 +1276,7 @@ WaveSchedule
 			{
 				Template T_TFBot_Heavyweapons_Shotgun_No_Stat
 				Tag forcefollowbombpath
+				Tag noflank
 			}
 		}
 
@@ -1270,7 +1284,7 @@ WaveSchedule
 		//////////////////////////
 		//			W1D			//
 		//////////////////////////
-		WaveSpawn //12k tank ($250)
+		WaveSpawn //13k tank ($250)
 		{
 			TotalCurrency 250
 			Name "w1d_tank"
@@ -1280,7 +1294,7 @@ WaveSchedule
 
 			Tank
 			{
-				Health 12000
+				Health 13000
 				Speed 75
 				Name "tankboss"
 				StartingPathTrackNode "boss_path_middle_1"
@@ -1335,6 +1349,7 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Scout_Bonk_Scattergun
+				Skill Hard
 			}
 		}
 
@@ -1415,12 +1430,13 @@ WaveSchedule
 			SpawnCount 3
 			MaxActive 9
 			WaitBetweenSpawns 5
-			WaitBeforeStarting 20
+			WaitBeforeStarting 10
 			WaitForAllSpawned "w1d_gburst_soldier"
 			
 			TFBot
 			{
 				Template T_TFBot_Soldier_Beggars_Bazooka
+				Tag forcefollowbombpath
 			}
 		}
 		
@@ -1574,9 +1590,9 @@ WaveSchedule
 		//////////////////////////
 		//			W2B			//
 		//////////////////////////
-		WaveSpawn //5 g shortstop ($200)
+		WaveSpawn //5 g shortstop ($100)
 		{
-			TotalCurrency 200
+			TotalCurrency 100
 			Name "w2b_gshortstop"
 			
 			Where spawnbot_left
@@ -1596,23 +1612,34 @@ WaveSchedule
 			}
 		}
 
-		WaveSpawn //3 buff colonel barrage  ($100)
+		WaveSpawn //3 buff colonel barrage +3 bigheals ($100)
 		{
 			TotalCurrency 100
 			Name "w2b_gbuff_colonel_barrage"
 			
 			Where spawnbot
-			TotalCount 3
-			SpawnCount 1
-			MaxActive 3
+			TotalCount 6
+			SpawnCount 2
+			MaxActive 6
 			WaitBetweenSpawns 5
 			WaitBeforeStarting 0
 			WaitForAllDead "w2a_dh_soldier#2"
 			
-			TFBot
+			Squad
 			{
-				Template T_TFBot_Giant_Soldier_SlowBarrage_Extended_Buff
+				TFBot
+				{
+					Template T_TFBot_Giant_Soldier_SlowBarrage_Extended_Buff
+				}
+
+				TFBot
+				{
+					Template T_TFBot_Medic_BigHeal
+					Item "The Surgeon's Stahlhelm"
+				}
 			}
+
+			
 		}
 		WaveSpawn //24 pistol scouts ($100)
 		{
@@ -1751,6 +1778,12 @@ WaveSchedule
 					ClassIcon sniper_bow_multi
 					Tag forcefollowbombpath
 					Name "Rapid Fire Bowmen"
+
+					CharacterAttributes
+					{
+						"damage force reduction" 0.75
+						"airblast vulnerability multiplier" 0.75
+					}
 				}
 				TFBot
 				{
@@ -1764,9 +1797,9 @@ WaveSchedule
 		//			W2E			//
 		//////////////////////////
 
-		WaveSpawn //6 samurai ($100)
+		WaveSpawn //6 samurai ($50)
 		{
-			TotalCurrency 100
+			TotalCurrency 50
 			Name "w2d_samurai"
 			
 			Where spawnbot_topflank
@@ -1780,28 +1813,32 @@ WaveSchedule
 			TFBot
 			{
 				Template T_TFBot_Demoman_Samurai
+				CharacterAttributes
+				{
+					"damage force reduction" 0.75
+					"airblast vulnerability multiplier" 0.75
+				}
 			}
 		}
 
-		WaveSpawn //6 Giant Soldier Spammer($100)
+		WaveSpawn //4 Giant Soldier Spammer buff($100)
 		{
 			TotalCurrency 100
-			Name "w2e_grapid_soldier"
+			Name "w2e_gbowmen+gshield+grapid_buff"
 			
 			Where spawnbot_left
 			Where spawnbot_right
 			RandomSpawn 1
-			TotalCount 6
+			TotalCount 4
 			SpawnCount 1
-			MaxActive 6
+			MaxActive 4
 			WaitBetweenSpawns 5
-			WaitBeforeStarting 25
+			WaitBeforeStarting 20
 			WaitForAllSpawned "w2d_huntsman_spammer"
 			
 			TFBot
 			{
-				Template T_TFBot_Giant_Soldier_Spammer
-				ClassIcon soldier_spammer_minigiant
+				Template T_TFBot_Giant_Soldier_Spammer_Extended_Buff
 				Tag forcefollowbombpath
 			}
 		}
@@ -1809,7 +1846,7 @@ WaveSchedule
 		WaveSpawn //2 g bowmen + 2 g shield ($100)
 		{
 			TotalCurrency 100
-			Name "w2e_gbowmen+gshield"
+			Name "w2e_gbowmen+gshield+grapid_buff"
 			
 			Where spawnbot
 			TotalCount 4
@@ -1829,7 +1866,7 @@ WaveSchedule
 					ItemAttributes
 					{
 						ItemName "The Huntsman"
-						"arrow mastery" 1  
+						"arrow mastery" 1 [$SIGSEGV]
 					}
 					Tag forcefollowbombpath
 				}
@@ -1845,9 +1882,9 @@ WaveSchedule
 		//////////////////////////
 		//			W2F			//
 		//////////////////////////
-		WaveSpawn //2 gheavy + 6 umed($150) (right)
+		WaveSpawn //2 gheavy + 6 umed($100) (right)
 		{
-			TotalCurrency 150
+			TotalCurrency 100
 			Name "w2f_gheavy+umed"
 			
 			Where spawnbot_right
@@ -1856,7 +1893,7 @@ WaveSchedule
 			MaxActive 4
 			WaitBetweenSpawns 15
 			WaitBeforeStarting 0
-			WaitForAllDead "w2e_grapid_soldier"
+			WaitForAllDead "w2e_gbowmen+gshield+grapid_buff"
 			
 			Squad
 			{
@@ -1878,9 +1915,9 @@ WaveSchedule
 				}
 			}
 		}
-		WaveSpawn //2 gheavy + 6 umed($150) (left)
+		WaveSpawn //2 gheavy + 6 umed($100) (left)
 		{
-			TotalCurrency 150
+			TotalCurrency 100
 			Name "w2f_gheavy+umed"
 			
 			Where spawnbot_left
@@ -1889,7 +1926,7 @@ WaveSchedule
 			MaxActive 4
 			WaitBetweenSpawns 15
 			WaitBeforeStarting 0
-			WaitForAllDead "w2e_grapid_soldier"
+			WaitForAllDead "w2e_gbowmen+gshield+grapid_buff"
 			
 			Squad
 			{
@@ -1923,7 +1960,7 @@ WaveSchedule
 			MaxActive 8
 			WaitBetweenSpawns 3
 			WaitBeforeStarting 10
-			WaitForAllDead "w2e_grapid_soldier"
+			WaitForAllDead "w2e_gbowmen+gshield+grapid_buff"
 			
 			TFBot
 			{
@@ -1931,14 +1968,14 @@ WaveSchedule
 				Tag doesnottaketopfalldamage
 			}
 		}
-		WaveSpawn   //small crit turret tank left ($100)
+		WaveSpawn [$SIGSEGV] //small crit turret tank left ($100)
 		{
 			TotalCount 1
 			WaitBeforeStarting 0
 			TotalCurrency 100
 			Name "w2f_turret_tank_left"
 			WaitBeforeStarting 15
-			WaitForAllDead "w2e_grapid_soldier"
+			WaitForAllDead "w2e_gbowmen+gshield+grapid_buff"
 
 			Tank
 			{
@@ -1960,14 +1997,14 @@ WaveSchedule
 				}
 			}
 		}
-		WaveSpawn   //small crit turret tank middle ($100)
+		WaveSpawn [$SIGSEGV] //small crit turret tank middle ($100)
 		{
 			TotalCount 1
 			WaitBeforeStarting 5
 			TotalCurrency 100
 			Name "w2f_turret_tank_middle"
 			WaitBeforeStarting 20
-			WaitForAllDead "w2e_grapid_soldier"
+			WaitForAllDead "w2e_gbowmen+gshield+grapid_buff"
 			Tank
 			{
 				Health	10000
@@ -1988,14 +2025,14 @@ WaveSchedule
 				}
 			}
 		}
-		WaveSpawn   //small crit turret tank right ($100)
+		WaveSpawn [$SIGSEGV] //small crit turret tank right ($100)
 		{
 			TotalCount 1
 			WaitBeforeStarting 10
 			TotalCurrency 100
 			Name "w2f_turret_tank_right"
 			WaitBeforeStarting 25
-			WaitForAllDead "w2e_grapid_soldier"
+			WaitForAllDead "w2e_gbowmen+gshield+grapid_buff"
 			Tank
 			{
 				Health	10000
@@ -2128,7 +2165,7 @@ WaveSchedule
 				Attributes AlwaysCrit
 				Attributes DisableDodge
 				Skill Expert
-				Action Mobber  
+				Action Mobber [$SIGSEGV]
 			}
 		}
 		WaveSpawn //4 left mobber super scouts ($50)
@@ -2150,7 +2187,7 @@ WaveSchedule
 				Attributes AlwaysCrit
 				Attributes DisableDodge
 				Skill Expert 
-				Action Mobber   
+				Action Mobber [$SIGSEGV] 
 			}
 		}
 
@@ -2305,9 +2342,9 @@ WaveSchedule
 			}
 		}
 
-		WaveSpawn //3 gshotgun + 3 gmed ($200)
+		WaveSpawn //3 gshotgun + 3 gmed ($100)
 		{
-			TotalCurrency 200
+			TotalCurrency 100
 			Name "w3c_gshotgun+gmed"
 			
 			Where spawnbot
@@ -2484,16 +2521,16 @@ WaveSchedule
 			FirstSpawnWarningSound "music/HL2_song12_long.mp3" //hard fought track
 		}
 
-		WaveSpawn //4 crit g df pyro ($100)
+		WaveSpawn //6 crit g df pyro ($100)
 		{
 			TotalCurrency 100
 			Name "w3e_gdf_pyro"
 			
 			Where spawnbot_left
-			TotalCount 4
+			TotalCount 6
 			SpawnCount 1
 			MaxActive 2
-			WaitBetweenSpawns 15
+			WaitBetweenSpawns 12
 			WaitBeforeStarting 0
 			WaitForAllDead "w3d_grapid_soldier"
 			
@@ -2501,18 +2538,20 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Pyro_Dragon_Fury
 				Attributes AlwaysCrit
+				BehaviorModifiers Push 
+				Tag flankpusher
 			}
 		}
-		WaveSpawn //4 colonel barrage ($100)
+		WaveSpawn //6 colonel barrage ($100)
 		{
 			TotalCurrency 100
 			Name "w3e_colonel_barrage"
 			
 			Where spawnbot_right
-			TotalCount 4
+			TotalCount 6
 			SpawnCount 1
 			MaxActive 2
-			WaitBetweenSpawns 15
+			WaitBetweenSpawns 12
 			WaitBeforeStarting 0
 			WaitForAllDead "w3d_grapid_soldier"
 			
@@ -2520,11 +2559,13 @@ WaveSchedule
 			{
 				Template T_TFBot_Giant_Soldier_SlowBarrage
 				Attributes AlwaysCrit
+				BehaviorModifiers Push
+				Tag flankpusher
 			}
 		}
-		WaveSpawn //3 g brass + 3 gkritz ($200) (Uses spawnbot_mission spy because it seems that spawnbot still gets teleported)
+		WaveSpawn //3 g brass + 3 gkritz ($100) (Uses spawnbot_mission spy because it seems that spawnbot still gets teleported)
 		{
-			TotalCurrency 200
+			TotalCurrency 100
 			Name "w3e_gbrass+kritz"
 			
 			Where spawnbot_mission_spy
@@ -2549,18 +2590,18 @@ WaveSchedule
 			}
 		}
 
-		WaveSpawn //30k tank middle($150)
+		WaveSpawn //32k tank middle($100)
 		{
-			TotalCurrency 150
+			TotalCurrency 100
 			Name "w3e_tank"
 			
 			TotalCount 1
 			WaitForAllSpawned "w3e_gbrass+kritz"
-			WaitBeforeStarting 10
+			WaitBeforeStarting 7
 
 			Tank
 			{
-				Health 30000
+				Health 32000
 				Speed 75
 				Name "tankboss"
 				StartingPathTrackNode "boss_path_middle_1"

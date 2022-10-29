@@ -55,7 +55,7 @@ WaveSchedule
 				"reload time increased hidden" 0.35		
 				"lose hype on take damage" -4
 			}
-			Description "+20% bullets per shot +Hype no longer lost from damage -50% accuracy -35% slower reload" 
+			Description "+50% bullets per shot +Hype no longer lost from damage -50% accuracy -35% slower reload" 
 			Tier 1
 			AllowPlayerClass Scout
             AllowedWeapons
