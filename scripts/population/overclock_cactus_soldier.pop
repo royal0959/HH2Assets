@@ -60,27 +60,6 @@ WaveSchedule
 				ItemName "The Direct Hit"
 			}
 		}
-		BlackBoxB
-		{
-			Name "Unstable Mod: Tank Buster"
-			Attribute "mult dmg vs tanks" 
-			Cap 1.2
-			Increment 0.2
-			Cost 0
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"Projectile speed decreased" -0.25
-				"heal on hit for rapidfire" 15
-				"health on radius damage" -20
-			}
-			Description "+Heal on hit stacks with multiple enemies +20% damage Vs. Tanks -25% slower projectile speed" 
-			Tier 1
-			AllowedWeapons
-			{
-				ItemName "The Black Box"
-				ItemName "Festive Black Box"
-			}
-		}
 		LibertyLauncherA
 		{
 			Name "Unstable Mod: Burst Chamber"
