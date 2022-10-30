@@ -367,7 +367,7 @@ WaveSchedule
             }
 			Tank
 			{
-				Health	20000
+				Health	18000
                 Skin 1
 				Name	gate_tank_boss
 				Speed	75
@@ -703,7 +703,7 @@ WaveSchedule
             }
 			Tank
 			{
-				Health	20000
+				Health	18000
                 Skin 1
 				Name	gate_tank_boss
 				Speed	75
@@ -739,7 +739,7 @@ WaveSchedule
             }
 			Tank
 			{
-				Health	20000
+				Health	18000
                 Skin 1
 				Name	gate_tank_boss
 				Speed	75
@@ -1659,7 +1659,7 @@ WaveSchedule
             }
 			Tank
 			{
-				Health	20000
+				Health	15000
                 Skin 1
 				Name	gate_tank_boss
 				Speed	75
@@ -1969,7 +1969,7 @@ WaveSchedule
             }
 			Tank
 			{
-				Health	45000
+				Health	38000
 				Name	tank_boss
                 Skin 1
 				Speed	75
