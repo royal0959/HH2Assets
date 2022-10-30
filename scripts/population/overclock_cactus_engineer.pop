@@ -139,49 +139,6 @@ WaveSchedule
 				ItemName "The Southern Hospitality"
 			}
 		}
-		Eureka
-		{
-			Name "Clean Overclock: Tuned Capacitor"
-			Attribute "provide on active" 
-			Cap 1
-			Increment 1
-			Cost 0
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"Construction rate decreased" 0.5
-			}
-			Description "Construction rate penalty is removed" 
-			Tier 1
-            Allowplayerclass Engineer
-            AllowedWeapons
-			{
-				ItemName "The Eureka Effect"
-			}
-		}
-		WatchMoney
-		{
-			Name "Unstable Mod: Cash Vacuum"
-			Attribute "mult credit collect range" 
-			Cap 4
-			Increment 3
-			Cost 0
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"health from credits" 90
-			}
-			Description "+300% Cash Collection Range +heals from cash collected" 
-			Tier 1
-            AllowedWeapons
-			{
-				ItemName "The Cloak and Dagger"
-				ItemName "TTG Watch"
-				ClassName TF_WEAPON_INVIS 
-			}
-            DisallowedWeapons
-			{
-				ItemName "The Dead Ringer"
-			}
-		}
 		Enforcer
 		{
 			Name "Balanced Overclock: Magnum Chamber"
@@ -223,29 +180,6 @@ WaveSchedule
 			{
 				ItemName "The Ambassador"
 				ItemName "Festive Ambassador"
-			}
-		}
-		Sapper
-		{
-			Name "Unstable Mod: Chemical payload"
-			Attribute "effect cond override" 
-			Cap 3283736
-			Increment 3283736
-			Cost 0
-			SecondaryAttributes
-			{
-				"robo sapper" 3
-				"effect bar recharge rate increased" -1.0
-				"applies snare effect" 0.65
-			}
-			Description "(i)Sapper effect replaced with jarate + milk" 
-			Tier 1
-            AllowPlayerClass Spy
-            AllowedWeapons
-			{
-                ItemName "The Red-Tape Recorder"
-				ClassName TF_WEAPON_BUILDER_SPY
-				ItemName "Festive Sapper"
 			}
 		}
 	}	

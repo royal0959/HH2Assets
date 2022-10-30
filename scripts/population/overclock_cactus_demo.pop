@@ -29,30 +29,6 @@ WaveSchedule
 				ItemName "The Loch-n-Load"
 			}
 		}
-		IronBomberA
-		{
-			Name "Unstable Overclock: Scatter Bombs"
-			Attribute "grenade not explode on impact"
-			Cap 1
-			Increment 1
-			Cost 0
-			SecondaryAttributes
-			{
-				"mult projectile count" 3
-				"grenade damage reduction on world contact" 15
-				"damage bonus HIDDEN" -0.95
-				"projectile spread angle penalty" 5
-				"fire rate penalty HIDDEN" 0.8
-				"rocket jump damage reduction" -0.9	
-				"mult dmg vs tanks" -0.3
-			}
-			Description "+fires 4 bombs +increased damage when exploded via timer -95% less direct damage -80% slower firing speed" 
-			Tier 1
-			AllowedWeapons
-			{
-				ItemName "The Iron Bomber"
-			}
-		}
 		LochB
 		{
 			Name "Unstable Mod: Burst Chamber"
@@ -126,27 +102,6 @@ WaveSchedule
 			}
 		}
 ///BEER AND SWORDS
-		Bottle
-		{
-			Name "Unstable Overclock: Gardener Module"
-			Description "+Crits while blast jumping +Damages all connected via medibeam +50% damage vs. giants -25% slower swing speed"
-			AllowPlayerClass Demoman
-			AllowedWeapons
-			{
-				ItemName	"The Scottish Handshake"
-				ClassName "TF_WEAPON_BOTTLE"
-			}
-			Cost 0
-			Attribute "mod crit while airborne"
-			Increment 1
-			Cap 1
-			SecondaryAttributes
-			{
-				"fire rate penalty"		0.25
-				"mult dmg vs giants"	0.5
-				"damage all connected"	1
-			}
-		}
 		CaberA
 		{
 			Name "Balanced Overclock: Cushioned Explosive"
@@ -210,6 +165,9 @@ WaveSchedule
 				ItemName "The Claidheamohmor"
 				ItemName "The Persian Persuader"
 				ItemName "The Half-Zatoichi"
+				ItemName "The Cloak and Dagger"
+				ItemName "TTG Watch"
+				ClassName TF_WEAPON_INVIS 
 				ItemName "Rocket Jumper"
 			}
 		}

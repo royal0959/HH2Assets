@@ -114,7 +114,6 @@ WaveSchedule
 			{
 				"scattergun has knockback" -1
 				"slow enemy on hit" 1
-				"damage bonus" 0.2
 			}
 			Description "+10% Damage bonus +Slows enemies on hit -No knockback"
 			Tier 1
@@ -144,25 +143,6 @@ WaveSchedule
 			}
 		}
 ////Scout Misc
-		BonkSoda
-		{
-			Name "Stable Mod: Battalion's Bonk-up"
-			Attribute "effect cond override" 
-			Cap 26
-			Increment 26
-			Cost 0
-			Description "Replaces Bonk! effect with battalion's backup effect"
-			Tier 1
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"provide on active" 1
-			}
-			AllowedWeapons
-			{
-				ItemName "Bonk! Atomic Punch"
-				ItemName "Festive Bonk 2014"
-			}
-		}	
 		Cleaver
 		{
 			Name "Stable Mod: Hot Knife"
@@ -231,24 +211,6 @@ WaveSchedule
 			{
 				ItemName "The Sandman"
 				ItemName "The Boston Basher"
-			}
-		}
-		CandyCaneA
-		{
-			Name "Clean Overclock: Sugar Shock"
-			Attribute "mark for death"
-			Cap 1
-			Increment 1
-			Cost 0
-			Description "+Marks Target for death +75% health from packs" 
-			Tier 1
-			SecondaryAttributes
-			{
-				"health from packs increased" 0.75
-			}
-			AllowedWeapons
-			{
-				ItemName "The Candy Cane"
 			}
 		}
 		SunOnAStickA

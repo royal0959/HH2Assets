@@ -184,26 +184,6 @@ WaveSchedule
 				ItemName "The Mantreads"
 			}
 		}
-		BaseJumper
-		{
-			Name "Stable Mod: Padded Soles"
-			Attribute "increased air control"
-			Cap 3
-			Increment 3
-			Cost 0
-			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
-			{
-				"parachute redeploy" 1
-			}
-			Description "Increased air control and can re-deploy" 
-			Tier 1
-            Allowplayerclass Soldier
-            Allowplayerclass Demoman
-			AllowedWeapons
-			{
-				ItemName "The B.A.S.E. Jumper"
-			}
-		}
 		PanicB
 		{
 			Name "Stable Mod: Combo Slugs"

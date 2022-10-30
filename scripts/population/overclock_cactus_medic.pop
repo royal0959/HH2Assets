@@ -27,27 +27,6 @@ WaveSchedule
 				ItemName "Festive Crusader's Crossbow"
 			}
 		}
-		NeedleBalancedB
-		{
-			Name "Balanced Overclock: Biohazard Needle"
-			Attribute "add cond on hit" 
-			SecondaryAttributes  
-			{
-				"add cond on hit duration" 3.0
-				"reload time increased hidden" 0.35
-				"damage penalty" -0.75
-				"clip size penalty" -0.75
-			}
-			Cap 24
-			Increment 24
-			Cost 0
-			Description "Applies Jarate on hit, but reloads 35% slower and damage and clip size are reduced by 75%" 
-			Tier 1
-			AllowedWeapons
-			{
-				ClassName TF_WEAPON_SYRINGEGUN_MEDIC
-			}
-		}
 ///mediguns
 		MedigunB
 		{
