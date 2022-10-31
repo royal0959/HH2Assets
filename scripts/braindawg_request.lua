@@ -47,10 +47,13 @@ function OnPlayerConnected(player)
 		return
 	end
 
-	playersCount = playersCount + 1
-	playersAlive = playersAlive + 1
-	playersHandle[player:GetHandleIndex()] = true
-	onPlayerCountChange(player)
+	-- dumb half fix
+	if playersCount < 6 and playersAlive < 6 then 
+		playersCount = playersCount + 1
+		playersAlive = playersAlive + 1
+		playersHandle[player:GetHandleIndex()] = true
+		onPlayerCountChange(player)
+	end
 
 	player:AddCallback(ON_DEATH, onPlayerDeath)
 	player:AddCallback(ON_SPAWN, onPlayerSpawn)
