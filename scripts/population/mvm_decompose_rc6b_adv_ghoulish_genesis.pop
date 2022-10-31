@@ -541,7 +541,7 @@ population
 	                }
 			Tank
 			{
-				Health	25000
+				Health	20000
 				Name	Tank
 				Speed	75
 				StartingPathTrackNode	sdtank_path_a_1
@@ -835,7 +835,7 @@ population
 	                }
 			Tank
 			{
-				Health	35000
+				Health	30000
 				Name	Tank
 				Speed	75
 				StartingPathTrackNode	sdtank_path_a_1
@@ -1137,7 +1137,7 @@ population
 			}
 			Tank
 			{
-				Health	35000
+				Health	30000
 				Speed 75
 				Name Tank
 				StartingPathTrackNode sdtank_path_a_1
@@ -1975,7 +1975,7 @@ population
 			}
 			Tank
 			{
-				Health	40000
+				Health	35000
 				Speed 75
                                 Skin 1
 				Name Tank
