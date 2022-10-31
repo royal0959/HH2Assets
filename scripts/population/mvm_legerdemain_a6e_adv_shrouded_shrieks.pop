@@ -8,6 +8,7 @@
 #base overclock_cactus_heavy.pop
 #base overclock_cactus_engineer.pop
 #base overclock_cactus_medic.pop
+//#base overclock_cactus_sniperspy.pop
 //Huge Thank you for everyone who helped!
 
 //NYS: Few icons
@@ -498,7 +499,7 @@ WaveSchedule
             {
                 Target timerformat
                 Action $SetKey$case01
-                Param 53000
+                Param 60000
             }
             //Change the text color from green to red, since it's dropped below half.
             //Just a cute touch.
@@ -516,7 +517,7 @@ WaveSchedule
             logic_case
             {
                 "targetname" "timerformat"
-                "Case16" "RED Tank Health: %/53000"
+                "Case16" "RED Tank Health: %/60000"
                 "OnDefault" "timertext,$setkey$message,,0,-1"
                 "OnDefault" "timertext,display,0,0,-1"
             }
@@ -2276,6 +2277,7 @@ WaveSchedule
             Line "{9632dc}Equip a {yellow}Spellbook {9632dc}this wave..."
             Line "{9632dc}An ally {red}Tank {9632dc}will give you spells!"
             Line "{9632dc}If the {red}Red Tank {9632dc}dies... You lose."
+            Line "{Blue}You will hear Music playing this wave! Don't worry, you wont get a copyright strike."
             //Line "{9632dc}du"
         }
         
@@ -2361,7 +2363,7 @@ WaveSchedule
             MaxActive 21
             SpawnCount 7
             WaitBeforeStarting 7.5
-            WaitBetweenSpawns 20
+            WaitBetweenSpawns 30
             TotalCurrency 5000
             Support 1
             RandomChoice
@@ -2630,7 +2632,7 @@ WaveSchedule
             MaxActive 2
             SpawnCount 2
             WaitBeforeStarting 35
-            WaitBetweenSpawns 15
+            WaitBetweenSpawns 23
             TotalCurrency 0
             Support 1
             RandomChoice
@@ -2669,7 +2671,7 @@ WaveSchedule
             MaxActive 3
             SpawnCount 3
             WaitBeforeStarting 16
-            WaitBetweenSpawns 45
+            WaitBetweenSpawns 55
             TotalCurrency 5000
             Support 1
             RandomChoice
@@ -3134,7 +3136,7 @@ WaveSchedule
             {
                 Name "tankboss2"
                 StartingPathTrackNode "tank_red_new_1"
-                Health 53000
+                Health 60000
                 Speed 75
                 Skin 1
                 //Immobile 1
@@ -3185,7 +3187,7 @@ WaveSchedule
             {
                 Name "tankboss_blue"
                 StartingPathTrackNode "tank_blue_new_1"
-                Health 70000
+                Health 75000
                 Speed 75
                 Skin 1
                 //Immobile 1
