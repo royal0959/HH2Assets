@@ -2,7 +2,7 @@
 //Mission made by Mudun
 #base robot_giant.pop
 #base robot_standard.pop
-#base rotating_shield.pop //thank you royal very cool
+#base rotating_shield_whitecliff.pop //thank you royal very cool
 
 population
 {
@@ -23,16 +23,7 @@ population
 			//	Action Trigger
 			//}
 	
-	PrecacheModel "models/bots/skeleton_sniper/skeleton_sniper.mdl"
 	PrecacheModel "models/bots/sniper_boss/bot_sniper_boss.mdl"
-	PrecacheModel "models/player/demo.mdl"
-	PrecacheModel "models/player/heavy.mdl"
-	PrecacheModel "models/player/medic.mdl"
-	PrecacheModel "models/player/pyro.mdl"
-	PrecacheModel "models/player/scout.mdl"
-	PrecacheModel "models/player/sniper.mdl"
-	PrecacheModel "models/player/soldier.mdl"
-	PrecacheModel "models/player/spy"
 	PointTemplates  
     {    
 		annotations
