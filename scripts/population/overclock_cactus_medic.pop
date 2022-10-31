@@ -76,7 +76,6 @@ WaveSchedule
             DisallowedWeapons
             {
 				ItemName "The Quick-Fix"
-                ItemName "The Kritzkrieg"
             }
 			// these are required
 			OnApply
@@ -137,7 +136,7 @@ WaveSchedule
 			Cap 100
 			Increment 100
 			Cost 0
-			Description "Resist all ranged damage by 35% and on hit: release an aoe heal to the team and when active/" 
+			Description "(i)When active: +35% Resistance to ranged damage +On hit: healing all allies +Taunt applies buff banner and battalions" 
 			Tier 1
 			SecondaryAttributes  
 			{
