@@ -724,7 +724,7 @@ WaveSchedule
                 ItemName "Battery Canteens" 
                 "ubercharge" 1
                 "powerup duration" 5
-                "powerup charges" 2
+                "powerup charges" 1
             }
 			FireWeapon  
             {
@@ -993,7 +993,7 @@ WaveSchedule
 	FlagResetTime   //Overrides default bomb reset time
     {
         Name "intel" //Name of flag entity on the map
-        ResetTime 60
+        ResetTime 50
     }
 	
 
@@ -1280,7 +1280,7 @@ WaveSchedule
 
 			Tank
 			{
-				Health 12000
+				Health 10000
 				Speed 75
 				Name "tankboss"
 				StartingPathTrackNode "boss_path_middle_1"
@@ -1791,7 +1791,7 @@ WaveSchedule
 			Where spawnbot_left
 			Where spawnbot_right
 			RandomSpawn 1
-			TotalCount 6
+			TotalCount 4
 			SpawnCount 1
 			MaxActive 6
 			WaitBetweenSpawns 5
