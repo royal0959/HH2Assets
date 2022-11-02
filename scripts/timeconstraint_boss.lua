@@ -271,9 +271,34 @@ function OnWaveInit()
 	end
 end
 
+local function handlePlayerDeath(player)
+	playersCallback[player] = {}
+	
+	playersCallback[player].died = player:AddCallback(ON_DEATH, function ()
+		if pvpActive then
+			return
+		end
+
+		if not bot:IsAlive() then
+			return
+		end
+
+		if player.m_iTeamNum ~= 2 then
+			return
+		end
+
+		local allInsults = DEATH_INSULTS[classIndices_Internal[player.m_iClass]]
+		local chosenInsult = allInsults[math.random(#allInsults)]
+		
+		local name = player:GetPlayerName()
+
+		chatMessage(string.format(chosenInsult, name))
+	end)
+
+end
+
 local function Holder(bot)
 	timeconstraint_alive = true
-	print(timeconstraint_alive)
 
 	local allPlayers = ents.GetAllPlayers()
 
@@ -282,28 +307,7 @@ local function Holder(bot)
 			goto continue
 		end
 
-		playersCallback[player] = {}
-	
-		playersCallback[player].died = player:AddCallback(ON_DEATH, function ()
-			if pvpActive then
-				return
-			end
-
-			if not bot:IsAlive() then
-				return
-			end
-
-			if player.m_iTeamNum ~= 2 then
-				return
-			end
-
-			local allInsults = DEATH_INSULTS[classIndices_Internal[player.m_iClass]]
-			local chosenInsult = allInsults[math.random(#allInsults)]
-			
-			local name = player:GetPlayerName()
-	
-			chatMessage(string.format(chosenInsult, name))
-		end)
+		handlePlayerDeath(player)
 
 		::continue::
 	end
@@ -638,11 +642,31 @@ local function checkPvPWinCond(dontSayCount)
 	end
 end
 
+local function handlePvPLateJoin(player)
+	player:ForceRespawn()
+	player:SetAttributeValue("min respawn time", 999999)
+	player:Suicide()
+end
+
+function OnPlayerConnected(player)
+	if pvpActive then
+		handlePvPLateJoin(player)
+		checkPvPWinCond(true)
+		return
+	end
+
+	if not timeconstraint_alive then
+		return
+	end
+
+	handlePlayerDeath(player)
+end
+
 function OnPlayerDisconnected(player)
 	if not timeconstraint_alive then
 		return
 	end
-	
+
 	if player.m_iTeamNum == 3 then
 		PvPRedWin()
 		return
