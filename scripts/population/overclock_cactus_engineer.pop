@@ -139,6 +139,25 @@ WaveSchedule
 				ItemName "The Southern Hospitality"
 			}
 		}
+		Eureka
+		{
+			Name "Clean Overclock: Tuned Capacitor"
+			Attribute "provide on active" 
+			Cap 1
+			Increment 1
+			Cost 0
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"Construction rate decreased" 0.5
+			}
+			Description "Construction rate penalty is removed" 
+			Tier 1
+            Allowplayerclass Engineer
+            AllowedWeapons
+			{
+				ItemName "The Eureka Effect"
+			}
+		}
 		Enforcer
 		{
 			Name "Balanced Overclock: Magnum Chamber"
@@ -180,6 +199,53 @@ WaveSchedule
 			{
 				ItemName "The Ambassador"
 				ItemName "Festive Ambassador"
+			}
+		}
+		Sapper
+		{
+			Name "Unstable Overclock: Chemical payload"
+			Attribute "effect cond override" 
+			Cap 3283736
+			Increment 3283736
+			Cost 0
+			SecondaryAttributes
+			{
+				"robo sapper" 3
+				"effect bar recharge rate increased" -1.0
+				"applies snare effect" 0.65
+			}
+			Description "Sapper applies jarate and mad milk to target and is not consumed upon use, but can no longer stun (bots can still be backtabbed at all angles)" 
+			Tier 1
+            AllowPlayerClass Spy
+            AllowedWeapons
+			{
+                ItemName "The Red-Tape Recorder"
+				ClassName TF_WEAPON_BUILDER_SPY
+				ItemName "Festive Sapper"
+			}
+		}
+		WatchMoney
+		{
+			Name "Balanced Overclock: Cash Vacuum"
+			Attribute "mult credit collect range" 
+			Cap 4
+			Increment 3
+			Cost 0
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"health from credits" 180
+			}
+			Description "Cloak no longer alerts robots on contact and increases movement speed and damage resistance, but cloak drains 60% faster" 
+			Tier 1
+            AllowedWeapons
+			{
+				ItemName "The Cloak and Dagger"
+				ItemName "TTG Watch"
+				ClassName TF_WEAPON_INVIS 
+			}
+            DisallowedWeapons
+			{
+				ItemName "The Dead Ringer"
 			}
 		}
 	}	

@@ -29,6 +29,30 @@ WaveSchedule
 				ItemName "The Loch-n-Load"
 			}
 		}
+		IronBomberA
+		{
+			Name "Unstable Overclock: Scatter Bombs"
+			Attribute "grenade not explode on impact"
+			Cap 1
+			Increment 1
+			Cost 0
+			SecondaryAttributes
+			{
+				"mult projectile count" 3
+				"grenade damage reduction on world contact" 15
+				"damage bonus HIDDEN" -0.95
+				"projectile spread angle penalty" 5
+				"fire rate penalty HIDDEN" 0.8
+				"rocket jump damage reduction" -0.9	
+				"mult dmg vs tanks" -0.3
+			}
+			Description "Chamber now fires 4 bombs at once and deals increased damage when exploded via timer, but direct hits deal 95% less damage and fires 80% slower" 
+			Tier 1
+			AllowedWeapons
+			{
+				ItemName "The Iron Bomber"
+			}
+		}
 		LochB
 		{
 			Name "Unstable Mod: Burst Chamber"
@@ -156,7 +180,7 @@ WaveSchedule
 			Cost 0
 			SecondaryAttributes
 			{
-				"health from credits" 60
+				"health from credits" 50
 			}
 			Description "Gain Cash Magnet and cash healing" 
 			Tier 1
@@ -166,8 +190,7 @@ WaveSchedule
 				ItemName "The Persian Persuader"
 				ItemName "The Half-Zatoichi"
 				ItemName "The Cloak and Dagger"
-				ItemName "TTG Watch"
-				ClassName TF_WEAPON_INVIS 
+				ItemName "The Dead Ringer"
 				ItemName "Rocket Jumper"
 			}
 		}

@@ -212,6 +212,25 @@ WaveSchedule
 				ItemName "The Boston Basher"
 			}
 		}
+		CandyCaneA
+		{
+			Name "Clean Overclock: Sugar Shock"
+			Attribute "mark for death"
+			Cap 1
+			Increment 1
+			Cost 0
+			Description "Weapon now marks for death, increases health from packs by 50% and blast vulnerability is lowered to 10%" 
+			Tier 1
+			SecondaryAttributes //Secondary attributes applied when upgrade is applied, for each upgrade level
+			{
+				"dmg taken from blast increased" -0.15
+				"health from packs increased" 0.5
+			}
+			AllowedWeapons
+			{
+				ItemName "The Candy Cane"
+			}
+		}
 		SunOnAStickA
 		{
 			Name "Stable Mod: Soul Scorcher"
