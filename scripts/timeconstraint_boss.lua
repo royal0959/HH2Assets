@@ -36,6 +36,7 @@ local DEATH_INSULTS = {
 	Engineer = {
 		"Build yourself better gamesense, %s",
 		"Sentry blocking going well, aye %s?",
+		"Unequip the wrangler, %s"
 	},
 	Medic = {
 		"How's that canteen spam going for you, %s?",
@@ -46,6 +47,7 @@ local DEATH_INSULTS = {
 	},
 	Spy = {
 		"I hate the french",
+		"Try running in circle harder, %s",
 	}
 
 }
@@ -55,6 +57,8 @@ local cur_constraint = false -- current time constraint bot
 
 local pvpActive = false
 local gamestateEnded = false
+
+local specialLinePlaying = false
 
 local PHASE3_SUBWAVES = 3
 local finishedSubwaves = 0
@@ -202,6 +206,10 @@ ents.AddCreateCallback("entity_medigun_shield", function (shield)
 		return
 	end
 
+	if specialLinePlaying then
+		return
+	end
+
 	timer.Simple(0.1, function()
 		if shield.Registered then
 			return
@@ -229,6 +237,8 @@ ents.AddCreateCallback("entity_medigun_shield", function (shield)
 
 		activeShieldOwners[handle] = true
 
+		specialLinePlaying = true
+
 		chatMessage("Projectile Shield?")
 
 		-- aaaaaaaaaaa
@@ -250,6 +260,8 @@ ents.AddCreateCallback("entity_medigun_shield", function (shield)
 
 			timer.Simple(0.8, function()
 				chatMessage("I don't think so")
+
+				specialLinePlaying = false
 			end)
 		end)
 	end)
@@ -263,6 +275,8 @@ function OnWaveInit()
 	timeconstraint_alive = false
 	pvpActive = false
 
+	specialLinePlaying = false
+
 	finishedSubwaves = 0
 
 	removeTimers(timers)
@@ -273,9 +287,13 @@ end
 
 local function handlePlayerDeath(player)
 	playersCallback[player] = {}
-	
+
 	playersCallback[player].died = player:AddCallback(ON_DEATH, function ()
 		if pvpActive then
+			return
+		end
+
+		if specialLinePlaying then
 			return
 		end
 
@@ -346,6 +364,8 @@ local function Holder(bot)
 
 		milkers[handle] = true
 
+		specialLinePlaying = true
+
 		chatMessage("Are you seriously using mad milk?")
 
 		timer.Simple(0.8, function ()
@@ -357,6 +377,8 @@ local function Holder(bot)
 			milker:WeaponSwitchSlot(LOADOUT_POSITION_SECONDARY)
 
 			milkers[handle] = nil
+
+			specialLinePlaying = false
 		end)
 
 	end, 0)
@@ -389,6 +411,8 @@ local function Handle1(bot)
 	storeRollback()
 
 	callbacks.died = bot:AddCallback(ON_DEATH, function()
+		specialLinePlaying = true
+
 		timer.Simple(0.5, function ()
 			chatMessage("That's not supposed to happen")
 		end)
@@ -398,6 +422,7 @@ local function Handle1(bot)
 		end)
 
 		timer.Simple(3.5, function ()
+			specialLinePlaying = false
 			revertRollback()
 		end)
 
@@ -416,6 +441,7 @@ local function Handle2(bot)
 	chatMessage("My chariot will carry me to victory")
 
 	callbacks.died = bot:AddCallback(ON_DEATH, function()
+		specialLinePlaying = true
 		timer.Simple(0.5, function ()
 			chatMessage("Fatal miscalculations were made")
 		end)
@@ -425,6 +451,7 @@ local function Handle2(bot)
 		end)
 
 		timer.Simple(3.5, function ()
+			specialLinePlaying = false
 			revertRollback()
 		end)
 
@@ -525,6 +552,8 @@ local function Handle3(bot)
 		-- 	::continue::
 		-- end
 
+		specialLinePlaying = true
+
 		timer.Simple(0.5, function ()
 			chatMessage("This is getting tiresome")
 		end)
@@ -534,6 +563,7 @@ local function Handle3(bot)
 		end)
 
 		timer.Simple(3.5, function ()
+			specialLinePlaying = false
 			revertRollback()
 		end)
 
@@ -577,6 +607,8 @@ local function PvPBluWin()
 	gamestateEnded = true
 	pvpActive = false
 
+	specialLinePlaying = true
+
 	timer.Simple(1, function ()
 		chatMessage("Masterfully done my dear friend")
 	end)
@@ -594,9 +626,11 @@ local function PvPRedWin()
 	if gamestateEnded then
 		return
 	end
-	
+
 	gamestateEnded = true
 	pvpActive = false
+
+	specialLinePlaying = true
 
 	timer.Simple(1, function ()
 		chatMessage("How embarrassing")
@@ -676,6 +710,8 @@ local function HandleFinal(bot)
 
 	storeRollback()
 
+	specialLinePlaying = true
+
 	chatMessage("Seeing as I myself am entirely unable to best you all")
 
 	timer.Simple(1.5, function ()
@@ -752,6 +788,8 @@ local function HandleFinal(bot)
 	end)
 	timer.Simple(10, function ()
 		chatMessage("Now give me a show")
+
+		specialLinePlaying = false
 
 		for _, player in pairs(ents.GetAllPlayers()) do
 			if not player:IsRealPlayer() then
