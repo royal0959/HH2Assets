@@ -279,17 +279,13 @@ local function handlePlayerDeath(player)
 			return
 		end
 
-		if not bot:IsAlive() then
-			return
-		end
-
 		if player.m_iTeamNum ~= 2 then
 			return
 		end
 
 		local allInsults = DEATH_INSULTS[classIndices_Internal[player.m_iClass]]
 		local chosenInsult = allInsults[math.random(#allInsults)]
-		
+
 		local name = player:GetPlayerName()
 
 		chatMessage(string.format(chosenInsult, name))
