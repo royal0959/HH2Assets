@@ -679,14 +679,13 @@ local function handlePvPLateJoin(player)
 end
 
 function OnPlayerConnected(player)
-	if pvpActive then
-		handlePvPLateJoin(player)
-		checkPvPWinCond(true)
+	if not timeconstraint_alive then
 		return
 	end
 
-	if not timeconstraint_alive then
-		return
+	if pvpActive then
+		handlePvPLateJoin(player)
+		checkPvPWinCond(true)
 	end
 
 	handlePlayerDeath(player)
