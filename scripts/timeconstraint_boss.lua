@@ -678,6 +678,14 @@ local function handlePvPLateJoin(player)
 	player:Suicide()
 end
 
+local function handlePlayerPvPDeath(player)
+	local plrCallbacks = {}
+	plrCallbacks.died = player:AddCallback(ON_DEATH, function ()
+		checkPvPWinCond()
+		removeCallbacks(player, plrCallbacks)
+	end)
+end
+
 function OnPlayerConnected(player)
 	if not timeconstraint_alive then
 		return
@@ -686,6 +694,7 @@ function OnPlayerConnected(player)
 	if pvpActive then
 		handlePvPLateJoin(player)
 		checkPvPWinCond(true)
+		handlePlayerPvPDeath(player)
 	end
 
 	handlePlayerDeath(player)
@@ -809,11 +818,14 @@ local function HandleFinal(bot)
 				goto continue
 			end
 
-			local plrCallbacks = {}
-			plrCallbacks.died = player:AddCallback(ON_DEATH, function ()
-				checkPvPWinCond()
-				removeCallbacks(player, plrCallbacks)
-			end)
+			-- local plrCallbacks = {}
+			-- plrCallbacks.died = player:AddCallback(ON_DEATH, function ()
+			-- 	checkPvPWinCond()
+			-- 	removeCallbacks(player, plrCallbacks)
+			-- end)
+
+			handlePlayerPvPDeath(player)
+
 			-- plrCallbacks.removed = player:AddCallback(ON_REMOVE, function ()
 			-- 	checkPvPWinCond()
 			-- end)
