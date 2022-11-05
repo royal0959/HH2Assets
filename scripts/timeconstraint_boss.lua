@@ -673,9 +673,22 @@ local function checkPvPWinCond(dontSayCount)
 end
 
 local function handlePvPLateJoin(player)
-	player:ForceRespawn()
+	-- player:ForceRespawn()
 	player:SetAttributeValue("min respawn time", 999999)
-	player:Suicide()
+	-- player:Suicide()
+
+	chatMessage("A new challenger enters the field? Very well, I'll allow it")
+
+	local plrCallbacks = {}
+	-- just incase
+	plrCallbacks.spawned = player:AddCallback(ON_SPAWN , function ()
+		player:SetAttributeValue("min respawn time", 999999)
+		checkPvPWinCond()
+	end)
+	plrCallbacks.died = player:AddCallback(ON_DEATH, function ()
+		checkPvPWinCond()
+		removeCallbacks(player, plrCallbacks)
+	end)
 end
 
 local function handlePlayerPvPDeath(player)
@@ -694,7 +707,7 @@ function OnPlayerConnected(player)
 	if pvpActive then
 		handlePvPLateJoin(player)
 		checkPvPWinCond(true)
-		handlePlayerPvPDeath(player)
+		-- handlePlayerPvPDeath(player)
 	end
 
 	handlePlayerDeath(player)
