@@ -15,6 +15,7 @@ local DEATH_INSULTS = {
 	Scout = {
 		"Jumping won't save you, %s",
 		"Unequip the Fan-o-War, %s",
+		"Try upgrading your primary weapon, %s"
 	},
 	Soldier = {
 		"Unbind your attack key, %s",
@@ -28,10 +29,12 @@ local DEATH_INSULTS = {
 	Demoman = {
 		"Try using your movement keys next time, %s",
 		"Are you actually drunk, %s? You're playing like you are",
+		"Your incompetency is truly explosive, %s",
 	},
 	Heavyweapons = {
 		"Consider playing a more interesting class, %s",
 		"I hope that got you to leave a negative review on the end-of-operation survey, %s",
+		"Keep standing directly infront me, %s, see how that goes next time",
 	},
 	Engineer = {
 		"Build yourself better gamesense, %s",
@@ -41,13 +44,16 @@ local DEATH_INSULTS = {
 	Medic = {
 		"How's that canteen spam going for you, %s?",
 		"Try idling more %s, maybe that will work",
+		"Too bad you can't reanimate yourself, %s",
 	},
 	Sniper = {
+		"Stop aiming for my head and start aiming to be better at the game, %s",
 		"Thanks for standing still, %s!",
 	},
 	Spy = {
 		"I hate the french",
 		"Try running in circle harder, %s",
+		"Couldn't dead ring that one, %s? Unfortunate",
 	}
 
 }
