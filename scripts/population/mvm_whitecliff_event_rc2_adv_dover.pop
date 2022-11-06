@@ -829,8 +829,8 @@ cliff_of_dover
 			Name "1_otherknights"
 			WaitForAllSpawned "1_conchknight"
 			Where flankers
-			TotalCount 2
-			MaxActive 2
+			TotalCount 1
+			MaxActive 1
 			SpawnCount 1
 			WaitBeforeStarting 15
 			WaitBetweenSpawns 0
@@ -839,15 +839,15 @@ cliff_of_dover
 			TFBot
 			{
 				Template T_TFBot_Giant_DemoMan_PrinceTavish
-				Name "Giant Buff Demoknight"
+				// Name "Giant Buff Demoknight"
 				
-				ClassIcon demoknight_buff_lite
-				Attributes SpawnWithFullCharge
-				Item "The Buff Banner"
-				CharacterAttributes
-				{
-					"increase buff duration"	9.0
-				}
+				// ClassIcon demoknight_buff_lite
+				// Attributes SpawnWithFullCharge
+				// Item "The Buff Banner"
+				// CharacterAttributes
+				// {
+				// 	"increase buff duration"	9.0
+				// }
 			}
 		}
 
@@ -991,7 +991,7 @@ cliff_of_dover
 			TFBot
 			{
 				Template T_TFBot_Giant_Soldier_RocketShotgun 
-				Attributes AlwaysCrit
+				// Attributes AlwaysCrit
 			}
 		}
 	}
@@ -2241,7 +2241,7 @@ cliff_of_dover
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 2
-			WaitBeforeStarting 20
+			WaitBeforeStarting 25
 			WaitBetweenSpawns 0
 			TotalCurrency 1
 
@@ -2284,7 +2284,7 @@ cliff_of_dover
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 2
-			WaitBeforeStarting 27
+			WaitBeforeStarting 39
 			WaitBetweenSpawns 0
 			TotalCurrency 1
 
@@ -2325,7 +2325,7 @@ cliff_of_dover
 			TotalCount 2
 			MaxActive 2
 			SpawnCount 2
-			WaitBeforeStarting 34
+			WaitBeforeStarting 42
 			WaitBetweenSpawns 0
 			TotalCurrency 1
 
@@ -2437,10 +2437,10 @@ cliff_of_dover
 			Name "6_tc4_reinforcement"
 			WaitForAllDead "6_tc3"
 			Where spawnbot
-			TotalCount 3
-			MaxActive 3
-			SpawnCount 3
-			WaitBeforeStarting 75
+			TotalCount 4
+			MaxActive 4
+			SpawnCount 4
+			WaitBeforeStarting 70
 			WaitBetweenSpawns 10
 			TotalCurrency 0
 
@@ -2456,6 +2456,11 @@ cliff_of_dover
 						AlwaysGlow 1
 						Attributes AlwaysCrit
 						Action Mobber
+
+						CharacterAttributes
+						{
+							"damage bonus" 1.5
+						}
 					}
 				}
 			}
