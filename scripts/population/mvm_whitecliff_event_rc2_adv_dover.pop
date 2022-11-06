@@ -813,6 +813,8 @@ cliff_of_dover
 			{
 				Template T_TFBot_Giant_DemoMan_PrinceTavish
 				Name "Giant Conch Demoknight"
+
+				Item "The Tide Turner"
 				
 				ClassIcon demoknight_conch_lite
 				Attributes SpawnWithFullCharge
@@ -839,6 +841,8 @@ cliff_of_dover
 			TFBot
 			{
 				Template T_TFBot_Giant_DemoMan_PrinceTavish
+
+				Item "The Tide Turner"
 				// Name "Giant Buff Demoknight"
 				
 				// ClassIcon demoknight_buff_lite
